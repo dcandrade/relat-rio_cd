@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2015.6.19)  9 SEP 2015 12:59
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2015.6.19)  11 OCT 2015 22:09
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -56,15 +56,36 @@ Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 \Gm@layoutvoffset=\dimen110
 \Gm@dimlist=\toks15
 )
-(./caption2.sty
-Package: caption2 2002/08/03 v2.1 Customising captions (AS)
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption2.sty
+Package: caption2 2013/02/03 v2.2-62 Customising captions (AR)
+
+
+Package caption2 Warning: ****************************************************
+(caption2)                THIS PACKAGE IS OBSOLETE:
+(caption2)                This package attempts to provide an `caption2'
+(caption2)                package v2.0/2.1 author environment so that OLD
+(caption2)                documents can be successfully processed. It should
+(caption2)                NOT be used for NEW documents! New documents should
+(caption2)                use the regular `caption' package v3.x instead.
+(caption2)                ****************************************************
+
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2013/05/02 v1.6-88 caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 57.
 \captionmargin=\dimen111
-\captionwidth=\dimen112
-\captionindent=\dimen113
+\captionmargin@=\dimen112
+\captionwidth=\dimen113
+\caption@tempdima=\dimen114
+\caption@indent=\dimen115
+\caption@parindent=\dimen116
+\caption@hangindent=\dimen117
+)
 Package caption2 Info: Running in caption2 v2.0 compatibility mode on input lin
-e 147.
-\captionlinewidth=\dimen114
-) (/usr/share/texlive/texmf-dist/tex/latex/psnfss/times.sty
+e 215.
+\captionlinewidth=\dimen118
+\realcaptionwidth=\dimen119
+)
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/times.sty
 Package: times 2005/04/12 PSNFSS-v9.2a (SPQR) 
 )
 \c@instn=\count90
@@ -74,12 +95,12 @@ Package: titlesec 2011/12/15 v2.10.0 Sectioning titles
 \ttl@box=\box26
 \beforetitleunit=\skip43
 \aftertitleunit=\skip44
-\ttl@plus=\dimen115
-\ttl@minus=\dimen116
+\ttl@plus=\dimen120
+\ttl@minus=\dimen121
 \ttl@toksa=\toks16
-\titlewidth=\dimen117
-\titlewidthlast=\dimen118
-\titlewidthfirst=\dimen119
+\titlewidth=\dimen122
+\titlewidthlast=\dimen123
+\titlewidthfirst=\dimen124
 ))
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
@@ -106,8 +127,8 @@ Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 )
 \Gread@gobject=\count91
 ))
-\Gin@req@height=\dimen120
-\Gin@req@width=\dimen121
+\Gin@req@height=\dimen125
+\Gin@req@width=\dimen126
 )
 (/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip10
@@ -130,8 +151,8 @@ Package: dcolumn 2001/05/28 v1.06 decimal alignment package (DPC)
 
 (/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty
 Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
-\col@sep=\dimen122
-\extrarowheight=\dimen123
+\col@sep=\dimen127
+\extrarowheight=\dimen128
 \NC@list=\toks18
 \extratabsurround=\skip47
 \backup@length=\skip48
@@ -205,16 +226,18 @@ File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: End \AtBeginDocument code.
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count94
-\scratchdimen=\dimen124
+\scratchdimen=\dimen129
 \scratchbox=\box30
 \nofMPsegments=\count95
 \nofMParguments=\count96
 \everyMPshowfont=\toks23
 \MPscratchCnt=\count97
-\MPscratchDim=\dimen125
+\MPscratchDim=\dimen130
 \MPnumerator=\count98
 \makeMPintoPDFobject=\count99
 \everyMPtoPDFconversion=\toks24
@@ -284,11 +307,11 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <13> not available
  [1
 
 {/usr/share/texlive/texmf-dist/fonts/map/pdftex/updmap/pdftex.map}]
-<diagrama-estados.png, id=12, 504.88625pt x 445.665pt>
-File: diagrama-estados.png Graphic file (type png)
+<img/diagrama-estados.png, id=12, 504.88625pt x 445.665pt>
+File: img/diagrama-estados.png Graphic file (type png)
 
-<use diagrama-estados.png>
-Package pdftex.def Info: diagrama-estados.png used on input line 57.
+<use img/diagrama-estados.png>
+Package pdftex.def Info: img/diagrama-estados.png used on input line 57.
 (pdftex.def)             Requested size: 213.39568pt x 188.36807pt.
 LaTeX Font Info:    Try loading font information for OT1+phv on input line 58.
 
@@ -304,94 +327,100 @@ File: omsptm.fd
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <12> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 65.
- [2 <./diagrama-estados.png>] <comparador-xnor.jpeg, id=20, 401.5pt x 392.46625
-pt>
-File: comparador-xnor.jpeg Graphic file (type jpg)
+ [2 <./img/diagrama-estados.png>] <img/comparador-xnor.jpeg, id=20, 401.5pt x 3
+92.46625pt>
+File: img/comparador-xnor.jpeg Graphic file (type jpg)
 
-<use comparador-xnor.jpeg>
-Package pdftex.def Info: comparador-xnor.jpeg used on input line 102.
+<use img/comparador-xnor.jpeg>
+Package pdftex.def Info: img/comparador-xnor.jpeg used on input line 102.
 (pdftex.def)             Requested size: 170.71393pt x 166.87679pt.
- <btn-ideal.jpg, id=21, 458.71375pt x 244.915pt>
-File: btn-ideal.jpg Graphic file (type jpg)
 
-<use btn-ideal.jpg>
-Package pdftex.def Info: btn-ideal.jpg used on input line 114.
+<img/btn-ideal.jpg, id=21, 458.71375pt x 244.915pt>
+File: img/btn-ideal.jpg Graphic file (type jpg)
+ <use img/btn-ideal.jpg>
+Package pdftex.def Info: img/btn-ideal.jpg used on input line 114.
 (pdftex.def)             Requested size: 170.71393pt x 91.14778pt.
- <btn-real.png, id=22, 474.3877pt x 267.76962pt>
-File: btn-real.png Graphic file (type png)
 
-<use btn-real.png>
-Package pdftex.def Info: btn-real.png used on input line 122.
+<img/btn-real.png, id=22, 474.3877pt x 267.76962pt>
+File: img/btn-real.png Graphic file (type png)
+ <use img/btn-real.png>
+Package pdftex.def Info: img/btn-real.png used on input line 122.
 (pdftex.def)             Requested size: 213.39568pt x 120.45435pt.
- [3] [4 <./comparador-xnor.jpeg> <./btn-ideal.jpg> <./btn-real.png (PNG copy)>]
- <debouncing-ex.png, id=30, 86.9649pt x 42.8802pt>
-File: debouncing-ex.png Graphic file (type png)
 
-<use debouncing-ex.png>
-Package pdftex.def Info: debouncing-ex.png used on input line 136.
+[3] [4 <./img/comparador-xnor.jpeg> <./img/btn-ideal.jpg> <./img/btn-real.png (
+PNG copy)>] <img/debouncing-ex.png, id=30, 86.9649pt x 42.8802pt>
+File: img/debouncing-ex.png Graphic file (type png)
+
+<use img/debouncing-ex.png>
+Package pdftex.def Info: img/debouncing-ex.png used on input line 136.
 (pdftex.def)             Requested size: 298.75264pt x 147.35316pt.
- [5 <./debouncing-ex.png (PNG copy)>]
-<diagrama.jpg, id=34, 2055.68pt x 1094.0875pt>
-File: diagrama.jpg Graphic file (type jpg)
- <use diagrama.jpg>
-Package pdftex.def Info: diagrama.jpg used on input line 167.
+ [5 <./img/debouncing-ex.png (PNG copy)>]
+<img/diagrama.jpg, id=34, 2055.68pt x 1094.0875pt>
+File: img/diagrama.jpg Graphic file (type jpg)
+ <use img/diagrama.jpg>
+Package pdftex.def Info: img/diagrama.jpg used on input line 167.
 (pdftex.def)             Requested size: 426.79135pt x 227.14413pt.
- [6]
-<debounce.png, id=38, 947.54pt x 515.9275pt>
-File: debounce.png Graphic file (type png)
- <use debounce.png>
-Package pdftex.def Info: debounce.png used on input line 179.
+
+[6] <img/debounce.png, id=38, 947.54pt x 515.9275pt>
+File: img/debounce.png Graphic file (type png)
+ <use img/debounce.png>
+Package pdftex.def Info: img/debounce.png used on input line 179.
 (pdftex.def)             Requested size: 298.75264pt x 162.66759pt.
- [7 <./diagrama.jpg> <./debounce.png>] <rom-memory.png, id=44, 1316.92pt x 480.
-79625pt>
-File: rom-memory.png Graphic file (type png)
 
-<use rom-memory.png>
-Package pdftex.def Info: rom-memory.png used on input line 221.
+[7 <./img/diagrama.jpg> <./img/debounce.png>]
+<img/rom-memory.png, id=44, 1316.92pt x 480.79625pt>
+File: img/rom-memory.png Graphic file (type png)
+ <use img/rom-memory.png>
+Package pdftex.def Info: img/rom-memory.png used on input line 221.
 (pdftex.def)             Requested size: 341.43437pt x 124.65192pt.
- <mem-mux.png, id=45, 1129.21875pt x 98.3675pt>
-File: mem-mux.png Graphic file (type png)
 
-<use mem-mux.png>
-Package pdftex.def Info: mem-mux.png used on input line 231.
+<img/mem-mux.png, id=45, 1129.21875pt x 98.3675pt>
+File: img/mem-mux.png Graphic file (type png)
+ <use img/mem-mux.png>
+Package pdftex.def Info: img/mem-mux.png used on input line 231.
 (pdftex.def)             Requested size: 384.1096pt x 33.461pt.
- [8 <./rom-memory.png> <./mem-mux.png>]
-<comparador.png, id=52, 700.6175pt x 628.3475pt>
-File: comparador.png Graphic file (type png)
- <use comparador.png>
-Package pdftex.def Info: comparador.png used on input line 249.
+
+[8 <./img/rom-memory.png> <./img/mem-mux.png>]
+<img/comparador.png, id=52, 700.6175pt x 628.3475pt>
+File: img/comparador.png Graphic file (type png)
+ <use img/comparador.png>
+Package pdftex.def Info: img/comparador.png used on input line 249.
 (pdftex.def)             Requested size: 341.43437pt x 306.2151pt.
- [9 <./comparador.png>] <ram-eda.png, id=57, 744.7825pt x 614.295pt>
-File: ram-eda.png Graphic file (type png)
- <use ram-eda.png>
-Package pdftex.def Info: ram-eda.png used on input line 262.
+
+[9 <./img/comparador.png>] <img/ram-eda.png, id=57, 744.7825pt x 614.295pt>
+File: img/ram-eda.png Graphic file (type png)
+
+<use img/ram-eda.png>
+Package pdftex.def Info: img/ram-eda.png used on input line 262.
 (pdftex.def)             Requested size: 256.07741pt x 211.21962pt.
+ [10 <./img/ram-eda.png>]
+<img/circuito-p2.jpg, id=62, 2380.895pt x 1731.46875pt>
+File: img/circuito-p2.jpg Graphic file (type jpg)
 
-[10 <./ram-eda.png>] <circuito-p2.jpg, id=62, 2380.895pt x 1731.46875pt>
-File: circuito-p2.jpg Graphic file (type jpg)
-
-<use circuito-p2.jpg>
-Package pdftex.def Info: circuito-p2.jpg used on input line 289.
+<use img/circuito-p2.jpg>
+Package pdftex.def Info: img/circuito-p2.jpg used on input line 289.
 (pdftex.def)             Requested size: 384.1096pt x 279.3392pt.
- <circuito-p3.jpg, id=63, 283.0575pt x 414.54875pt>
-File: circuito-p3.jpg Graphic file (type jpg)
 
-<use circuito-p3.jpg>
-Package pdftex.def Info: circuito-p3.jpg used on input line 297.
+<img/circuito-p3.jpg, id=63, 283.0575pt x 414.54875pt>
+File: img/circuito-p3.jpg Graphic file (type jpg)
+
+<use img/circuito-p3.jpg>
+Package pdftex.def Info: img/circuito-p3.jpg used on input line 297.
 (pdftex.def)             Requested size: 256.07741pt x 375.06398pt.
- [11 <./circuito-p2.jpg>]
-<testeram.png, id=67, 1091.07625pt x 266.9975pt>
-File: testeram.png Graphic file (type png)
- <use testeram.png>
-Package pdftex.def Info: testeram.png used on input line 319.
+ [11 <./img/circuito-p2.jpg>]
+<img/testeram.png, id=67, 1091.07625pt x 266.9975pt>
+File: img/testeram.png Graphic file (type png)
+ <use img/testeram.png>
+Package pdftex.def Info: img/testeram.png used on input line 319.
 (pdftex.def)             Requested size: 426.79135pt x 104.43822pt.
- [12 <./circuito-p3.jpg>]
+
+[12 <./img/circuito-p3.jpg>]
 Underfull \hbox (badness 4096) in paragraph at lines 335--336
 []\OT1/ptm/m/n/12 Dispondo-se de to-das as fer-ra-men-tas necess[]arias, o test
 e foi re-al-izado
  []
 
-[13 <./testeram.png>] (./relatorio.bbl
+[13 <./img/testeram.png>] (./relatorio.bbl
 Underfull \hbox (badness 10000) in paragraph at lines 4--8
 []\OT1/ptm/m/n/12 Coates, E. (2001).  Bi-nary Com-para-tors.  $\OT1/pcr/m/n/12 
 http : / / www .
@@ -417,13 +446,13 @@ ircuit +
 
 ) [14] (./relatorio.aux) ) 
 Here is how much of TeX's memory you used:
- 3027 strings out of 494971
- 42939 string characters out of 6180013
- 109082 words of memory out of 5000000
- 6168 multiletter control sequences out of 15000+600000
+ 3587 strings out of 494971
+ 53835 string characters out of 6180013
+ 117799 words of memory out of 5000000
+ 6723 multiletter control sequences out of 15000+600000
  21548 words of font info for 46 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 38i,12n,28p,981b,290s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 43i,12n,40p,981b,290s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8
 r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb>
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/s
@@ -434,7 +463,7 @@ ts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw
 /times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.
 pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share
 /texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on relatorio.pdf (14 pages, 1359265 bytes).
+Output written on relatorio.pdf (14 pages, 1359273 bytes).
 PDF statistics:
  113 PDF objects out of 1000 (max. 8388607)
  65 compressed objects within 1 object stream
