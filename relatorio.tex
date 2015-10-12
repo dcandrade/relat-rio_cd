@@ -20,12 +20,12 @@
 
 \title{Problema 4: "Batalha Naval!"}
 
-\author{Daniel Coelho de Andrade\inst{1}}
+%\author{Daniel Coelho de Andrade\inst{1}}
 
 
 \address{MI - Projetos de Circuitos Digitais, Turma P04 \\ Tutor: Marcos Paz\\
 Curso de Engenharia de Computação \\ Universidade Estadual de Feira de Satana (UEFS)\\
-  \email{dcndrd@gmail.com}
+ 
 }
 
 \begin{document} 
@@ -33,12 +33,12 @@ Curso de Engenharia de Computação \\ Universidade Estadual de Feira de Satana 
 \maketitle
 
 \begin{resumo} 
-  O presente relatório descreve o processo de resolução do terceiro problema do MI - Circuitos Digitais, da correspondente turma, no período de 2015.1, na Universidade Estadual de Feira de Santana. O problema propôs que os estudantes integrassem ao projeto do problema anterior a funcionalidade de comparar a presente entrada com um conjunto de outras previamente conhecidas, e, caso a comparação for válida, exibir um \textit{feedback} visual acendendo o led cuja comparação foi dada como válida.
+O presente relatório descreve o processo de resolução do terceiro problema do MI - Circuitos Digitais, da supracitada turma,no período de 2015.1, na Universidade Estadual de Feira de Santana. O problema propôs, dado o sucesso dos projetos préteritos, que os estudantes desenvolvessem um protótipo do jogo Batalha Naval em \textit{FPGA}, tomando como base o  protótipo do controlador para matriz de \textit{LED}, sendo que a comunicação com este novo circuito deveria acontecer através de um computador pessoal utilizando o conceito de comunicação serial, toranando o projeto a ser desenvolvido, mais conviável em relação a transmissão de dados.
 \end{resumo}
 
 \section{Introdução} \label{sec:firstpage}
 
-Ao se fazer o uso de qualquer dispositivo, o mesmo apresenta um conjunto de características resultantes que correspondem diretamente ao modo que ele é manuseado e seu estado atual. Por exemplo, ao inserir uma chave em uma fechadura que estava fechada, pressupondo que a chave é a correta e girada no sentido correto, a fechadura é destravada. Esse procedimento é repetido diversas vezes diariamente e por várias pessoas ao redor do globo. Para tornar, em teoria, esse procedimento mais automatizado, é possível imaginar que a fechadura é capaz de girar a chave e, também, reconhecer quando a sua respectiva chave é inserida nela. Desse modo, ao inserir a chave correta na fechadura, a mesma abrirá automaticamente. Caso contrário, nenhuma ação será realizada. Caso fosse um caso real, o mesmo só seria possível pela capacidade da fechadura de \textit{memorizar} a chave que a pertence e de \textit{compará-la} com qualquer outra chave inserida nela.
+Hoje em dia cresce, substancialmente, a ampla utilização de jogos no segmento lúdico de simulação 2D. Estes são utilizados em diversas áreas conhecidas, tendo uma mais elavada utilização na educação. Além do papel, prfícuo que os mesmos podem fornecer à educação, podem servir , também, única e exclusivamente como forma de entretenimento entre os mais jovens, bem como para o público mais adulto. Um exemplo destes jogos, é famigerado Batalha Naval. Sendo no Brasil no ano de 1988, o jogo batalha naval é um dos jogos de maiores sucessos entre o público mundial. Em sua forma mais rústica, dois adversários desenhavam em folhas de papel, navios posicionados em um mar imaginário quadriculado, formando uma grade. Todavia, no contexto atual, além de encontrar versões deste jogo de maneira similar aos seus primórdios, encontra-se, também, aplicativos para diversas arquiteturas que executam o mesmo processo, faciliatando assim a sua disseminação entre as pessoas.
 
 Facilitando o manuseio de dispositivos existentes e fornecendo novas possibilidades de desenvolvimento, as estruturas capazes de armazenar dados, conhecidas como memórias, tem se tornado cada vez mais presente nos diversos equipamentos eletrônicos, independente do qual seja seu objetivo e usuário final, pois cada um desses equipamentos realizam processos que exigem a permanência, temporária ou não, de um dado. No caso citado, o dado seria a combinação de ranhuras na chave que a torna válida. Além disso, a coordenada entrada no barramento paralelo, sendo válida ou não, e o endereço de memória atual devem ser exibidos em forma numérica em dispositivo(s) de visualização de dígitos.
 
