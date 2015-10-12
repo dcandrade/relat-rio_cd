@@ -72,7 +72,19 @@ Além dos Flip-Flops até o momento estudados, temos na literatura, outro flip-f
 
 %colocar a figura do flip flop t
 
-\subsection{Circuito Debounce}
+\subsection{Registrador de Deslocamento}
+
+No universo dos circuitos digitais, principalmente no que diz respeito aos Flip-Flops, encontramos diversas aplicações. Uma, das várias aplicações é na forma de registrador de deslocamento, os quais são amplamente utilizados hoje em dia no desenvolvimento de circuitos robustos. Segundo \cite{floyd2011digital} os registradores de deslocamento consistem de arranjos de Flip-Flops e são importantes em aplicações que envolvem o armazenamento e a transferência de dados em sistemas digitais. É importante esclarecer, que o funcionamente do registrdor de dslocamento é diferente de um contador comum, ou seja, ele não tem uma sequência específica de estados, apesar de em alguns casos poder ser utilizado como tal. Na \textbf{figura 4} podemos ver um circuito típico para um registrador de deslocamento de quatro bits com entrada e saída serial de dados.
+
+%Colocar Fgura do registrador de deslocamento
+
+São diversos, os tipos de registradores de deslocamento, na \textbf{figura 5} pode-se observar os diversos tipos de registradores de delocamento existentes, sendo ilustrados de forma abstrata. Dentre eles, um dos mais importantes está o registrador com entrada serial e saída paralela, o qual será abordado com mais detalhe na próxima subsubseção.
+
+
+%COLOCAR FIGURA DOS TIPOS DE REGISTRADORES DE DESLOCAMENTO.
+
+
+\subsubsection{Registrador de deslocamento com serial e saída paralela}
 
 No ambiente de aprendizagem, para facilitar o entendimento dos circuitos digitais, faz-se uso de artifícios como aproximação e arredondamento. Porém, quando se trata da implementação física, na prática, esses fatos não podem ser ignorados. Como exemplo, um botão ideal, ao ser pressionado, emite um pulso igual ao descrito na figura~\ref{fig:btn-ideal}. Já considerando todas as variáveis presentes no ambiente de prototipagem, testes e uso do produto, o pulso do botão se torna semelhante ao descrito na figura~\ref{fig:btn-real}.
 
