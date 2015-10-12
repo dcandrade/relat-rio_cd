@@ -33,7 +33,7 @@ Curso de Engenharia de Computação \\ Universidade Estadual de Feira de Satana 
 \maketitle
 
 \begin{resumo} 
-O presente relatório descreve o processo de resolução do terceiro problema do MI - Circuitos Digitais, da supracitada turma,no período de 2015.1, na Universidade Estadual de Feira de Santana. O problema propôs, dado o sucesso dos projetos préteritos, que os estudantes desenvolvessem um protótipo do jogo Batalha Naval em \textit{FPGA}, tomando como base o  protótipo do controlador para matriz de \textit{LED}, sendo que a comunicação com este novo circuito deveria acontecer através de um computador pessoal utilizando o conceito de comunicação serial, toranando o projeto a ser desenvolvido, mais conviável em relação a transmissão de dados.
+O presente relatório descreve o processo de resolução do terceiro problema do MI - Circuitos Digitais, da supracitada turma,no período de 2015.1, na Universidade Estadual de Feira de Santana. O problema propôs, dado o sucesso dos projetos préteritos, que os estudantes desenvolvessem um protótipo do jogo Batalha Naval em \textit{FPGA}, tomando como base o  protótipo do controlador para matriz de \textit{LED}, sendo que a comunicação com este novo circuito deveria acontecer através de um computador pessoal utilizando o conceito de comunicação serial, toranando o projeto a ser desenvolvido, mais confiável em relação a transmissão de dados.
 \end{resumo}
 
 \section{Introdução} \label{sec:firstpage}
@@ -48,11 +48,11 @@ Desta forma, observando a mudança atual do mercado, principalmente no que diz r
 
 \section{Fundamentação Teórica}
 
-Na presente seção, serão descritos os conceitos que contribuíram para a solução do problema, de forma direta ou indireta.
+Na seção que segue, serão descritos os conceitos utilizados para resolução do problema proposto, frisando os conceitos que foram de fundamental importância para solucionar o mesmo, tendo contribuição de maneira direta ou indireta.
 
-\subsection{Contador Binário}
+\subsection{Máquinas de Estados}
 
-Parte dos equipamentos digitais precisam operar em uma sequência, ou realizar um procedimento de acordo com a o último número fornecido por uma sequência. Um contador é um circuito sequencial composto por uma série de Flip Flops interligados de uma maneira que os tornem capaz de enumerar os pulsos de clock que entram no sistema. Tal contagem é feita pela alternância da saída de cada FF(Flip Flop) de acordo com o número de pulsos de clock recebidos. Uma das formas de analisar o estado dos FF's e saber mais sobre o funcionamento de um contador específico, é construir um diagrama de transição de estados.\cite{tocci1997digital}.
+Em se tratando de Circuitos Digitais, diversos dispositivos têm uma ampla importância, dentre estes dispositivos temos os conhecidos contadores, os quais segundo\cite{tocci1997digital} são Máquinas de estados específicas.(colocar referencia de floyd). Floyd, por sua vez, vai mais adiante, e fala que Máquinas de estados ou circuito sequencial é um circuito que  consiste de uma seção de lógica combinacional e uma seção de memória (flip-flops). Na \textbf{figura 1} podemos observar o circuito típico para uma máquina de estados.  
 
 \begin{figure}[!htbp]
 \centering
