@@ -52,8 +52,9 @@ Na seção que segue, serão descritos os conceitos utilizados para resolução 
 
 \subsection{Máquinas de Estados}
 
-Em se tratando de Circuitos Digitais, diversos dispositivos têm uma ampla importância, dentre estes dispositivos temos os conhecidos contadores, os quais segundo\cite{tocci1997digital} são Máquinas de estados específicas. Floyd, por sua vez, vai mais adiante, e fala que Máquinas de estados ou circuito sequencial é um circuito que  consiste de uma seção de lógica combinacional e uma seção de memória (flip-flops)\cite{floyd2011digital}. Na \textbf{figura 1} podemos observar o circuito típico para uma máquina de estados.  
+Em se tratando de Circuitos Digitais, diversos dispositivos têm uma ampla importância, dentre estes dispositivos temos os conhecidos contadores, os quais segundo\cite{tocci1997digital} são Máquinas de estados específicas. Floyd, por sua vez, vai mais adiante, e fala que Máquinas de estados ou circuito sequencial é um circuito que  consiste de uma seção de lógica combinacional e uma seção de memória (flip-flops)\cite{floyd2011digital}. Na \textbf{figura 1} podemos observar o circuito típico para uma máquina de estados. Vale acrescentar que a quantidade de estados que uma máquina pode interpretar é diretamente ligada a quantidade de Flip-Flop, a quantidade de estados pode ser obtido fazendo 2^n, sendo n o número de Flip-flops.  
 
+%FAZER UPLOAD DA IMAGEM DE MAQUINAS DE ESTADOS
 \begin{figure}[!htbp]
 \centering
 \includegraphics[width=.5\textwidth]{img/diagrama-estados.png}
@@ -61,20 +62,9 @@ Em se tratando de Circuitos Digitais, diversos dispositivos têm uma ampla impor
 \label{fig:diagrama-estados}
 \end{figure}
 
-Como retratado na figura~\ref{fig:diagrama-estados}, um contador passa de um estado para outro ao alternar um de seus bits, sendo essa mudança  causada por um pulso de clock. Porém, não existe só um tipo de dispositivo capaz de enumerar os pulsos de clock. Segundo \cite{singh2006digital}, os contadores podem ser, majoritariamente, divididos em:
+Existem basicamente, dois modelos de máquinas de estados, a saber, máquina Moore e máquina Mealy. Na máquina Moore, a saída depende única e exlcusivamente dos seus estados atuais, enquanto na máquina Mealy além de depender dos seus estados atuais, a saída depende, também, das variáveis de entrada naquele instante. Na \textbf{figura 2} podemos observar  o digrama de transiçao de estado para uma máquina Moore, já na \textbf{figura 3} temos o diagrama para uma máquina Mealy. É importante notarmos, através dos diagramas, a diferença referente a saída de cada máquina.    
 
-\begin{itemize}
-\item{Contadores Síncronos: }
-Um contador é chamado de síncronos quando o mesmo sinal de clock é aplicado em todos os FF's ao mesmo tempo.
-\end{itemize}
-
-\begin{itemize}
-\item{Contadores Assíncronos: }
-Os contadores síncronos quando o pulso de clock destinado ao contador é aplicado apenas no primeiro FF. Os outros FF's do conjunto utilizam como sinal de clock a saída \textit{Q} do FF anterior.
-\end{itemize}
-
-Uma característica previsível através da categorização desses circuitos, é que a forma de externalizar o resultado não é a mesma. Outra razão para isso é a variedade de FF's que podem ser usados para implementar um contador. Ou seja, o diagrama de estados para um contador de 3 bits varia de acordo com a implementação do mesmo e com os tipos de FF's usados. Tal comportamento torna o diagrama de estados, anteriormente importante, algo indispensável.
-
+%COLOCAR AS IMAGENS REFERENTES AOS DIAGRAMS QUE SERÃO UTILIZADOS PARA REPRESENTAR OS TIPOS DE MAQUINAS DE ESTADOS EXISTENTES.
 \subsection{Comparador Binário}
 
 Muitas vezes em circuitos digitais é necessário, independente do objetivo final, comparar dois dados ou valores binários. Um circuito comparador básico tem como entrada \textit{2*n} entradas, sendo \textit{n} entradas correspondentes ao valor de referência e \textit{n} entradas correspondendo ao valor que deverá ser comparado com o valor de referência. A saída corresponde a 1 bit em nível alto, caso as entradas forem iguais e em nível baixo se as entradas forem diferentes\cite{tocci1997digital,  floyd2011digital}.
