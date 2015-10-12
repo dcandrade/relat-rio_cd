@@ -65,37 +65,12 @@ Em se tratando de Circuitos Digitais, diversos dispositivos têm uma ampla impor
 Existem basicamente, dois modelos de máquinas de estados, a saber, máquina Moore e máquina Mealy. Na máquina Moore, a saída depende única e exlcusivamente dos seus estados atuais, enquanto na máquina Mealy além de depender dos seus estados atuais, a saída depende, também, das variáveis de entrada naquele instante. Na \textbf{figura 2} podemos observar  o digrama de transiçao de estado para uma máquina Moore, já na \textbf{figura 3} temos o diagrama para uma máquina Mealy. É importante notarmos, através dos diagramas, a diferença referente a saída de cada máquina.    
 
 %COLOCAR AS IMAGENS REFERENTES AOS DIAGRAMS QUE SERÃO UTILIZADOS PARA REPRESENTAR OS TIPOS DE MAQUINAS DE ESTADOS EXISTENTES.
-\subsection{Comparador Binário}
 
-Muitas vezes em circuitos digitais é necessário, independente do objetivo final, comparar dois dados ou valores binários. Um circuito comparador básico tem como entrada \textit{2*n} entradas, sendo \textit{n} entradas correspondentes ao valor de referência e \textit{n} entradas correspondendo ao valor que deverá ser comparado com o valor de referência. A saída corresponde a 1 bit em nível alto, caso as entradas forem iguais e em nível baixo se as entradas forem diferentes\cite{tocci1997digital,  floyd2011digital}.
+\subsection{Flip-Flop T}
 
-Apesar poder comparar conjuntos de \textit{n} bits, a base do funcionamento do comparador é a operação \textit{ou exclusiva(XNOR)} entre bits de igual magnitude, resultando em \textit{n} comparações. A justificativa para a utilização dessa porta lógica, pode ser obtida observando sua tabela verdade, demonstrada na tabela~\ref{tab:verdade-xnor}:
+Além dos Flip-Flops até o momento estudados, temos na literatura, outro flip-flop que é amplamente utilizado, qual seja, o Flip-flop T. Na \textbf{figura 3} podemos analisar o bloco lógico e a tabela verdade para este Flip-Flop. Quando a entrada T estiver em estado alto, o flip-flop T, onde T significa \textit{toggle}, comutará quando o \textit{clock} for aplicado. Se a entrada T for baixa, o flip-flop mantém o valor do seu estado.
 
-\begin{table}[!htbp]
-\centering
-\begin{tabular}{|c|c|c|}
-	\hline
-	A & B & $S$ \\
- \hline \hline
-	0 & 0 & 1\\
-	0 & 1 & 0\\
-	1 & 0 & 0\\
-	1 & 1 & 1\\
- \hline
-\end{tabular}
-\caption{Tabela verdade da porta XNOR \cite{tocci1997digital}}
-\label{tab:verdade-xnor}
-\end{table}
-
-Em suma, a porta XNOR tem $S$ em nível alto quando as duas entradas são iguais, característica ideal para o circuito em discussão. Após comparar todos os bits de mesma magnitude, tem-se \textit{n} saídas de portas XNOR. Para completar o comparador, liga-se todas essas saídas em uma porta multiplicativa(AND). O resultado será 1 se as entradas forem equivalentes e 0 caso contrário\cite{ref-xnor}. A figura ~\ref{fig:portas-xnor} mostra a implementação descrita em um comparador de 4 bits.
-
-\begin{figure}[!htbp]
-\centering
-\includegraphics[width=.4\textwidth]{img/comparador-xnor.jpeg}
-\caption{Esquema lógico de um comparador de 4 bits\cite{ref-xnor}}
-\label{fig:portas-xnor}
-\end{figure}
-
+%colocar a figura do flip flop t
 
 \subsection{Circuito Debounce}
 
