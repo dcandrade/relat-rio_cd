@@ -84,40 +84,14 @@ São diversos, os tipos de registradores de deslocamento, na \textbf{figura 5} p
 %COLOCAR FIGURA DOS TIPOS DE REGISTRADORES DE DESLOCAMENTO.
 
 
-\subsubsection{Registrador de deslocamento com serial e saída paralela}
+\subsubsection{Registrador de deslocamento com entrada serial e saída paralela}
 
-No ambiente de aprendizagem, para facilitar o entendimento dos circuitos digitais, faz-se uso de artifícios como aproximação e arredondamento. Porém, quando se trata da implementação física, na prática, esses fatos não podem ser ignorados. Como exemplo, um botão ideal, ao ser pressionado, emite um pulso igual ao descrito na figura~\ref{fig:btn-ideal}. Já considerando todas as variáveis presentes no ambiente de prototipagem, testes e uso do produto, o pulso do botão se torna semelhante ao descrito na figura~\ref{fig:btn-real}.
+Como o própio nome já designa, neste tipo de registrador a entrada de dados se dá de forma serial, contudo, a saída não será serial e sim paralela. Desta forma, segundo \cite{floyd2011digital} uma vez armazenados os dados, cada bit aparece em sua linha de saída respectiva e todos os bits são disponibilizados simultaneamente, em vez de um bit de cada vez como no registrador com saída serial. \textbf{figura 6} podemos ver uma exemplificação para este circuito. Notem que neste tipo de registrador a saída de cada estágio está disponível.
 
-\begin{figure}[!htbp]
-\centering
-\includegraphics[width=.4\textwidth]{img/btn-ideal.jpg}
-\caption{Pulso de um botão ideal ao ser pressionado\cite{btn-ideal}}
-\label{fig:btn-ideal}
-\end{figure}
+%COLOCAR FIGURA DO REGISTRADOR DE DESLOCAMENTO SERIAL\PARALELO.
 
 
-\begin{figure}[!htbp]
-\centering
-\includegraphics[width=.5\textwidth]{img/btn-real.png}
-\caption{Pulso de um botão real ao ser pressionado\cite{btn-real}}
-\label{fig:btn-real}
-\end{figure}
-
-Como pode ser visto na figura~\ref{fig:btn-real}, ao ser pressinado, o botão gera uma onda com várias oscilações. O problema dessa variância é que o circuito disparado pelo botão pode ser ativo mais de uma vez quando o mesmo é pressionado apenas uma única vez. A razão disso acontecer é que entre tais oscilações, pode ocorrer uma tão grande que seja capaz de alternar entre os níveis lógicos\cite{debouncing-reason}.
-
-Para garantir que o pulso do botão seja devidamente interpretado, ou seja, que a cada pressionar o disparo apresente uma forma de onda regular, é feito um circuito de \textit{debouncing} que regulariza o pulso proveniente do botão. Tal circuito pode ser feito utilizando multiplicando várias frequências diferentes, sendo que a entrada dos FF's que compõe tal divisor será a saída do botão. Realizando essa operação, a saída será regulada pelas frequências, uma vez ativadas pelo botão, a saída será 1 quando elas todas se encontrarem em pico, atrasando a regularizando o pulso\cite{debouncing-theory}.
-
-Um exemplo do circuito abordado é descrito na figura~\ref{fig:debouncing-ex}, na qual $Sig$ corresponde a entrada do botão, $CLK$ ao clock do sistema e $Deb\_Sig$ ao pulso regularizado pelo circuito.
-
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=.7\textwidth]{img/debouncing-ex.png}
-\caption{Circuito de Debouncing utilizando FF's D\cite{debouncing-ex}}
-\label{fig:debouncing-ex}
-\end{figure}
-
-\subsection{Memórias RAM e ROM}
+\subsection{Comunicação Serial}
 
 Os computadores e outros tipos de sistemas necessitam de armazenamento permanente ou semi-permanente de uma grande quantidade de dados binários\cite{floyd2011digital}. Para armazenar esses dados, são utilizados dispositivos chamados de memória, sendo os principais tipos as memórias RAM e ROM.
 
