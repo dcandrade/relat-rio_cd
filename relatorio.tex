@@ -50,12 +50,11 @@ Desta forma, observando a mudança atual do mercado, principalmente no que diz re
 Na seção que segue, serão descritos os conceitos utilizados para resolução do problema proposto, frisando os conceitos que foram de fundamental importância para solucionar o mesmo, tendo contribuição de maneira direta ou indireta.
 
 \subsection{Máquinas de Estados}
-Em se tratando de Circuitos Digitais, diversos dispositivos têm uma ampla importância, dentre estes dispositivos temos os conhecidos contadores, os quais segundo\cite{tocci1997digital} são Máquinas de estados específicas. Floyd, por sua vez, vai mais adiante, e fala que Máquinas de estados ou circuito sequencial é um circuito que  consiste de uma seção de lógica combinacional e uma seção de memória (flip-flops)\cite{floyd2011digital}. Na figura~\ref{fig:diagrama}%wrong number
- podemos observar o circuito típico para uma máquina de estados. Vale acrescentar que a quantidade de estados que uma máquina pode interpretar é diretamente ligada a quantidade de Flip-Flop, a quantidade de estados pode ser obtido fazendo $2^{n}$, sendo n o número de Flip-flops.  
+Em se tratando de Circuitos Digitais, diversos dispositivos têm uma ampla importância, dentre estes dispositivos temos os conhecidos contadores, os quais segundo\cite{tocci1997digital} são Máquinas de estados específicas. Floyd, por sua vez, vai mais adiante, e fala que Máquinas de estados ou circuito sequencial é um circuito que  consiste de uma seção de lógica combinacional e uma seção de memória (flip-flops)\cite{floyd2011digital}. Na figura~\ref{fig:diagrama} podemos observar o circuito típico para uma máquina de estados. Vale acrescentar que a quantidade de estados que uma máquina pode interpretar é diretamente ligada a quantidade de Flip-Flop, a quantidade de estados pode ser obtido fazendo $2^{n}$, sendo n o número de Flip-flops.  
 
 \begin{figure}[!htbp]
 \centering
-\includegraphics[width=.5\textwidth]{img/diagrama-estados.png}
+\includegraphics[width=.5\textwidth]{img/p4/diagrama-estados.png}
 \caption{Diagrama de estados de um contador de 3 bits\cite{floyd2011digital}}
 \label{fig:diagrama}
 \end{figure}
@@ -146,8 +145,7 @@ Antes de falarmos acerca de como ocorrer a transmissão de dados de forma serial,
 
 
 
-Na maioria das aplicações, a comunicação serial acontece de forma assíncrona, onde geralmente se tem 11 bits sendo transferidos. Um desses bits é o \textit{start bit}, o qual notifica um receptor que um novo dado serial esta disponível, seguido pelos bits de dados, um bit opcional de paridade \textit{parity} e um ou mais bits de parada \textit{stop bits}. %COLOCAR ESTE SITE COMO REFERENCIA(http://www.c2o.pro.br/automacao/x834.html)
-percebam que o número de bits de paridade, de parada podem variar, dependendo apenas do padrão de transmissão escolhido pelo projetista. Na figura~\ref{fig:cserial} pode-se analisar esta forma de comunicação de maneira mais concreta. Vale acrescentar, que enquanto o bit de parada se manter em nível alto, os dados não estarão sendo transmitidos, e sim, apenas, quando ocorrer a mudança de estado do nível lógico alto para baixo, caracterizando assim, o bit de início, ou \textit{start bit}. 
+Na maioria das aplicações, a comunicação serial acontece de forma assíncrona, onde geralmente se tem 11 bits sendo transferidos. Um desses bits é o \textit{start bit}, o qual notifica um receptor que um novo dado serial esta disponível, seguido pelos bits de dados, um bit opcional de paridade \textit{parity} e um ou mais bits de parada \textit{stop bits}\cite{porta-serial}. Percebam que o número de bits de paridade, de parada podem variar, dependendo apenas do padrão de transmissão escolhido pelo projetista. Na figura~\ref{fig:cserial} pode-se analisar esta forma de comunicação de maneira mais concreta. Vale acrescentar, que enquanto o bit de parada se manter em nível alto, os dados não estarão sendo transmitidos, e sim, apenas, quando ocorrer a mudança de estado do nível lógico alto para baixo, caracterizando assim, o bit de início, ou \textit{start bit}. 
 
 
 \begin{figure}[!htbp]
