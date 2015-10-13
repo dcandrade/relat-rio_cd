@@ -95,18 +95,22 @@ Como o própio nome já designa, neste tipo de registrador a entrada de dados se
 No contexto computacional, temos duas formas de comunicação principais, são elas: comunicação serial e comunicação paralela. cada uma com suas vantagens e desvantagens. Na comunicação paralela os bits são transferidos de maneira simultanea, conferindo para este tipo de comunicação a vantagem de rapidez e simplicidade de interface, contudo essa mesma vantagem acaba gerando algumas desvantagens, pois há um maior número de conexões, o que pode gerar ruído, perda de sincronismo além de um custo maior. Já na comunicação serial os dados são tranferidos  bit a bit, conferindo a vantagem de se ter menos fios, ou seja, baixo custo, além de ser capaz de transmitir dados em distâncias maiores. Contudo, nesta forma de comunicação, justamente por haver apenas um fio que transmite os dados, ela acaba sendo mais lenta, e com um grau de complexidade maior. Todavia, apesar das desvantagens da comunicação serial, a mesma se mostra mais robusta e mais viável, a ser aplicada em sistemas onde a confiabilidade dos dados são importantes. Assim, esta subseção tratará especificamente deste tipo de comunicação. 
 
 \subsubsection{Transmissão de Dados}
-Antes de falarmos acerca de como ocorrer a transmissão de dados de forma serial, é importante lembrar que existe diversas interfaces que empregam este tipo de comunicação, entre as interfaces mais antigas estão as portas DB9 e DB25, as quais podem ser encontradas nos computadores mais antigos. Na \textbf{figura 7} temos um exemplo para estas duas portas.
+Antes de falarmos acerca de como ocorrer a transmissão de dados de forma serial, é importante lembrar que existe diversas interfaces que empregam este tipo de comunicação, entre as interfaces mais antigas estão as portas DB9 e DB25, as quais podem ser encontradas nos computadores mais antigos. Na \textbf{figura 7} temos um exemplo para estas duas portas. Cada pino nestas portas tem uma determinada função, podendo variar de acordo com o seu tipo. Na  \textbf{figura 8} podemos ver a função de cada pindo na porta DB9.
 
 %Colocar figura das portas.
 
 Na maioria das aplicações, a comunicação serial acontece de forma assíncrona, onde geralmente se tem 11 bits sendo transfiridos. Um desses bits é o \textit{start bit}, o qual notifica um receptor que um novo dado serial esta disponível, seguido pelos bits de dados, um bit opcional de paridade \textit{parity} e um ou mais bits de parada \textit{stop bits}. %COLOCAR ESTE SITE COMO REFERENCIA(http://www.c2o.pro.br/automacao/x834.html)
-percebam que o número de bits de paridade, de parada podem variar, dependendo apenas do padrão de transmissão escolhido pelo projetista. Na \textbf{figura 8} pode-se analisar esta forma de comunicação de maneira mais concreta. Vale acrescentar, que enquanto o bit de paraada se manter em nível alto, os dados não estrão sendo transmitidos, e sim, apenas, quando ocorrer a mudança de estado do nível lógico alto para baixo, caracterizando assim, o bit de início, ou \textit{start bit}.
+percebam que o número de bits de paridade, de parada podem variar, dependendo apenas do padrão de transmissão escolhido pelo projetista. Na \textbf{figura 9} pode-se analisar esta forma de comunicação de maneira mais concreta. Vale acrescentar, que enquanto o bit de paraada se manter em nível alto, os dados não estrão sendo transmitidos, e sim, apenas, quando ocorrer a mudança de estado do nível lógico alto para baixo, caracterizando assim, o bit de início, ou \textit{start bit}. 
 
 
 %COLOCAR IMAGEM DOS BITS SENDO TRANSMITIDOS.
 
 
 %PAREI AQUI.
+
+Cada dispositivo que emprega a comunicação serial, tem uma determinada taxa de velocidade, sendo que para se referir a velocidade de tranferência devemos usar o termo bps \textit{bits-per-second}, ou seja, bits por segundo. Em alguns equipamentos, costuma-se chamar esta taxa  como \textit{baud}. Desta forma, a expressão 9600 bps é equivalente a 9600 bauds.
+\subsubsection{Transmissão de Dados}
+
 
 \section{Metodologia}
 Como definido pela metodologia do PBL, a resolução do problema 3 do MI de Circuitos Digitais, iniciou-se com o levantamento de ideias pelos membros do grupo de quais seriam as possíveis resoluções para o problema. Como de praxe, surgiram diversas ideias sobre como realizar o mesmo procedimento e dúvidas relacionadas ao texto do problema. 
