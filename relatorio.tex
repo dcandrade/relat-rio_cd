@@ -189,7 +189,7 @@ Iniciado na primeira sessão do problema 4 e finalizado na terceira sessão do mes
 
 O resultado desse processo de descrição em alto nível do projeto pode ser conferido na figura~\ref{fig:diagrama}, que destaca também as tarefas de cada subgrupo. Por exemplo, o subgrupo vermelho é responsável pela elaboração dos módulos correspondentes ao \textit{comparador} e \textit{Bloco do Mux-Coordenada}.
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
 \includegraphics[width=1\textwidth]{img/p4/diagrama.png}
 \caption{Diagrama de blocos do Problema 4: [COLOCAR NOME DO PROBLEMA]}
@@ -199,54 +199,55 @@ O resultado desse processo de descrição em alto nível do projeto pode ser confer
 
 \subsection{Memórias RAM}
 
-Necessária para armazenar os dados das coordenadas inseridas na primeira etapa de jogo, armazena essas informações em um arranjo de números binários em uma célula de 1 $byte$, sendo os 4 $bits$ primeiros para informações que dizem respeito a coluna e as outras 4 $bits$, a linha.
+Como explicitado nas regras determinadas pela turma, o jogo será composto de 15 jogadas de preenchimento do tabuleiro mais 20 jogadas na qual o jogador tentará acertar o barco do oponente. A partir desse dado, é perceptível que precisam ser armazenados 15 posições diferentes, sendo cada uma correspondente a um pixel de um barco que foi inserido no tabuleiro. Utilizando a codificação de 8 $bits$ por coordenada, sendo 4 bits correspondentes a linha e outros 4 correspondentes ao pixel escolhido. A partir dessas informações, chega-se a conclusão que a célula da memória RAM deve ter 1 byte, e que a memória deve conter 15 dessas células.
 
-Como explicitado nas regras determinadas pela turma(...)
-[deixa q eu termino aqui]
+Tendo em vista o mercado e a praticidade para uso em grandes escalas, a equipe resolveu construir uma memória com 16 células de 1 byte. Tal decisão foi tomada partindo dos princípios que o método de endereçamento da mesma não seria alterado, mas a 16ª célula ficaria ociosa. Porém, por ser uma potência de $2$, tal memória pode ser ligada em cascata de modo que um conjunto das mesmas possa, com facilidade, originar uma memória das capacidades comuns e requisitadas do mercado, como 512$mb$, 1$gb$, 4$gb$ e entre outras.
 
-\begin{table}[!htbp]
+Diferentemente do problema anterior, no Problema 4, o endereçador de memória foi integrado na mesma, objetivando uma maior congruência de projeto e uma visão mais limpa e ampla da totalidade do mesmo. Além dessa característica, como pode ser visto na figura~\ref{fig:ram15} a memória elaborada conta com 8 bits de entrada, um bit de clock, um bit de $clear$, um bit seletor $R/\overline{W}$ e 4 bits de endereçamento. Essa última característica segue o padrão crescente de 0 a 15, ou seja, o endereço 0 corresponde a primeira célula de memória, o 2 a segunda e assim por diante.
+
+
+\begin{figure}[!htbp]
 \centering
-\begin{tabular}{||c||c||c||c||}
-\hline 
-\rule[-1ex]{0pt}{2.5ex} Endereço & Coordenada(CxL) & Valor Binário(C) & Valor Binário(L) \\ 
-\hline 
-\hline
-\rule[-1ex]{0pt}{2.5ex} 0 & B,5 & 1011 & 0101 \\ 
-\hline 
-\rule[-1ex]{0pt}{2.5ex} 1 & B,1 & 1011 & 0001 \\ 
-\hline 
-\rule[-1ex]{0pt}{2.5ex} 2 & C,3 & 1100 & 0011 \\ 
-\hline 
-\rule[-1ex]{0pt}{2.5ex} 3 & D,5 & 1101 & 0101 \\ 
-\hline 
-\rule[-1ex]{0pt}{2.5ex} 4 & D,1 & 1101 & 0011 \\ 
-\hline 
-\rule[-1ex]{0pt}{2.5ex} 5 & E,4 & 1110 & 0100 \\ 
-\hline 
-\rule[-1ex]{0pt}{2.5ex} 6 & E,3 & 1110 & 0011 \\ 
-\hline 
-\rule[-1ex]{0pt}{2.5ex} 7 & E,2 & 1110 & 0010 \\ 
-\hline 
-\end{tabular} 
-\caption{Informações que devem ser armazenadas e suas versões e binário}
-\label{tab:ram-memory}
-\end{table}
+\includegraphics[width=.3\textwidth]{img/p4/ram15bytes.png}
+\caption{Bloco lógico da Memória Ram na EDA}
+\label{fig:ram15}
+\end{figure}
 
+\subsubsection{Célula de Memória}
+
+Para elaborar o item anterior, fez-se necessária a elaboração de uma unidade menor de memória, sendo esta a unidade básica utilizada no projeto, 1 byte. Em suma, cada célula de memória do tipo demonstrado na figura ~\ref{fig:celulamemoria} funciona como uma miniatura da memória anteriormente citada, porém só possui um bit de endereçamento, uma vez que só existem duas possibilidades: estar ou não estar selecionada.
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=.3\textwidth]{img/p4/celulamemoria.png}
+\caption{Bloco lógico da Memória Ram na EDA}
+\label{fig:celulamemoria}
+\end{figure}
+
+Buscando melhorar o desempenho da memória, em suas células foram implementados diferentes mecanismos, um deles permite que a mesma seja ligada, ou desligada completamente, já o outro faz com que a memória só seja gravada uma única vez, evitando possíveis dados duplicados e alteração indevida dos mesmos. O segundo mecanismo pode ser visto na figura~\ref{fig:ff1}. Esse mecanismo é uma máquina de estados de Moore que está representada na figura~\ref{fig:fsm}. O outro mecanismo corresponde a equação de excitação de um registrador do tipo T para as variáveis dadas. T deve mudar de estado quando sua saída $Q$ e sua entrada $I$ forem diferentes, e, além disso, a $Z$ do mecanismo anterior deve estar em nível lógico 1, ou seja: T= Z(Q$\oplus$I).
+
+
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=.8\textwidth]{img/p4/ff1.png}
+\caption{Máquina de estados para máquina de uma única ação.}
+\label{fig:ff1}
+\end{figure}
+
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=.3\textwidth]{img/p4/fsm.png}
+\caption{Diagrama de estados para máquina de uma única ação.}
+\label{fig:fsm}
+\end{figure}
 
 
 \subsubsection{Comunicação Serial}
 
 
 \subsection{Transmissão de Dados}
-
-
-\subsection{Comparador}
-
-
-\subsection{Memória RAM}
-
-
-\subsection{Multiplexador do Display Dual de Sete Segmentos} \label{sub:mux-matriz}
 
 
 \subsection{Unificação dos blocos em um projeto}
