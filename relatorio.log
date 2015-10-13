@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2015.6.19)  13 OCT 2015 11:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2015.6.19)  13 OCT 2015 11:50
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -317,7 +317,7 @@ Underfull \hbox (badness 3838) in paragraph at lines 53--55
 s con-ta-dores, os quais
  []
 
-<img/diagrama-estados.png, id=11, 504.88625pt x 445.665pt>
+<img/diagrama-estados.png, id=13, 504.88625pt x 445.665pt>
 File: img/diagrama-estados.png Graphic file (type png)
 
 <use img/diagrama-estados.png>
@@ -330,7 +330,7 @@ File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
 )
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <10> not available
 (Font)              Font shape `OT1/phv/b/n' tried instead on input line 59.
- [2 <./img/diagrama-estados.png>] <img/p4/fig2MaquinaMealy.png, id=20, 247.6753
+ [2 <./img/diagrama-estados.png>] <img/p4/fig2MaquinaMealy.png, id=21, 247.6753
 1pt x 160.34906pt>
 File: img/p4/fig2MaquinaMealy.png Graphic file (type png)
 
@@ -338,21 +338,21 @@ File: img/p4/fig2MaquinaMealy.png Graphic file (type png)
 Package pdftex.def Info: img/p4/fig2MaquinaMealy.png used on input line 68.
 (pdftex.def)             Requested size: 213.39568pt x 138.15685pt.
 
-<img/p4/fig3MaquinaMoore.png, id=21, 247.67531pt x 160.34906pt>
+<img/p4/fig3MaquinaMoore.png, id=22, 247.67531pt x 160.34906pt>
 File: img/p4/fig3MaquinaMoore.png Graphic file (type png)
 
 <use img/p4/fig3MaquinaMoore.png>
 Package pdftex.def Info: img/p4/fig3MaquinaMoore.png used on input line 75.
 (pdftex.def)             Requested size: 213.39568pt x 138.15685pt.
 
-<img/p4/fig4Flip-Flopt.png, id=22, 221.32687pt x 162.6075pt>
+<img/p4/fig4Flip-Flopt.png, id=23, 221.32687pt x 162.6075pt>
 File: img/p4/fig4Flip-Flopt.png Graphic file (type png)
 
 <use img/p4/fig4Flip-Flopt.png>
 Package pdftex.def Info: img/p4/fig4Flip-Flopt.png used on input line 86.
 (pdftex.def)             Requested size: 213.39568pt x 156.78871pt.
  [3 <./img/p4/fig2MaquinaMealy.png> <./img/p4/fig3MaquinaMoore.png>]
-<img/p4/Fig5RegistradorDeslocamento.png, id=26, 592.46344pt x 190.46156pt>
+<img/p4/Fig5RegistradorDeslocamento.png, id=27, 592.46344pt x 190.46156pt>
 File: img/p4/Fig5RegistradorDeslocamento.png Graphic file (type png)
 
 <use img/p4/Fig5RegistradorDeslocamento.png>
@@ -365,7 +365,7 @@ Underfull \hbox (badness 1472) in paragraph at lines 99--99
 nto de 4 bits
  []
 
-<img/p4/Fig6tipodeRegistrador.png, id=27, 800.23969pt x 327.47343pt>
+<img/p4/Fig6tipodeRegistrador.png, id=28, 800.23969pt x 327.47343pt>
 File: img/p4/Fig6tipodeRegistrador.png Graphic file (type png)
 
 <use img/p4/Fig6tipodeRegistrador.png>
@@ -374,7 +374,7 @@ Package pdftex.def Info: img/p4/Fig6tipodeRegistrador.png used on input line 11
 (pdftex.def)             Requested size: 213.39568pt x 87.32469pt.
  [4 <./img/p4/fig4Flip-Flopt.png> <./img/p4/Fig5RegistradorDeslocamento.png> <.
 /img/p4/Fig6tipodeRegistrador.png>]
-<img/p4/Fig7RegistradorSerialParalelo.png, id=31, 420.82219pt x 185.94469pt>
+<img/p4/Fig7RegistradorSerialParalelo.png, id=32, 420.82219pt x 185.94469pt>
 File: img/p4/Fig7RegistradorSerialParalelo.png Graphic file (type png)
 
 <use img/p4/Fig7RegistradorSerialParalelo.png>
@@ -382,20 +382,20 @@ Package pdftex.def Info: img/p4/Fig7RegistradorSerialParalelo.png used on input
  line 121.
 (pdftex.def)             Requested size: 213.39568pt x 94.29144pt.
 
-<img/p4/fig8DB9DB25.png, id=32, 332.74312pt x 91.09032pt>
+<img/p4/fig8DB9DB25.png, id=33, 332.74312pt x 91.09032pt>
 File: img/p4/fig8DB9DB25.png Graphic file (type png)
 
 <use img/p4/fig8DB9DB25.png>
 Package pdftex.def Info: img/p4/fig8DB9DB25.png used on input line 135.
 (pdftex.def)             Requested size: 213.39568pt x 58.4185pt.
 
-<img/p4/Fig9serial_pinos.png, id=33, 523.9575pt x 386.94562pt>
+<img/p4/Fig9serial_pinos.png, id=34, 523.9575pt x 386.94562pt>
 File: img/p4/Fig9serial_pinos.png Graphic file (type png)
 
 <use img/p4/Fig9serial_pinos.png>
 Package pdftex.def Info: img/p4/Fig9serial_pinos.png used on input line 142.
 (pdftex.def)             Requested size: 213.39568pt x 157.59186pt.
- [5 <./img/p4/Fig7RegistradorSerialParalelo.png>] <img/p4/Fig10rs232.jpg, id=37
+ [5 <./img/p4/Fig7RegistradorSerialParalelo.png>] <img/p4/Fig10rs232.jpg, id=38
 , 299.4387pt x 133.2177pt>
 File: img/p4/Fig10rs232.jpg Graphic file (type jpg)
 
@@ -404,7 +404,7 @@ Package pdftex.def Info: img/p4/Fig10rs232.jpg used on input line 155.
 (pdftex.def)             Requested size: 213.39568pt x 94.93687pt.
  [6 <./img/p4/fig8DB9DB25.png> <./img/p4/Fig9serial_pinos.png> <./img/p4/Fig10r
 s232.jpg>]
-<img/p4/Fig11-microcontroller_uart_max232_circuit.jpg, id=41, 471.7625pt x 327.
+<img/p4/Fig11-microcontroller_uart_max232_circuit.jpg, id=42, 471.7625pt x 327.
 2225pt>
 File: img/p4/Fig11-microcontroller_uart_max232_circuit.jpg Graphic file (type j
 pg)
@@ -413,7 +413,7 @@ Package pdftex.def Info: img/p4/Fig11-microcontroller_uart_max232_circuit.jpg u
 sed on input line 172.
 (pdftex.def)             Requested size: 213.39568pt x 148.01768pt.
  [7 <./img/p4/Fig11-microcontroller_uart_max232_circuit.jpg>]
-<img/diagrama.jpg, id=46, 2055.68pt x 1094.0875pt>
+<img/diagrama.jpg, id=48, 2055.68pt x 1094.0875pt>
 File: img/diagrama.jpg Graphic file (type jpg)
  <use img/diagrama.jpg>
 Package pdftex.def Info: img/diagrama.jpg used on input line 195.
@@ -422,20 +422,20 @@ Package pdftex.def Info: img/diagrama.jpg used on input line 195.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [8]
-<img/debounce.png, id=50, 947.54pt x 515.9275pt>
+<img/debounce.png, id=52, 947.54pt x 515.9275pt>
 File: img/debounce.png Graphic file (type png)
  <use img/debounce.png>
 Package pdftex.def Info: img/debounce.png used on input line 207.
 (pdftex.def)             Requested size: 298.75264pt x 162.66759pt.
 
 [9 <./img/diagrama.jpg> <./img/debounce.png>]
-<img/rom-memory.png, id=56, 1316.92pt x 480.79625pt>
+<img/rom-memory.png, id=57, 1316.92pt x 480.79625pt>
 File: img/rom-memory.png Graphic file (type png)
  <use img/rom-memory.png>
 Package pdftex.def Info: img/rom-memory.png used on input line 249.
 (pdftex.def)             Requested size: 341.43437pt x 124.65192pt.
 
-<img/mem-mux.png, id=57, 1129.21875pt x 98.3675pt>
+<img/mem-mux.png, id=58, 1129.21875pt x 98.3675pt>
 File: img/mem-mux.png Graphic file (type png)
  <use img/mem-mux.png>
 Package pdftex.def Info: img/mem-mux.png used on input line 259.
@@ -443,7 +443,7 @@ Package pdftex.def Info: img/mem-mux.png used on input line 259.
 
 Underfull \vbox (badness 3343) has occurred while \output is active []
 
- [10 <./img/rom-memory.png>] <img/comparador.png, id=62, 700.6175pt x 628.3475p
+ [10 <./img/rom-memory.png>] <img/comparador.png, id=63, 700.6175pt x 628.3475p
 t>
 File: img/comparador.png Graphic file (type png)
 
@@ -453,7 +453,7 @@ Package pdftex.def Info: img/comparador.png used on input line 277.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [11 <./img/mem-mux.png>] <img/ram-eda.png, id=67, 744.7825pt x 614.295pt>
+ [11 <./img/mem-mux.png>] <img/ram-eda.png, id=68, 744.7825pt x 614.295pt>
 File: img/ram-eda.png Graphic file (type png)
 
 <use img/ram-eda.png>
@@ -498,7 +498,7 @@ Here is how much of TeX's memory you used:
  6700 multiletter control sequences out of 15000+600000
  20011 words of font info for 41 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 43i,12n,40p,1167b,244s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 43i,12n,40p,1172b,244s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/
@@ -509,7 +509,7 @@ tic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb>
 </usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/te
 xlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dis
 t/fonts/type1/urw/times/utmri8a.pfb>
-Output written on relatorio.pdf (17 pages, 1542265 bytes).
+Output written on relatorio.pdf (17 pages, 1543176 bytes).
 PDF statistics:
  128 PDF objects out of 1000 (max. 8388607)
  71 compressed objects within 1 object stream
