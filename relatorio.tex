@@ -232,14 +232,7 @@ Necessária para armazenar os dados das coordenadas pré definidas no problema, gu
 \label{tab:rom-memory}
 \end{table}
 
-Para obter os conjuntos de dados desejados, foram dispostos 8 conjuntos de 8 saídas cada, de modo que as saídas de cada conjunto correspondessem aos dados de cada um dos pares de coordenadas. Como pode ser visto na figura~\ref{fig:mem-rom}, as saídas foram nomeadas no padrão $m\alpha b\beta$, onde $\alpha$ corresponde ao endereço de memória e $\beta$ o bit de saída(para $\beta>4$, os bits representam a saída da linha e para $3<\beta<8$ a saída da coluna).
 
-\begin{figure}[!htbp]
-\centering
-\includegraphics[width=.8\textwidth]{img/rom-memory.png}
-\caption{Descrição da memória ROM na EDA}
-\label{fig:mem-rom}
-\end{figure}
 
 \subsubsection{Comunicação Serial}
 
@@ -268,24 +261,7 @@ Nesta sessão serão abordados os principais resultados obtidos, os testes realiza
 
 \subsection{Testes lógicos no ambiente Quartus II}
 
-Como de praxe, antes realizar os testes físicos, foram realizados testes virtuais com o intuito de avaliar o funcionamento do circuito lógico.  Para realizar esta análise, foram utilizadas ferramentas fornecidas pelo software da Altera, sendo estes os arquivos de WaveForm e o Simulator Tool.
-
-Foram realizados uma série de testes em cada bloco componente do produto final. Todos apresentavam a eficácia pretendida, com a exceção da memória RAM. De início, tal componente não apresentou resultados compatíveis com os desejados e, ao analisar cuidadosamente, foi percebida que a abordagem inicial de usar FF's do tipo D com o D ligado em $VCC$ e utilizar o $result$ do comparador multiplicado com o pulso do botão como clock não daria certo, uma vez que o pulso do botão, mesmo com o Debounce, se mostra irregular. Para corrigir esse erro, o FF foi substituído por um FF do tipo JK com o K aterrado, o J contendo a multiplicação do $result$ com a entrada do botão e a entrada de clock com o clock do sistema. 
-
-Como demonstrado na figura~\ref{fig:teste-ram}, ao receber $result$ em nível alto, estando o $clear$ em estado também alto, a célula de memória passa a armazenar 1 na coordenada apontada pelo contador(o valor em decimal apontado pelo contador corresponde ao endereço da célula de memória). Caso $result$ seja 0, o valor armazenado na célula atual é mantido. Se utilizando da operação de $clear$, toda a memória é limpa e volta ao seu estado primitivo.
-
-\begin{figure}[!htbp]
-\centering
-\includegraphics[width=1\textwidth]{img/testeram.png}
-\caption{Teste da Memória RAM na EDA}
-\label{fig:teste-ram}
-\end{figure}
-
-Analisando os requisitos necessários e o comportamento demonstrado pelo dispositivo nos testes, concluiu-se que o mesmo corresponde ao desejado.
-
 \subsection{Funcionamento do Circuito}
-
-O circuito deve receber uma entrada oriunda de um barramento paralelo de oito bits, que deve ser diretamente impressa em um $DSS$, e compará-la com a memória presente no endereço atual, endereço esse que deve também estar sendo impresso em um $DSS$ que alterna as duas informações (coordenadas e endereçamento) para exibição. Caso a entrada e os dados da memória sejam iguais, o LED correspondente a coordenada inserida deverá ser aceso. O controle de endereçamento e de comparação é dado por meio de dois botões distintos. Além disso, a matriz deve voltar ao estado original quando o botão de $clear$ for selecionado.
 
 
 \subsection{Testes práticos}
@@ -303,7 +279,7 @@ Observando os requisitos que foram solicitados para o desenvolvimento deste sist
 
 Tendo sido revisado várias vezes e tentando melhorar quando possível, o grupo chegou num resultado simples e funcional, e, além de tudo, totalmente compatível com o problema anterior.
 
-Além do aspecto técnico, houve uma melhora singular no trabalho em equipe a partir do uso das práticas de projeto citadas. Problemas organizacionais, de incompatibilidade e de centralização de conhecimento, outrora frequêntes, foram eliminados ou amenizados.
+Além do aspecto técnico, houve uma melhora singular no trabalho em equipe a partir do uso das práticas de projeto citadas. Problemas organizacionais, de incompatibilidade e de centralização de conhecimento, outrora frequentes, foram eliminados ou amenizados.
 
 Apesar do circuito como um todo estar sendo melhorado, outras possíveis melhorias apontadas no problema anterior continuam não realizadas. Tal fato esclarece que tanto com iniciativas do grupo tanto como exigências do próprio problema, atualizações ainda são possíveis, como o uso de um teclado para a inserção das coordenadas e um aviso de erro mais chamativo, como um aviso sonoro(sugestão que persiste do problema anterior) e a automatização da função $comparar$ e da função $clear$, eliminando botões do sistema e o deixando sua interface com o usuário mais simples.
 
