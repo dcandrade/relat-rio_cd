@@ -37,7 +37,7 @@ O presente relatório descreve o processo de resolução do terceiro problema do MI
 
 \section{Introdução} \label{sec:firstpage}
 
-Hoje em dia cresce, substancialmente, a ampla utilização de jogos no segmento lúdico de simulação 2D. Estes são utilizados em diversas áreas conhecidas, tendo uma mais elavada utilização na educação. Além do papel, prfícuo que os mesmos podem fornecer à educação, podem servir , também, única e exclusivamente como forma de entretenimento entre os mais jovens, bem como para o público mais adulto. Um exemplo destes jogos, é famigerado Batalha Naval. Sendo no Brasil no ano de 1988, o jogo batalha naval é um dos jogos de maiores sucessos entre o público mundial. Em sua forma mais rústica, dois adversários desenhavam em folhas de papel, navios posicionados em um mar imaginário quadriculado, formando uma grade. Todavia, no contexto atual, além de encontrar versões deste jogo de maneira similar aos seus primórdios, encontra-se, também, aplicativos para diversas arquiteturas que executam o mesmo processo, faciliatando assim a sua disseminação entre as pessoas.
+Hoje em dia cresce, substancialmente, a ampla utilização de jogos no segmento lúdico de simulação 2D. Estes são utilizados em diversas áreas conhecidas, tendo uma mais elavada utilização na educação. Além do papel, prfícuo que os mesmos podem fornecer à educação, podem servir , também, única e exclusivamente como forma de entretenimento entre os mais jovens, bem como para o público mais adulto. Um exemplo destes jogos, é famigerado Batalha Naval. Sendo no Brasil no ano de 1988, o jogo batalha naval é um dos jogos de maiores sucessos entre o público mundial. Em sua forma mais rústica, dois adversários desenhavam em folhas de papel, navios posicionados em um mar imaginário quadriculado, formando uma grade. Todavia, no contexto atual, além de encontrar versões deste jogo de maneira similar aos seus primórdios, encontra-se, também, aplicativos para diversas arquiteturas que executam o mesmo processo, facilitando assim a sua disseminação entre as pessoas.
 
 Além da existência, como visto, deste tipo de jogo na forma de aplicativos móveis, existe a possibilidade, também, de desenvolvê-lo utilizando circuitos digitais, visando a criação de um jogo lúdico de simulação 2D.  É de se notar, que para desenvolvê-lo, faz-se necessário utilizar um conceito muito importante na eletrônica digital, a saber, memória RAM. A criação deste tipo de jogo, traz diversas vantagens para o empreendedor que o desenvolve, justamente pelo fato do mercado de jogos está sempre em constante expansão. lembrando que hoje em dia, aplicações envolvendo a tecnologia digital tem ampla aceitação no mercado, o ser humano necessita de recursos tecnológicos, com forma também de pertença, e inclusão no mundo global tecnológico. 
 
@@ -50,58 +50,112 @@ Desta forma, observando a mudança atual do mercado, principalmente no que diz re
 Na seção que segue, serão descritos os conceitos utilizados para resolução do problema proposto, frisando os conceitos que foram de fundamental importância para solucionar o mesmo, tendo contribuição de maneira direta ou indireta.
 
 \subsection{Máquinas de Estados}
-Em se tratando de Circuitos Digitais, diversos dispositivos têm uma ampla importância, dentre estes dispositivos temos os conhecidos contadores, os quais segundo\cite{tocci1997digital} são Máquinas de estados específicas. Floyd, por sua vez, vai mais adiante, e fala que Máquinas de estados ou circuito sequencial é um circuito que  consiste de uma seção de lógica combinacional e uma seção de memória (flip-flops)\cite{floyd2011digital}. Na \textbf{figura 1} podemos observar o circuito típico para uma máquina de estados. Vale acrescentar que a quantidade de estados que uma máquina pode interpretar é diretamente ligada a quantidade de Flip-Flop, a quantidade de estados pode ser obtido fazendo $2^{n}$, sendo n o número de Flip-flops.  
-
-
-%Figura 1
-
+Em se tratando de Circuitos Digitais, diversos dispositivos têm uma ampla importância, dentre estes dispositivos temos os conhecidos contadores, os quais segundo\cite{tocci1997digital} são Máquinas de estados específicas. Floyd, por sua vez, vai mais adiante, e fala que Máquinas de estados ou circuito sequencial é um circuito que  consiste de uma seção de lógica combinacional e uma seção de memória (flip-flops)\cite{floyd2011digital}. Na figura~\ref{fig:diagrama}%wrong number
+ podemos observar o circuito típico para uma máquina de estados. Vale acrescentar que a quantidade de estados que uma máquina pode interpretar é diretamente ligada a quantidade de Flip-Flop, a quantidade de estados pode ser obtido fazendo $2^{n}$, sendo n o número de Flip-flops.  
 
 \begin{figure}[!htbp]
 \centering
 \includegraphics[width=.5\textwidth]{img/diagrama-estados.png}
 \caption{Diagrama de estados de um contador de 3 bits\cite{floyd2011digital}}
-\label{fig:diagrama-estados}
+\label{fig:diagrama}
 \end{figure}
 
-Existem basicamente, dois modelos de máquinas de estados, a saber, máquina Moore e máquina Mealy. Na máquina Moore, a saída depende única e exlcusivamente dos seus estados atuais, enquanto na máquina Mealy além de depender dos seus estados atuais, a saída depende, também, das variáveis de entrada naquele instante. Na \textbf{figura 2} podemos observar  o digrama de transição de estados para uma máquina Moore, já na \textbf{figura 3} temos o diagrama para uma máquina Mealy. É importante notarmos, através dos diagramas, a diferença referente a saída de cada máquina.   
+Existem basicamente, dois modelos de máquinas de estados, a saber, máquina Moore e máquina Mealy. Na máquina Moore, a saída depende única e exlcusivamente dos seus estados atuais, enquanto na máquina Mealy além de depender dos seus estados atuais, a saída depende, também, das variáveis de entrada naquele instante. Na figura~\ref{fig:diagrama-mealy}  podemos observar  o digrama de transição de estados para uma máquina Moore, já na figura~\ref{fig:diagrama-moore} temos o diagrama para uma máquina Mealy. É importante notarmos, através dos diagramas, a diferença referente a saída de cada máquina.   
 
 %Figura 2 e 3
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=.5\textwidth]{img/p4/fig2MaquinaMealy.png}
+\caption{Exemplo de diagrama de estados usando uma máquina Mealy}
+\label{fig:diagrama-mealy}
+\end{figure}
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=.5\textwidth]{img/p4/fig3MaquinaMoore.png}
+\caption{Exemplo de diagrama de estados usando uma máquina Moore}
+\label{fig:diagrama-moore}
+\end{figure}
 
 \subsection{Flip-Flop T}
 
-Além dos Flip-Flops até o momento estudados, temos na literatura, outro Flip-flop que é amplamente utilizado, qual seja, o Flip-flop T. Na \textbf{figura 4} podemos analisar o bloco lógico e a tabela verdade para este Flip-Flop. Quando a entrada T estiver em estado alto, o flip-flop T, onde T significa \textit{toggle}, comutará quando o \textit{clock} for aplicado. Se a entrada T for baixa, o flip-flop mantém o valor do seu estado. Vale lembrar, que o Flip-flop T pode ser obtido utilizando um Flip-flop J-K, basta conecatar as entradas J e K em nível lógico alto de maneira intermitente.  
+Além dos Flip-Flops até o momento estudados, temos na literatura, outro Flip-flop que é amplamente utilizado, qual seja, o Flip-flop T. Na figura~\ref{fig:fft} podemos analisar o bloco lógico e a tabela verdade para este Flip-Flop. Quando a entrada T estiver em estado alto, o flip-flop T, onde T significa \textit{toggle}, comutará quando o \textit{clock} for aplicado. Se a entrada T for baixa, o flip-flop mantém o valor do seu estado. Vale lembrar, que o Flip-flop T pode ser obtido utilizando um Flip-flop J-K, basta conecatar as entradas J e K em nível lógico alto de maneira intermitente.  
 
-%Figura 4
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=.5\textwidth]{img/p4/fig4Flip-Flopt.png}
+\caption{Tabela Verdade do Flip Flop T}
+\label{fig:fft}
+\end{figure}
+\subsection{Flip-Flop T}
+
 \subsection{Registrador de Deslocamento}
 
-No universo dos circuitos digitais, principalmente no que diz respeito aos Flip-Flops, encontramos diversas aplicações. Uma, das várias aplicações é na forma de registrador de deslocamento, os quais são amplamente utilizados hoje em dia no desenvolvimento de circuitos robustos. Segundo \cite{floyd2011digital} os registradores de deslocamento consistem de arranjos de Flip-Flops e são importantes em aplicações que envolvem o armazenamento e a transferência de dados em sistemas digitais. É importante esclarecer, que o funcionamente do registrdor de dslocamento é diferente de um contador comum, ou seja, ele não tem uma sequência específica de estados, apesar de em alguns casos poder ser utilizado como tal. Na \textbf{figura 5} podemos ver um circuito típico para um registrador de deslocamento de quatro bits com entrada e saída serial de dados.
+No universo dos circuitos digitais, principalmente no que diz respeito aos Flip-Flops, encontramos diversas aplicações. Uma, das várias aplicações é na forma de registrador de deslocamento, os quais são amplamente utilizados hoje em dia no desenvolvimento de circuitos robustos. Segundo \cite{floyd2011digital} os registradores de deslocamento consistem de arranjos de Flip-Flops e são importantes em aplicações que envolvem o armazenamento e a transferência de dados em sistemas digitais. É importante esclarecer, que o funcionamente do registrdor de dslocamento é diferente de um contador comum, ou seja, ele não tem uma sequência específica de estados, apesar de em alguns casos poder ser utilizado como tal. Na figura~\ref{fig:rdeslocamento} podemos ver um circuito típico para um registrador de deslocamento de quatro bits com entrada e saída serial de dados.
 
-%Figura 5
-São diversos, os tipos de registradores de deslocamento, na \textbf{figura 6} pode-se observar os diversos tipos de registradores de delocamento existentes, sendo ilustrados de forma abstrata. Dentre eles, um dos mais importantes está o registrador com entrada serial e saída paralela, o qual será abordado com mais detalhe na próxima subsubseção.
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=.5\textwidth]{img/p4/Fig5RegistradorDeslocamento.png}
+\caption{Representação de um registrador de deslocamento de 4 bits \cite{floyd2011digital}}
+\label{fig:rdeslocamento}
+\end{figure}
 
 
-%Figura 6
+\subsection{Flip-Flop T}
+
+São diversos, os tipos de registradores de deslocamento, na figura~\ref{fig:registradores} pode-se observar os diversos tipos de registradores de delocamento existentes, sendo ilustrados de forma abstrata. Dentre eles, um dos mais importantes está o registrador com entrada serial e saída paralela, o qual será abordado com mais detalhe na próxima sub-subseção.
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=.5\textwidth]{img/p4/Fig6tipodeRegistrador.png}
+\caption{Diferentes tipos de registradores, segundo \cite{floyd2011digital}}
+\label{fig:registradores}
+\end{figure}
 
 \subsubsection{Registrador de deslocamento com entrada serial e saída paralela}
 
-Como o própio nome já designa, neste tipo de registrador a entrada de dados se dá de forma serial, contudo, a saída não será serial e sim paralela. Desta forma, segundo \cite{floyd2011digital} uma vez armazenados os dados, cada bit aparece em sua linha de saída respectiva e todos os bits são disponibilizados simultaneamente, em vez de um bit de cada vez como no registrador com saída serial. Na \textbf{figura 7} podemos ver uma exemplificação para este circuito. Notem que neste tipo de registrador a saída de cada estágio está disponível.
+Como o própio nome já designa, neste tipo de registrador a entrada de dados se dá de forma serial, contudo, a saída não será serial e sim paralela. Desta forma, segundo \cite{floyd2011digital} uma vez armazenados os dados, cada bit aparece em sua linha de saída respectiva e todos os bits são disponibilizados simultaneamente, em vez de um bit de cada vez como no registrador com saída serial. Na figura~\ref{fig:registradorsp} podemos ver uma exemplificação para este circuito. Notem que neste tipo de registrador a saída de cada estágio está disponível.
 
-%Figura 7
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=.5\textwidth]{img/p4/Fig7RegistradorSerialParalelo.png}
+\caption{Registrador Serial-Paralelo}
+\label{fig:registradorsp}
+\end{figure}
 
 \subsection{Comunicação Serial}
 No contexto computacional, temos duas formas de comunicação principais, são elas: comunicação serial e comunicação paralela. cada uma com suas vantagens e desvantagens. Na comunicação paralela os bits são transferidos de maneira simultanea, conferindo para este tipo de comunicação a vantagem de rapidez e simplicidade de interface, contudo essa mesma vantagem acaba gerando algumas desvantagens, pois há um maior número de conexões, o que pode gerar ruído, perda de sincronismo além de um custo maior. Já na comunicação serial os dados são tranferidos  bit a bit, conferindo a vantagem de se ter menos fios, ou seja, baixo custo, além de ser capaz de transmitir dados em distâncias maiores. Contudo, nesta forma de comunicação, justamente por haver apenas um fio que transmite os dados, ela acaba sendo mais lenta, e com um grau de complexidade maior. Todavia, apesar das desvantagens da comunicação serial, a mesma se mostra mais robusta e mais viável, a ser aplicada em sistemas onde a confiabilidade dos dados são importantes. Assim, esta subseção tratará especificamente deste tipo de comunicação. 
 
 \subsubsection{Transmissão de Dados}
-Antes de falarmos acerca de como ocorrer a transmissão de dados de forma serial, é importante lembrar que existe diversas interfaces que empregam este tipo de comunicação, entre as interfaces mais antigas estão as portas DB9 e DB25, as quais podem ser encontradas nos computadores mais antigos. Na \textbf{figura 8} temos um exemplo para estas duas portas. Cada pino nestas portas tem uma determinada função, podendo variar de acordo com o seu tipo. Na  \textbf{figura 9} podemos ver a função de cada pindo na porta DB9.
+Antes de falarmos acerca de como ocorrer a transmissão de dados de forma serial, é importante lembrar que existe diversas interfaces que empregam este tipo de comunicação, entre as interfaces mais antigas estão as portas DB9 e DB25, as quais podem ser encontradas nos computadores mais antigos. Na figura~\ref{fig:db9db25} temos um exemplo para estas duas portas. Cada pino nestas portas tem uma determinada função, podendo variar de acordo com o seu tipo. Na  figura~\ref{fig:pinosdb9} podemos ver a função de cada pindo na porta DB9.
 
-%Figura 8 e 9
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=.5\textwidth]{img/p4/fig8DB9DB25.png}
+\caption{Portas DB9 e DB25, interfaces seriais encontradas em computadores antigos.}
+\label{fig:db9db25}
+\end{figure}
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=.5\textwidth]{img/p4/Fig9serial_pinos.png}
+\caption{Funcionalidades dos pinos presentes na porta DB9}
+\label{fig:pinosdb9}
+\end{figure}
+
 
 
 Na maioria das aplicações, a comunicação serial acontece de forma assíncrona, onde geralmente se tem 11 bits sendo transfiridos. Um desses bits é o \textit{start bit}, o qual notifica um receptor que um novo dado serial esta disponível, seguido pelos bits de dados, um bit opcional de paridade \textit{parity} e um ou mais bits de parada \textit{stop bits}. %COLOCAR ESTE SITE COMO REFERENCIA(http://www.c2o.pro.br/automacao/x834.html)
-percebam que o número de bits de paridade, de parada podem variar, dependendo apenas do padrão de transmissão escolhido pelo projetista. Na \textbf{figura 10} pode-se analisar esta forma de comunicação de maneira mais concreta. Vale acrescentar, que enquanto o bit de paraada se manter em nível alto, os dados não estrão sendo transmitidos, e sim, apenas, quando ocorrer a mudança de estado do nível lógico alto para baixo, caracterizando assim, o bit de início, ou \textit{start bit}. 
+percebam que o número de bits de paridade, de parada podem variar, dependendo apenas do padrão de transmissão escolhido pelo projetista. Na figura~\ref{fig:cserial} pode-se analisar esta forma de comunicação de maneira mais concreta. Vale acrescentar, que enquanto o bit de paraada se manter em nível alto, os dados não estrão sendo transmitidos, e sim, apenas, quando ocorrer a mudança de estado do nível lógico alto para baixo, caracterizando assim, o bit de início, ou \textit{start bit}. 
 
 
-%Figura 10
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=.5\textwidth]{img/p4/Fig10rs232.jpg}
+\caption{Características de uma transferência de dados serial.}
+\label{fig:cserial}
+\end{figure}
 
 
 
@@ -111,7 +165,14 @@ Cada dispositivo que emprega a comunicação serial, tem uma determinada taxa de v
 Segundo (http://www.c2o.pro.br/automacao/x834.html) RS-232 é um padrão definido pela \textit{EIA-Eletronic Industries Associatio}n para os dispositivos usados para comunicaçao serial. Este padrão está disponível em três versões, quais sejam, (A, B e C). Cada um especifica uma faixa de voltagens para os níveis ligado e desligado. Por exemplo, na versão RS-232 para representar  nível lógico alto utiliza-se as tensões de -3V a -12V, enquanto para representar nível lógico baixo é utilizado tensão na faixa de +3V e +12V. É importante notar que a representação de nível lógico alto e nível baixo nesse padrão não utiliza o modelo convencinal de tensão. Vale lembrar que este padrão é utilzado marjoritariamente nas portas DB9 e DB25.  
 
 \subsubsection{Conversor de nível MAX-232}
-Os dispositivos eletrônicos utilizam níveis de tensão diferentes para identificar nível lógico baixo e nível lógico alto, dependendo apenas da tecnologia que está sendo empregada. Desta forma, quando se vai utilizar a porta serial do computador pessoal para se comunicar com algum dispositivo controlador, tem-se que analisar o padrão que o mesmo utilza,pois a depender das especificações, será necessário fazer a conversão do nível. Por exemplo, vamos supor que queremos fazer uma comunicação entre o computador pesssoal através da porta serial, com uma \textit{FPGA}. No entanto, a \textit{FPGA} utiliza a tecnologia \textit{TTL}, ou seja, 0V a 0,8V representa nível lógico baixo e 2V a 5V representa nível lógico alto. Percebe-se, assim, uma imcompatibilidade entre o padrão RS-232 e o \textit{TTL}, desta forma é necessário fazer a conversão. Todavia, existe alguns dispositivos que tem a capacidade de fazer essa conversão, um deles é o MAX-232, o qual faz  a conversão entre os níveis utlizados pelo padrão RS-232 para TTL, e vice-versa. Na \textbf{figura 11} podemos ver uma configuração comum utilizando um conversor MAX-232. 
+Os dispositivos eletrônicos utilizam níveis de tensão diferentes para identificar nível lógico baixo e nível lógico alto, dependendo apenas da tecnologia que está sendo empregada. Desta forma, quando se vai utilizar a porta serial do computador pessoal para se comunicar com algum dispositivo controlador, tem-se que analisar o padrão que o mesmo utilza,pois a depender das especificações, será necessário fazer a conversão do nível. Por exemplo, vamos supor que queremos fazer uma comunicação entre o computador pesssoal através da porta serial, com uma \textit{FPGA}. No entanto, a \textit{FPGA} utiliza a tecnologia \textit{TTL}, ou seja, 0V a 0,8V representa nível lógico baixo e 2V a 5V representa nível lógico alto. Percebe-se, assim, uma imcompatibilidade entre o padrão RS-232 e o \textit{TTL}, desta forma é necessário fazer a conversão. Todavia, existe alguns dispositivos que tem a capacidade de fazer essa conversão, um deles é o MAX-232, o qual faz  a conversão entre os níveis utlizados pelo padrão RS-232 para TTL, e vice-versa. Na figura~\ref{fig:232} podemos ver uma configuração comum utilizando um conversor MAX-232. 
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=.5\textwidth]{img/p4/Fig11-microcontroller_uart_max232_circuit.jpg}
+\caption{MAX-232: Conversor de RS-232 para TTL.}
+\label{fig:232}
+\end{figure}
 
 \section{Metodologia}
 Como definido pela metodologia do PBL, a resolução do problema 3 do MI de Circuitos Digitais, iniciou-se com o levantamento de ideias pelos membros do grupo de quais seriam as possíveis resoluções para o problema. Como de praxe, surgiram diversas ideias sobre como realizar o mesmo procedimento e dúvidas relacionadas ao texto do problema. 
