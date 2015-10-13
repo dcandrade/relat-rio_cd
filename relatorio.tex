@@ -197,12 +197,12 @@ O resultado desse processo de descrição em alto nível do projeto pode ser confer
 \end{figure}
 
 
-\subsection{Circuito Debounce}
-
-
 \subsection{Memórias RAM}
 
-Necessária para armazenar os dados das coordenadas pré definidas no problema, guarda os dados das coordenadas(linha e coluna) em forma de um arranjo de números binários. Respeitando os endereços fornecidos junto aos pares de coordenadas e convertendo os mesmos para valores binários(demonstrados na tabela~\ref{tab:rom-memory}), foram elaborados os conjuntos de dados a serem programados na memória ROM.
+Necessária para armazenar os dados das coordenadas inseridas na primeira etapa de jogo, armazena essas informações em um arranjo de números binários em uma célula de 1 $byte$, sendo os 4 $bits$ primeiros para informações que dizem respeito a coluna e as outras 4 $bits$, a linha.
+
+Como explicitado nas regras determinadas pela turma(...)
+[deixa q eu termino aqui]
 
 \begin{table}[!htbp]
 \centering
@@ -229,7 +229,7 @@ Necessária para armazenar os dados das coordenadas pré definidas no problema, gu
 \hline 
 \end{tabular} 
 \caption{Informações que devem ser armazenadas e suas versões e binário}
-\label{tab:rom-memory}
+\label{tab:ram-memory}
 \end{table}
 
 
