@@ -109,9 +109,15 @@ percebam que o número de bits de paridade, de parada podem variar, dependendo a
 %PAREI AQUI.
 
 Cada dispositivo que emprega a comunicação serial, tem uma determinada taxa de velocidade, sendo que para se referir a velocidade de tranferência devemos usar o termo bps \textit{bits-per-second}, ou seja, bits por segundo. Em alguns equipamentos, costuma-se chamar esta taxa  como \textit{baud}. Desta forma, a expressão 9600 bps é equivalente a 9600 bauds.
+
 \subsubsection{Padrão RS-232}
 Segundo (http://www.c2o.pro.br/automacao/x834.html) RS-232 é um padrão definido pela \textit{EIA-Eletronic Industries Associatio}n para os dispositivos usados para comunicaçao serial. Este padrão está disponível em três versões, quais sejam, (A, B e C). Cada um especifica uma faixa de voltagens para os níveis ligado e desligado. Por exemplo, na versão RS-232 para representar  nível lógico alto utiliza-se as tensões de -3V a -12V, enquanto para representar nível lógico baixo é utilizado tensão na faixa de +3V e +12V. É importante notar que a representação de nível lógico alto e nível baixo nesse padrão não utiliza o modelo convencinal de tensão. Vale lembrar que este padrão é utilzado marjoritariamente nas portas DB9 e DB25.  
 
+\subsubsection{Conversor de nível MAX-232}
+Os dispositivos eletrônicos utilizam níveis de tensão diferentes para identificar nível lógico baixo e nível lógico alto, dependendo apenas da tecnologia que está sendo empregada. Desta forma, quando se vai utilizar a porta serial do computador pessoal para se comunicar com algum dispositivo controlador, tem-se que analisar o padrão que o mesmo utilza,pois a depender das especificações, será necessário fazer a conversão do nível. Por exemplo, vamos supor que queremos fazer uma comunicação entre o computador pesssoal através da porta serial, com uma \textit{FPGA}. No entanto, a \textit{FPGA} utiliza a tecnologia \textit{TTL}, ou seja, 0V a 0,8V representa nível lógico baixo e 2V a 5V representa nível lógico alto. Percebe-se, assim, uma imcompatibilidade entre o padrão RS-232 e o \textit{TTL}, desta forma é necessário fazer a conversão. Todavia, existe alguns dispositivos que tem a capacidade de fazer essa conversão, um deles é o MAX-232, o qual faz  a conversão entre os níveis utlizados pelo padrão RS-232 para TTL, e vice-versa. Na \textbf{figura 10} podemos ver uma configuração comum utilizando um conversor MAX-232. 
+
+
+%COLOCAR IMAGEM DO CIRCUITO DO MAX
 
 \section{Metodologia}
 Como definido pela metodologia do PBL, a resolução do problema 3 do MI de Circuitos Digitais, iniciou-se com o levantamento de ideias pelos membros do grupo de quais seriam as possíveis resoluções para o problema. Como de praxe, surgiram diversas ideias sobre como realizar o mesmo procedimento e dúvidas relacionadas ao texto do problema. 
