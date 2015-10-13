@@ -14,18 +14,17 @@
 %RENAMES
 \renewcommand{\figurename}{Figura}
 \renewcommand{\tablename}{Tabela}
-\renewcommand{\refname}{ReferÃªncias}
+\renewcommand{\refname}{Referências}
      
 \sloppy
 
-\title{Problema 4: "Batalha Naval!"}
+\title{Problema 3: "Memorizando!"}
 
-%\author{Daniel Coelho de Andrade\inst{1}}
+\author{Turma P04}
 
 
-\address{MI - Projetos de Circuitos Digitais, Turma P04 \\ Tutor: Marcos Paz\\
-Curso de Engenharia de ComputaÃ§Ã£o \\ Universidade Estadual de Feira de Satana (UEFS)\\
- 
+\address{MI - Projetos de Circuitos Digitais, Período 2015.1\\ Tutor: Marcos Paz\\
+Curso de Engenharia de Computação \\ Universidade Estadual de Feira de Santana (UEFS)
 }
 
 \begin{document} 
@@ -33,26 +32,25 @@ Curso de Engenharia de ComputaÃ§Ã£o \\ Universidade Estadual de Feira de Satana 
 \maketitle
 
 \begin{resumo} 
-O presente relatÃ³rio descreve o processo de resoluÃ§Ã£o do terceiro problema do MI - Circuitos Digitais, da supracitada turma,no perÃ­odo de 2015.1, na Universidade Estadual de Feira de Santana. O problema propÃ´s, dado o sucesso dos projetos prÃ©teritos, que os estudantes desenvolvessem um protÃ³tipo do jogo Batalha Naval em \textit{FPGA}, tomando como base o  protÃ³tipo do controlador para matriz de \textit{LED}, sendo que a comunicaÃ§Ã£o com este novo circuito deveria acontecer atravÃ©s de um computador pessoal utilizando o conceito de comunicaÃ§Ã£o serial, toranando o projeto a ser desenvolvido, mais confiÃ¡vel em relaÃ§Ã£o a transmissÃ£o de dados.
+O presente relatório descreve o processo de resolução do terceiro problema do MI - Circuitos Digitais, da supracitada turma,no período de 2015.1, na Universidade Estadual de Feira de Santana. O problema propôs, dado o sucesso dos projetos préteritos, que os estudantes desenvolvessem um protótipo do jogo Batalha Naval em \textit{FPGA}, tomando como base o  protótipo do controlador para matriz de \textit{LED}, sendo que a comunicação com este novo circuito deveria acontecer através de um computador pessoal utilizando o conceito de comunicação serial, toranando o projeto a ser desenvolvido, mais confiável em relação a transmissão de dados.
 \end{resumo}
 
-\section{IntroduÃ§Ã£o} \label{sec:firstpage}
+\section{Introdução} \label{sec:firstpage}
 
-Hoje em dia cresce, substancialmente, a ampla utilizaÃ§Ã£o de jogos no segmento lÃºdico de simulaÃ§Ã£o 2D. Estes sÃ£o utilizados em diversas Ã¡reas conhecidas, tendo uma mais elavada utilizaÃ§Ã£o na educaÃ§Ã£o. AlÃ©m do papel, prfÃ­cuo que os mesmos podem fornecer Ã  educaÃ§Ã£o, podem servir , tambÃ©m, Ãºnica e exclusivamente como forma de entretenimento entre os mais jovens, bem como para o pÃºblico mais adulto. Um exemplo destes jogos, Ã© famigerado Batalha Naval. Sendo no Brasil no ano de 1988, o jogo batalha naval Ã© um dos jogos de maiores sucessos entre o pÃºblico mundial. Em sua forma mais rÃºstica, dois adversÃ¡rios desenhavam em folhas de papel, navios posicionados em um mar imaginÃ¡rio quadriculado, formando uma grade. Todavia, no contexto atual, alÃ©m de encontrar versÃµes deste jogo de maneira similar aos seus primÃ³rdios, encontra-se, tambÃ©m, aplicativos para diversas arquiteturas que executam o mesmo processo, faciliatando assim a sua disseminaÃ§Ã£o entre as pessoas.
+Hoje em dia cresce, substancialmente, a ampla utilização de jogos no segmento lúdico de simulação 2D. Estes são utilizados em diversas áreas conhecidas, tendo uma mais elavada utilização na educação. Além do papel, prfícuo que os mesmos podem fornecer à educação, podem servir , também, única e exclusivamente como forma de entretenimento entre os mais jovens, bem como para o público mais adulto. Um exemplo destes jogos, é famigerado Batalha Naval. Sendo no Brasil no ano de 1988, o jogo batalha naval é um dos jogos de maiores sucessos entre o público mundial. Em sua forma mais rústica, dois adversários desenhavam em folhas de papel, navios posicionados em um mar imaginário quadriculado, formando uma grade. Todavia, no contexto atual, além de encontrar versões deste jogo de maneira similar aos seus primórdios, encontra-se, também, aplicativos para diversas arquiteturas que executam o mesmo processo, faciliatando assim a sua disseminação entre as pessoas.
 
-AlÃ©m da existÃªncia, como visto, deste tipo de jogo na forma de aplicativos mÃ³veis, existe a possibilidade, tambÃ©m, de desenvolvÃª-lo utilizando circuitos digitais, visando a criaÃ§Ã£o de um jogo lÃºdico de simulaÃ§Ã£o 2D.  Ã‰ de se notar, que para desenvolvÃª-lo, faz-se necessÃ¡rio utilizar um conceito muito importante na eletrÃ´nica digital, a saber, memÃ³ria RAM. A criaÃ§Ã£o deste tipo de jogo, traz diversas vantagens para o empreendedor que o desenvolve, justamente pelo fato do mercado de jogos estÃ¡ sempre em constante expansÃ£o. lembrando que hoje em dia, aplicaÃ§Ãµes envolvendo a tecnologia digital tem ampla aceitaÃ§Ã£o no mercado, o ser humano necessita de recursos tecnolÃ³gicos, com forma tambÃ©m de pertenÃ§a, e inclusÃ£o no mundo global tecnolÃ³gico. 
+Além da existência, como visto, deste tipo de jogo na forma de aplicativos móveis, existe a possibilidade, também, de desenvolvê-lo utilizando circuitos digitais, visando a criação de um jogo lúdico de simulação 2D.  É de se notar, que para desenvolvê-lo, faz-se necessário utilizar um conceito muito importante na eletrônica digital, a saber, memória RAM. A criação deste tipo de jogo, traz diversas vantagens para o empreendedor que o desenvolve, justamente pelo fato do mercado de jogos está sempre em constante expansão. lembrando que hoje em dia, aplicações envolvendo a tecnologia digital tem ampla aceitação no mercado, o ser humano necessita de recursos tecnológicos, com forma também de pertença, e inclusão no mundo global tecnológico. 
 
-Desta forma, observando a mudanÃ§a atual do mercado, principalmente no que diz respeito a alta receptividade em relaÃ§Ã£o a jogos eletrÃ´nicos, o grupo Inova Digital Bahia S.A  resolveu adaptar o projeto desenvolvido anteriormente, para que o mesmo funcionase como uma espÃ©cie de jogo Batalha Naval, seguindo um modelo de simulaÃ§Ã£o 2D. Sendo que este novo prÃ³totipo deveria ser controlado remotamente, a partir de um computador pessoal, enviando os dados por meio de canal de comunicaÃ§Ã£o serial. Neste jogo, dois modos estarÃ£o disponÃ­veis, o modo de gravaÃ§Ã£o e o modo de jogo propiamente dito, cada modo contendo suas especificaÃ§Ãµes e caracateristicas pÃ³prias, as quais serÃ£o descritas nas seÃ§Ãµes posteriores.
+Desta forma, observando a mudança atual do mercado, principalmente no que diz respeito a alta receptividade em relação a jogos eletrônicos, o grupo Inova Digital Bahia S.A  resolveu adaptar o projeto desenvolvido anteriormente, para que o mesmo funcionase como uma espécie de jogo Batalha Naval, seguindo um modelo de simulação 2D. Sendo que este novo prótotipo deveria ser controlado remotamente, a partir de um computador pessoal, enviando os dados por meio de canal de comunicação serial. Neste jogo, dois modos estarão disponíveis, o modo de gravação e o modo de jogo propiamente dito, cada modo contendo suas especificações e caracateristicas póprias, as quais serão descritas nas seções posteriores.
 
-Ã‰ importante lembrar, que para desenvolver este projeto, foram utilizados alÃ©m dos recursos jÃ¡ conhecidos, fez-se uso tambÃ©m de MÃ¡quinas de estados, registrador de descolocamento, porta serial, protocolo de comunicaÃ§Ã£o RS-232, conversores de nÃ­veis elÃ©tricos e, por Ãºltimo, mas nao menos importante, Software para comunicaÃ§Ã£o com Hardware.
+É importante lembrar, que para desenvolver este projeto, foram utilizados além dos recursos já conhecidos, fez-se uso também de Máquinas de estados, registrador de descolocamento, porta serial, protocolo de comunicação RS-232, conversores de níveis elétricos e, por último, mas nao menos importante, Software para comunicação com Hardware.
 
-\section{FundamentaÃ§Ã£o TeÃ³rica}
+\section{Fundamentação Teórica}
 
-Na seÃ§Ã£o que segue, serÃ£o descritos os conceitos utilizados para resoluÃ§Ã£o do problema proposto, frisando os conceitos que foram de fundamental importÃ¢ncia para solucionar o mesmo, tendo contribuiÃ§Ã£o de maneira direta ou indireta.
+Na seção que segue, serão descritos os conceitos utilizados para resolução do problema proposto, frisando os conceitos que foram de fundamental importância para solucionar o mesmo, tendo contribuição de maneira direta ou indireta.
 
-\subsection{MÃ¡quinas de Estados}
-
-Em se tratando de Circuitos Digitais, diversos dispositivos tÃªm uma ampla importÃ¢ncia, dentre estes dispositivos temos os conhecidos contadores, os quais segundo\cite{tocci1997digital} sÃ£o MÃ¡quinas de estados especÃ­ficas. Floyd, por sua vez, vai mais adiante, e fala que MÃ¡quinas de estados ou circuito sequencial Ã© um circuito que  consiste de uma seÃ§Ã£o de lÃ³gica combinacional e uma seÃ§Ã£o de memÃ³ria (flip-flops)\cite{floyd2011digital}. Na \textbf{figura 1} podemos observar o circuito tÃ­pico para uma mÃ¡quina de estados. Vale acrescentar que a quantidade de estados que uma mÃ¡quina pode interpretar Ã© diretamente ligada a quantidade de Flip-Flop, a quantidade de estados pode ser obtido fazendo 2^n, sendo n o nÃºmero de Flip-flops.  
+\subsection{Máquinas de Estados}
+Em se tratando de Circuitos Digitais, diversos dispositivos têm uma ampla importância, dentre estes dispositivos temos os conhecidos contadores, os quais segundo\cite{tocci1997digital} são Máquinas de estados específicas. Floyd, por sua vez, vai mais adiante, e fala que Máquinas de estados ou circuito sequencial é um circuito que  consiste de uma seção de lógica combinacional e uma seção de memória (flip-flops)\cite{floyd2011digital}. Na \textbf{figura 1} podemos observar o circuito típico para uma máquina de estados. Vale acrescentar que a quantidade de estados que uma máquina pode interpretar é diretamente ligada a quantidade de Flip-Flop, a quantidade de estados pode ser obtido fazendo $2^{n}$, sendo n o número de Flip-flops.  
 
 
 %Figura 1
@@ -65,75 +63,71 @@ Em se tratando de Circuitos Digitais, diversos dispositivos tÃªm uma ampla impor
 \label{fig:diagrama-estados}
 \end{figure}
 
-Existem basicamente, dois modelos de mÃ¡quinas de estados, a saber, mÃ¡quina Moore e mÃ¡quina Mealy. Na mÃ¡quina Moore, a saÃ­da depende Ãºnica e exlcusivamente dos seus estados atuais, enquanto na mÃ¡quina Mealy alÃ©m de depender dos seus estados atuais, a saÃ­da depende, tambÃ©m, das variÃ¡veis de entrada naquele instante. Na \textbf{figura 2} podemos observar  o digrama de transiÃ§Ã£o de estados para uma mÃ¡quina Moore, jÃ¡ na \textbf{figura 3} temos o diagrama para uma mÃ¡quina Mealy. Ã‰ importante notarmos, atravÃ©s dos diagramas, a diferenÃ§a referente a saÃ­da de cada mÃ¡quina.   
+Existem basicamente, dois modelos de máquinas de estados, a saber, máquina Moore e máquina Mealy. Na máquina Moore, a saída depende única e exlcusivamente dos seus estados atuais, enquanto na máquina Mealy além de depender dos seus estados atuais, a saída depende, também, das variáveis de entrada naquele instante. Na \textbf{figura 2} podemos observar  o digrama de transição de estados para uma máquina Moore, já na \textbf{figura 3} temos o diagrama para uma máquina Mealy. É importante notarmos, através dos diagramas, a diferença referente a saída de cada máquina.   
 
 %Figura 2 e 3
 
 \subsection{Flip-Flop T}
 
-AlÃ©m dos Flip-Flops atÃ© o momento estudados, temos na literatura, outro Flip-flop que Ã© amplamente utilizado, qual seja, o Flip-flop T. Na \textbf{figura 4} podemos analisar o bloco lÃ³gico e a tabela verdade para este Flip-Flop. Quando a entrada T estiver em estado alto, o flip-flop T, onde T significa \textit{toggle}, comutarÃ¡ quando o \textit{clock} for aplicado. Se a entrada T for baixa, o flip-flop mantÃ©m o valor do seu estado. Vale lembrar, que o Flip-flop T pode ser obtido utilizando um Flip-flop J-K, basta conecatar as entradas J e K em nÃ­vel lÃ³gico alto de maneira intermitente.  
+Além dos Flip-Flops até o momento estudados, temos na literatura, outro Flip-flop que é amplamente utilizado, qual seja, o Flip-flop T. Na \textbf{figura 4} podemos analisar o bloco lógico e a tabela verdade para este Flip-Flop. Quando a entrada T estiver em estado alto, o flip-flop T, onde T significa \textit{toggle}, comutará quando o \textit{clock} for aplicado. Se a entrada T for baixa, o flip-flop mantém o valor do seu estado. Vale lembrar, que o Flip-flop T pode ser obtido utilizando um Flip-flop J-K, basta conecatar as entradas J e K em nível lógico alto de maneira intermitente.  
 
 %Figura 4
 \subsection{Registrador de Deslocamento}
 
-No universo dos circuitos digitais, principalmente no que diz respeito aos Flip-Flops, encontramos diversas aplicaÃ§Ãµes. Uma, das vÃ¡rias aplicaÃ§Ãµes Ã© na forma de registrador de deslocamento, os quais sÃ£o amplamente utilizados hoje em dia no desenvolvimento de circuitos robustos. Segundo \cite{floyd2011digital} os registradores de deslocamento consistem de arranjos de Flip-Flops e sÃ£o importantes em aplicaÃ§Ãµes que envolvem o armazenamento e a transferÃªncia de dados em sistemas digitais. Ã‰ importante esclarecer, que o funcionamente do registrdor de dslocamento Ã© diferente de um contador comum, ou seja, ele nÃ£o tem uma sequÃªncia especÃ­fica de estados, apesar de em alguns casos poder ser utilizado como tal. Na \textbf{figura 5} podemos ver um circuito tÃ­pico para um registrador de deslocamento de quatro bits com entrada e saÃ­da serial de dados.
+No universo dos circuitos digitais, principalmente no que diz respeito aos Flip-Flops, encontramos diversas aplicações. Uma, das várias aplicações é na forma de registrador de deslocamento, os quais são amplamente utilizados hoje em dia no desenvolvimento de circuitos robustos. Segundo \cite{floyd2011digital} os registradores de deslocamento consistem de arranjos de Flip-Flops e são importantes em aplicações que envolvem o armazenamento e a transferência de dados em sistemas digitais. É importante esclarecer, que o funcionamente do registrdor de dslocamento é diferente de um contador comum, ou seja, ele não tem uma sequência específica de estados, apesar de em alguns casos poder ser utilizado como tal. Na \textbf{figura 5} podemos ver um circuito típico para um registrador de deslocamento de quatro bits com entrada e saída serial de dados.
 
 %Figura 5
-SÃ£o diversos, os tipos de registradores de deslocamento, na \textbf{figura 6} pode-se observar os diversos tipos de registradores de delocamento existentes, sendo ilustrados de forma abstrata. Dentre eles, um dos mais importantes estÃ¡ o registrador com entrada serial e saÃ­da paralela, o qual serÃ¡ abordado com mais detalhe na prÃ³xima subsubseÃ§Ã£o.
+São diversos, os tipos de registradores de deslocamento, na \textbf{figura 6} pode-se observar os diversos tipos de registradores de delocamento existentes, sendo ilustrados de forma abstrata. Dentre eles, um dos mais importantes está o registrador com entrada serial e saída paralela, o qual será abordado com mais detalhe na próxima subsubseção.
 
 
 %Figura 6
 
-\subsubsection{Registrador de deslocamento com entrada serial e saÃ­da paralela}
+\subsubsection{Registrador de deslocamento com entrada serial e saída paralela}
 
-Como o prÃ³pio nome jÃ¡ designa, neste tipo de registrador a entrada de dados se dÃ¡ de forma serial, contudo, a saÃ­da nÃ£o serÃ¡ serial e sim paralela. Desta forma, segundo \cite{floyd2011digital} uma vez armazenados os dados, cada bit aparece em sua linha de saÃ­da respectiva e todos os bits sÃ£o disponibilizados simultaneamente, em vez de um bit de cada vez como no registrador com saÃ­da serial. Na \textbf{figura 7} podemos ver uma exemplificaÃ§Ã£o para este circuito. Notem que neste tipo de registrador a saÃ­da de cada estÃ¡gio estÃ¡ disponÃ­vel.
+Como o própio nome já designa, neste tipo de registrador a entrada de dados se dá de forma serial, contudo, a saída não será serial e sim paralela. Desta forma, segundo \cite{floyd2011digital} uma vez armazenados os dados, cada bit aparece em sua linha de saída respectiva e todos os bits são disponibilizados simultaneamente, em vez de um bit de cada vez como no registrador com saída serial. Na \textbf{figura 7} podemos ver uma exemplificação para este circuito. Notem que neste tipo de registrador a saída de cada estágio está disponível.
 
 %Figura 7
 
-\subsection{ComunicaÃ§Ã£o Serial}
-No contexto computacional, temos duas formas de comunicaÃ§Ã£o principais, sÃ£o elas: comunicaÃ§Ã£o serial e comunicaÃ§Ã£o paralela. cada uma com suas vantagens e desvantagens. Na comunicaÃ§Ã£o paralela os bits sÃ£o transferidos de maneira simultanea, conferindo para este tipo de comunicaÃ§Ã£o a vantagem de rapidez e simplicidade de interface, contudo essa mesma vantagem acaba gerando algumas desvantagens, pois hÃ¡ um maior nÃºmero de conexÃµes, o que pode gerar ruÃ­do, perda de sincronismo alÃ©m de um custo maior. JÃ¡ na comunicaÃ§Ã£o serial os dados sÃ£o tranferidos  bit a bit, conferindo a vantagem de se ter menos fios, ou seja, baixo custo, alÃ©m de ser capaz de transmitir dados em distÃ¢ncias maiores. Contudo, nesta forma de comunicaÃ§Ã£o, justamente por haver apenas um fio que transmite os dados, ela acaba sendo mais lenta, e com um grau de complexidade maior. Todavia, apesar das desvantagens da comunicaÃ§Ã£o serial, a mesma se mostra mais robusta e mais viÃ¡vel, a ser aplicada em sistemas onde a confiabilidade dos dados sÃ£o importantes. Assim, esta subseÃ§Ã£o tratarÃ¡ especificamente deste tipo de comunicaÃ§Ã£o. 
+\subsection{Comunicação Serial}
+No contexto computacional, temos duas formas de comunicação principais, são elas: comunicação serial e comunicação paralela. cada uma com suas vantagens e desvantagens. Na comunicação paralela os bits são transferidos de maneira simultanea, conferindo para este tipo de comunicação a vantagem de rapidez e simplicidade de interface, contudo essa mesma vantagem acaba gerando algumas desvantagens, pois há um maior número de conexões, o que pode gerar ruído, perda de sincronismo além de um custo maior. Já na comunicação serial os dados são tranferidos  bit a bit, conferindo a vantagem de se ter menos fios, ou seja, baixo custo, além de ser capaz de transmitir dados em distâncias maiores. Contudo, nesta forma de comunicação, justamente por haver apenas um fio que transmite os dados, ela acaba sendo mais lenta, e com um grau de complexidade maior. Todavia, apesar das desvantagens da comunicação serial, a mesma se mostra mais robusta e mais viável, a ser aplicada em sistemas onde a confiabilidade dos dados são importantes. Assim, esta subseção tratará especificamente deste tipo de comunicação. 
 
-\subsubsection{TransmissÃ£o de Dados}
-Antes de falarmos acerca de como ocorrer a transmissÃ£o de dados de forma serial, Ã© importante lembrar que existe diversas interfaces que empregam este tipo de comunicaÃ§Ã£o, entre as interfaces mais antigas estÃ£o as portas DB9 e DB25, as quais podem ser encontradas nos computadores mais antigos. Na \textbf{figura 8} temos um exemplo para estas duas portas. Cada pino nestas portas tem uma determinada funÃ§Ã£o, podendo variar de acordo com o seu tipo. Na  \textbf{figura 9} podemos ver a funÃ§Ã£o de cada pindo na porta DB9.
+\subsubsection{Transmissão de Dados}
+Antes de falarmos acerca de como ocorrer a transmissão de dados de forma serial, é importante lembrar que existe diversas interfaces que empregam este tipo de comunicação, entre as interfaces mais antigas estão as portas DB9 e DB25, as quais podem ser encontradas nos computadores mais antigos. Na \textbf{figura 8} temos um exemplo para estas duas portas. Cada pino nestas portas tem uma determinada função, podendo variar de acordo com o seu tipo. Na  \textbf{figura 9} podemos ver a função de cada pindo na porta DB9.
 
 %Figura 8 e 9
 
 
-Na maioria das aplicaÃ§Ãµes, a comunicaÃ§Ã£o serial acontece de forma assÃ­ncrona, onde geralmente se tem 11 bits sendo transfiridos. Um desses bits Ã© o \textit{start bit}, o qual notifica um receptor que um novo dado serial esta disponÃ­vel, seguido pelos bits de dados, um bit opcional de paridade \textit{parity} e um ou mais bits de parada \textit{stop bits}. %COLOCAR ESTE SITE COMO REFERENCIA(http://www.c2o.pro.br/automacao/x834.html)
-percebam que o nÃºmero de bits de paridade, de parada podem variar, dependendo apenas do padrÃ£o de transmissÃ£o escolhido pelo projetista. Na \textbf{figura 10} pode-se analisar esta forma de comunicaÃ§Ã£o de maneira mais concreta. Vale acrescentar, que enquanto o bit de paraada se manter em nÃ­vel alto, os dados nÃ£o estrÃ£o sendo transmitidos, e sim, apenas, quando ocorrer a mudanÃ§a de estado do nÃ­vel lÃ³gico alto para baixo, caracterizando assim, o bit de inÃ­cio, ou \textit{start bit}. 
+Na maioria das aplicações, a comunicação serial acontece de forma assíncrona, onde geralmente se tem 11 bits sendo transfiridos. Um desses bits é o \textit{start bit}, o qual notifica um receptor que um novo dado serial esta disponível, seguido pelos bits de dados, um bit opcional de paridade \textit{parity} e um ou mais bits de parada \textit{stop bits}. %COLOCAR ESTE SITE COMO REFERENCIA(http://www.c2o.pro.br/automacao/x834.html)
+percebam que o número de bits de paridade, de parada podem variar, dependendo apenas do padrão de transmissão escolhido pelo projetista. Na \textbf{figura 10} pode-se analisar esta forma de comunicação de maneira mais concreta. Vale acrescentar, que enquanto o bit de paraada se manter em nível alto, os dados não estrão sendo transmitidos, e sim, apenas, quando ocorrer a mudança de estado do nível lógico alto para baixo, caracterizando assim, o bit de início, ou \textit{start bit}. 
 
 
 %Figura 10
 
 
 
-Cada dispositivo que emprega a comunicaÃ§Ã£o serial, tem uma determinada taxa de velocidade, sendo que para se referir a velocidade de tranferÃªncia devemos usar o termo bps \textit{bits-per-second}, ou seja, bits por segundo. Em alguns equipamentos, costuma-se chamar esta taxa  como \textit{baud}. Desta forma, a expressÃ£o 9600 bps Ã© equivalente a 9600 bauds.
+Cada dispositivo que emprega a comunicação serial, tem uma determinada taxa de velocidade, sendo que para se referir a velocidade de tranferência devemos usar o termo bps \textit{bits-per-second}, ou seja, bits por segundo. Em alguns equipamentos, costuma-se chamar esta taxa  como \textit{baud}. Desta forma, a expressão 9600 bps é equivalente a 9600 bauds.
 
-\subsubsection{PadrÃ£o RS-232}
-Segundo (http://www.c2o.pro.br/automacao/x834.html) RS-232 Ã© um padrÃ£o definido pela \textit{EIA-Eletronic Industries Associatio}n para os dispositivos usados para comunicaÃ§ao serial. Este padrÃ£o estÃ¡ disponÃ­vel em trÃªs versÃµes, quais sejam, (A, B e C). Cada um especifica uma faixa de voltagens para os nÃ­veis ligado e desligado. Por exemplo, na versÃ£o RS-232 para representar  nÃ­vel lÃ³gico alto utiliza-se as tensÃµes de -3V a -12V, enquanto para representar nÃ­vel lÃ³gico baixo Ã© utilizado tensÃ£o na faixa de +3V e +12V. Ã‰ importante notar que a representaÃ§Ã£o de nÃ­vel lÃ³gico alto e nÃ­vel baixo nesse padrÃ£o nÃ£o utiliza o modelo convencinal de tensÃ£o. Vale lembrar que este padrÃ£o Ã© utilzado marjoritariamente nas portas DB9 e DB25.  
+\subsubsection{Padrão RS-232}
+Segundo (http://www.c2o.pro.br/automacao/x834.html) RS-232 é um padrão definido pela \textit{EIA-Eletronic Industries Associatio}n para os dispositivos usados para comunicaçao serial. Este padrão está disponível em três versões, quais sejam, (A, B e C). Cada um especifica uma faixa de voltagens para os níveis ligado e desligado. Por exemplo, na versão RS-232 para representar  nível lógico alto utiliza-se as tensões de -3V a -12V, enquanto para representar nível lógico baixo é utilizado tensão na faixa de +3V e +12V. É importante notar que a representação de nível lógico alto e nível baixo nesse padrão não utiliza o modelo convencinal de tensão. Vale lembrar que este padrão é utilzado marjoritariamente nas portas DB9 e DB25.  
 
-\subsubsection{Conversor de nÃ­vel MAX-232}
-Os dispositivos eletrÃ´nicos utilizam nÃ­veis de tensÃ£o diferentes para identificar nÃ­vel lÃ³gico baixo e nÃ­vel lÃ³gico alto, dependendo apenas da tecnologia que estÃ¡ sendo empregada. Desta forma, quando se vai utilizar a porta serial do computador pessoal para se comunicar com algum dispositivo controlador, tem-se que analisar o padrÃ£o que o mesmo utilza,pois a depender das especificaÃ§Ãµes, serÃ¡ necessÃ¡rio fazer a conversÃ£o do nÃ­vel. Por exemplo, vamos supor que queremos fazer uma comunicaÃ§Ã£o entre o computador pesssoal atravÃ©s da porta serial, com uma \textit{FPGA}. No entanto, a \textit{FPGA} utiliza a tecnologia \textit{TTL}, ou seja, 0V a 0,8V representa nÃ­vel lÃ³gico baixo e 2V a 5V representa nÃ­vel lÃ³gico alto. Percebe-se, assim, uma imcompatibilidade entre o padrÃ£o RS-232 e o \textit{TTL}, desta forma Ã© necessÃ¡rio fazer a conversÃ£o. Todavia, existe alguns dispositivos que tem a capacidade de fazer essa conversÃ£o, um deles Ã© o MAX-232, o qual faz  a conversÃ£o entre os nÃ­veis utlizados pelo padrÃ£o RS-232 para TTL, e vice-versa. Na \textbf{figura 11} podemos ver uma configuraÃ§Ã£o comum utilizando um conversor MAX-232. 
-
-
-%Figura 11
-
+\subsubsection{Conversor de nível MAX-232}
+Os dispositivos eletrônicos utilizam níveis de tensão diferentes para identificar nível lógico baixo e nível lógico alto, dependendo apenas da tecnologia que está sendo empregada. Desta forma, quando se vai utilizar a porta serial do computador pessoal para se comunicar com algum dispositivo controlador, tem-se que analisar o padrão que o mesmo utilza,pois a depender das especificações, será necessário fazer a conversão do nível. Por exemplo, vamos supor que queremos fazer uma comunicação entre o computador pesssoal através da porta serial, com uma \textit{FPGA}. No entanto, a \textit{FPGA} utiliza a tecnologia \textit{TTL}, ou seja, 0V a 0,8V representa nível lógico baixo e 2V a 5V representa nível lógico alto. Percebe-se, assim, uma imcompatibilidade entre o padrão RS-232 e o \textit{TTL}, desta forma é necessário fazer a conversão. Todavia, existe alguns dispositivos que tem a capacidade de fazer essa conversão, um deles é o MAX-232, o qual faz  a conversão entre os níveis utlizados pelo padrão RS-232 para TTL, e vice-versa. Na \textbf{figura 11} podemos ver uma configuração comum utilizando um conversor MAX-232. 
 
 \section{Metodologia}
-Como definido pela metodologia do PBL, a resoluÃ§Ã£o do problema 3 do MI de Circuitos Digitais, iniciou-se com o levantamento de ideias pelos membros do grupo de quais seriam as possÃ­veis resoluÃ§Ãµes para o problema. Como de praxe, surgiram diversas ideias sobre como realizar o mesmo procedimento e dÃºvidas relacionadas ao texto do problema. 
+Como definido pela metodologia do PBL, a resolução do problema 3 do MI de Circuitos Digitais, iniciou-se com o levantamento de ideias pelos membros do grupo de quais seriam as possíveis resoluções para o problema. Como de praxe, surgiram diversas ideias sobre como realizar o mesmo procedimento e dúvidas relacionadas ao texto do problema. 
 
-Os membros da sessÃ£o, solucionando as questÃµes um dos outros quando possÃ­vel durante o processo, buscaram tomar decisÃµes de projeto para formalizaÃ§Ã£o das obrigaÃ§Ãµes, analisando fatores positivos e negativos das soluÃ§Ãµes propostas, optando pela soluÃ§Ã£o que fosse mais simples e que estivesse de acordo com o problema, de acordo com a visÃ£o dos alunos. Com esse mÃ©todo deu-se inÃ­cio a construÃ§Ã£o da soluÃ§Ã£o do problema 3 do MI - Circuitos Digitais, comeÃ§ando pela formalizaÃ§Ã£o e definiÃ§Ã£o de padrÃµes de projeto e de um diagrama que as mostrasse aplicadas ao circuito.
+Os membros da sessão, solucionando as questões um dos outros quando possível durante o processo, buscaram tomar decisões de projeto para formalização das obrigações, analisando fatores positivos e negativos das soluções propostas, optando pela solução que fosse mais simples e que estivesse de acordo com o problema, de acordo com a visão dos alunos. Com esse método deu-se início a construção da solução do problema 3 do MI - Circuitos Digitais, começando pela formalização e definição de padrões de projeto e de um diagrama que as mostrasse aplicadas ao circuito.
 
-\subsection{DecisÃµes de Projeto}
+\subsection{Decisões de Projeto}
 
-Antes de iniciar a implementaÃ§Ã£o do projeto em si, Ã© necessÃ¡rio traÃ§ar o caminho a percorrer durante todo o processo de soluÃ§Ã£o do problema. Essa metodologia foi adotada pelos membros da sessÃ£o apÃ³s algumas decisÃµes de projeto que nÃ£o deram o resultado esperado nos problemas anteriores, causando incongruÃªncias entre os mÃ³dulos projetados entre diferentes membros da turma. 
+Antes de iniciar a implementação do projeto em si, é necessário traçar o caminho a percorrer durante todo o processo de solução do problema. Essa metodologia foi adotada pelos membros da sessão após algumas decisões de projeto que não deram o resultado esperado nos problemas anteriores, causando incongruências entre os módulos projetados entre diferentes membros da turma. 
 
-De inÃ­cio, foi de comum acordo que, mais uma vez, modularizar o problema e dividir tais mÃ³dulos entre pequenos subgrupos, sendo que cada subgrupo deveria enviar um pequeno relatÃ³rio contendo todas as informaÃ§Ãµes necessÃ¡rias para a elaboraÃ§Ã£o do mesmo, para conscientizar os outros alunos do processo de construÃ§Ã£o, alÃ©m da descriÃ§Ã£o do bloco na ferramenta EDA \textit{Quartus II 9.0}. A partir desse ponto, a abordagem mudou em relaÃ§Ã£o aos problemas anteriores, uma vez que houveram problemas com essa segmentaÃ§Ã£o. Para resolver esses problemas de incompatibilidade, a turma resolvou elaborar um diagrama completo do problema, estabelecendo padrÃµes para cada segmento.
+De início, foi de comum acordo que, mais uma vez, modularizar o problema e dividir tais módulos entre pequenos subgrupos, sendo que cada subgrupo deveria enviar um pequeno relatório contendo todas as informações necessárias para a elaboração do mesmo, para conscientizar os outros alunos do processo de construção, além da descrição do bloco na ferramenta EDA \textit{Quartus II 9.0}. A partir desse ponto, a abordagem mudou em relação aos problemas anteriores, uma vez que houveram problemas com essa segmentação. Para resolver esses problemas de incompatibilidade, a turma resolvou elaborar um diagrama completo do problema, estabelecendo padrões para cada segmento.
 
-\subsection{ElaboraÃ§Ã£o do Diagrama}
-Iniciado na primeira sessÃ£o do problema 3 e finalizado na segunda sessÃ£o do mesmo problema, o diagrama teve como objetivo fazer com que todos os alunos tivessem consciÃªncia plena do funcionamento do circuito, da entrada a saÃ­da. Descrevendo as relaÃ§Ãµes entre os blocos e a funÃ§Ã£o, a quantidade de entrada e a quantidade de saÃ­das de cada um deles e, tambÃ©m,  padrÃµes de nomenclatura, o diagrama descreve o que cada subgrupo deve fazer para que, quando combinadas, as fraÃ§Ãµes do problema resultem em um circuito funcional e dentro da perspectiva do problema. 
+\subsection{Elaboração do Diagrama}
+Iniciado na primeira sessão do problema 3 e finalizado na segunda sessão do mesmo problema, o diagrama teve como objetivo fazer com que todos os alunos tivessem consciência plena do funcionamento do circuito, da entrada a saída. Descrevendo as relações entre os blocos e a função, a quantidade de entrada e a quantidade de saídas de cada um deles e, também,  padrões de nomenclatura, o diagrama descreve o que cada subgrupo deve fazer para que, quando combinadas, as frações do problema resultem em um circuito funcional e dentro da perspectiva do problema. 
 
-O resultado desse processo de descriÃ§Ã£o am alto nÃ­vel do projeto pode ser conferido na figura~\ref{fig:diagrama}, que destaca tambÃ©m as tarefas de cada subgrupo. Por exemplo, o subgrupo amarelo Ã© responsÃ¡vel pela elaboraÃ§Ã£o dos mÃ³dulos correspondentes ao \textit{decodificador da matriz} e \textit{Bloco do Mux-Coordenada}.
+O resultado desse processo de descrição am alto nível do projeto pode ser conferido na figura~\ref{fig:diagrama}, que destaca também as tarefas de cada subgrupo. Por exemplo, o subgrupo amarelo é responsável pela elaboração dos módulos correspondentes ao \textit{decodificador da matriz} e \textit{Bloco do Mux-Coordenada}.
 
 \begin{figure}[H]
 \centering
@@ -145,25 +139,25 @@ O resultado desse processo de descriÃ§Ã£o am alto nÃ­vel do projeto pode ser con
 
 
 \subsection{Circuito Debounce}
-Circuito utilizado para amenizar a trepidaÃ§Ã£o da onda do botÃ£o, recebe como entrada uma frequÃªncia de clock dividida resultando em 33$Hz$ e o pulso do botÃ£o, e tem como saÃ­da um pulso com baixa oscilaÃ§Ã£o caso o botÃ£o seja pressionado. A implementaÃ§Ã£o desse circuito pode ser vista na figura~\ref{fig:debounce}.
+Circuito utilizado para amenizar a trepidação da onda do botão, recebe como entrada uma frequência de clock dividida resultando em 33$Hz$ e o pulso do botão, e tem como saída um pulso com baixa oscilação caso o botão seja pressionado. A implementação desse circuito pode ser vista na figura~\ref{fig:debounce}.
 
 \begin{figure}[!htbp]
 \centering
 \includegraphics[width=.7\textwidth]{img/debounce.png}
-\caption{ImplementaÃ§Ã£o do circuito Debounce na EDA}
+\caption{Implementação do circuito Debounce na EDA}
 \label{fig:debounce}
 \end{figure}
 
 
-\subsection{MemÃ³ria ROM}
+\subsection{Memória ROM}
 
-NecessÃ¡ria para armazenar os dados das coordenadas prÃ© definidas no problema, guarda os dados das coordenadas(linha e coluna) em forma de um arranjo de nÃºmeros binÃ¡rios. Respeitando os endereÃ§os fornecidos junto aos pares de coordenadas e convertendo os mesmos para valores binÃ¡rios(demonstrados na tabela~\ref{tab:rom-memory}), foram elaborados os conjuntos de dados a serem programados na memÃ³ria ROM.
+Necessária para armazenar os dados das coordenadas pré definidas no problema, guarda os dados das coordenadas(linha e coluna) em forma de um arranjo de números binários. Respeitando os endereços fornecidos junto aos pares de coordenadas e convertendo os mesmos para valores binários(demonstrados na tabela~\ref{tab:rom-memory}), foram elaborados os conjuntos de dados a serem programados na memória ROM.
 
 \begin{table}[!htbp]
 \centering
 \begin{tabular}{||c||c||c||c||}
 \hline 
-\rule[-1ex]{0pt}{2.5ex} EndereÃ§o & Coordenada(CxL) & Valor BinÃ¡rio(C) & Valor BinÃ¡rio(L) \\ 
+\rule[-1ex]{0pt}{2.5ex} Endereço & Coordenada(CxL) & Valor Binário(C) & Valor Binário(L) \\ 
 \hline 
 \hline
 \rule[-1ex]{0pt}{2.5ex} 0 & B,5 & 1011 & 0101 \\ 
@@ -183,84 +177,84 @@ NecessÃ¡ria para armazenar os dados das coordenadas prÃ© definidas no problema, 
 \rule[-1ex]{0pt}{2.5ex} 7 & E,2 & 1110 & 0010 \\ 
 \hline 
 \end{tabular} 
-\caption{InformaÃ§Ãµes que devem ser armazenadas e suas versÃµes e binÃ¡rio}
+\caption{Informações que devem ser armazenadas e suas versões e binário}
 \label{tab:rom-memory}
 \end{table}
 
-Para obter os conjuntos de dados desejados, foram dispostos 8 conjuntos de 8 saÃ­das cada, de modo que as saÃ­das de cada conjunto correspondessem aos dados de cada um dos pares de coordenadas. Como pode ser visto na figura~\ref{fig:mem-rom}, as saÃ­das foram nomeadas no padrÃ£o $m\alpha b\beta$, onde $\alpha$ corresponde ao endereÃ§o de memÃ³ria e $\beta$ o bit de saÃ­da(para $\beta>4$, os bits representam a saÃ­da da linha e para $3<\beta<8$ a saÃ­da da coluna).
+Para obter os conjuntos de dados desejados, foram dispostos 8 conjuntos de 8 saídas cada, de modo que as saídas de cada conjunto correspondessem aos dados de cada um dos pares de coordenadas. Como pode ser visto na figura~\ref{fig:mem-rom}, as saídas foram nomeadas no padrão $m\alpha b\beta$, onde $\alpha$ corresponde ao endereço de memória e $\beta$ o bit de saída(para $\beta>4$, os bits representam a saída da linha e para $3<\beta<8$ a saída da coluna).
 
 \begin{figure}[!htbp]
 \centering
 \includegraphics[width=.8\textwidth]{img/rom-memory.png}
-\caption{DescriÃ§Ã£o da memÃ³ria ROM na EDA}
+\caption{Descrição da memória ROM na EDA}
 \label{fig:mem-rom}
 \end{figure}
 
-\subsubsection{Seletor de MemÃ³ria}
-Para efetuar o acesso a memÃ³ria ROM, Ã© necessÃ¡rio endereÃ§Ã¡-la. Buscando isolar os componentes, a turma optou por elaborar um circuito multiplexador que recebe como entrada padrÃ£o todas as saÃ­das da memÃ³ria ROM e, atravÃ©s de 3 seletores $b_{0}, b_{1}, b_{2}$ que devem ser um contador binÃ¡rio de 3 bits, sendo $b_{0}$ o bit menos significativo, pÃµe em uma saÃ­da $S$ de 8 bits somente os bits da coordenada de endereÃ§o apontado no contador. Para ajudar na tarefa da seleÃ§Ã£o, sabendo que o contador Ã© um contador binÃ¡rio de 3 bits, foi implementado um decodificador do contador para 8 saÃ­das, cada um representando um endereÃ§o e sendo apenas uma ativa por vez. O bloco do multiplexador implementado pode ser visto na ~\ref{fig:mux-mem}.
+\subsubsection{Seletor de Memória}
+Para efetuar o acesso a memória ROM, é necessário endereçá-la. Buscando isolar os componentes, a turma optou por elaborar um circuito multiplexador que recebe como entrada padrão todas as saídas da memória ROM e, através de 3 seletores $b_{0}, b_{1}, b_{2}$ que devem ser um contador binário de 3 bits, sendo $b_{0}$ o bit menos significativo, põe em uma saída $S$ de 8 bits somente os bits da coordenada de endereço apontado no contador. Para ajudar na tarefa da seleção, sabendo que o contador é um contador binário de 3 bits, foi implementado um decodificador do contador para 8 saídas, cada um representando um endereço e sendo apenas uma ativa por vez. O bloco do multiplexador implementado pode ser visto na ~\ref{fig:mux-mem}.
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=.9\textwidth]{img/mem-mux.png}
-\caption{DescriÃ§Ã£o do seletor da memÃ³ria ROM na EDA}
+\caption{Descrição do seletor da memória ROM na EDA}
 \label{fig:mux-mem}
 \end{figure}
 
 \subsection{Contadores}
 
-Usados para controlar o endereÃ§amento da memÃ³ria e para oscilar as saÃ­das na Matriz de Leds, os contadores $c_{1}$ e $c_{1}$, respectivamente, sÃ£o contadores binÃ¡rios sÃ­ncronos de 3 bits. Por ser responsÃ¡vel pelo endereÃ§amento da memÃ³ria $c_{1}$ tem como entrada o pulso do botÃ£o normalizado pelo Debounce, jÃ¡ $c_{2}$ um pulso de clock dividido de, aproximadamente, 132.8$Hz$. A razÃ£o para esse nÃºmero serÃ¡ explicada em ~\ref{sub:mux-matriz}. 
+Usados para controlar o endereçamento da memória e para oscilar as saídas na Matriz de Leds, os contadores $c_{1}$ e $c_{1}$, respectivamente, são contadores binários síncronos de 3 bits. Por ser responsável pelo endereçamento da memória $c_{1}$ tem como entrada o pulso do botão normalizado pelo Debounce, já $c_{2}$ um pulso de clock dividido de, aproximadamente, 132.8$Hz$. A razão para esse número será explicada em ~\ref{sub:mux-matriz}. 
 
 \subsection{Comparador}
-Sendo o tipo de comparador mais simples possÃ­vel, o comparador utilizado no problema Ã© capaz de comparar dois conjuntos de 8 bits e determinar se eles sÃ£o iguais ao comparar os bits de mesma magnitude. O comparador presente no problema recebe como entrada o conjunto de dados bruto, oriundo do barramento paralelo de oito bits, e  o conjunto de dados armazenados na unidade da memÃ³ria ROM correspondente ao endereÃ§amento atual determinado pelo contador $c_{1}$. Ou seja, caso o contador $c_{1}$ esteja em 1, as dados presentes no bloco 1 da memÃ³ria ROM serÃ£o enviados pelo seletor de memÃ³ria para o comparador.
+Sendo o tipo de comparador mais simples possível, o comparador utilizado no problema é capaz de comparar dois conjuntos de 8 bits e determinar se eles são iguais ao comparar os bits de mesma magnitude. O comparador presente no problema recebe como entrada o conjunto de dados bruto, oriundo do barramento paralelo de oito bits, e  o conjunto de dados armazenados na unidade da memória ROM correspondente ao endereçamento atual determinado pelo contador $c_{1}$. Ou seja, caso o contador $c_{1}$ esteja em 1, as dados presentes no bloco 1 da memória ROM serão enviados pelo seletor de memória para o comparador.
 
-Como uma caracterÃ­stica extra, foi implementado no comparador usado um bit a mais. Tal bit funciona como um $enable$ e Ã© alterado por um botÃ£o ligado a um circuito de Debounce.
+Como uma característica extra, foi implementado no comparador usado um bit a mais. Tal bit funciona como um $enable$ e é alterado por um botão ligado a um circuito de Debounce.
 
-Sendo $D\_L\alpha$, $D\_L\beta$ e $M\_L\alpha$, $M\_C\beta$ as entradas correspondentes para a entrada do valor inerente linha a coluna disposta no barramento e linha e coluna de referÃªncia, respectivamente, o comparados descrito na figura~\ref{fig:comparador} mostra o circuito responsÃ¡vel por comparar coordenadas feito e utilizado pela equipe.
+Sendo $D\_L\alpha$, $D\_L\beta$ e $M\_L\alpha$, $M\_C\beta$ as entradas correspondentes para a entrada do valor inerente linha a coluna disposta no barramento e linha e coluna de referência, respectivamente, o comparados descrito na figura~\ref{fig:comparador} mostra o circuito responsável por comparar coordenadas feito e utilizado pela equipe.
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=.8\textwidth]{img/comparador.png}
-\caption{DescriÃ§Ã£o do comparador de coordenadas na EDA}
+\caption{Descrição do comparador de coordenadas na EDA}
 \label{fig:comparador}
 \end{figure}
 
 
-\subsection{MemÃ³ria RAM}
-A memÃ³ria RAM, de acordo com o diagrama elaborado, deve receber como bit de ativaÃ§Ã£o o bit de saÃ­da do comparador, chamado de $result$ e a saÃ­da de $c_{1}$. Caso $result$ esteja em nÃ­vel alto, esse nÃ­vel Ã© armazenado no endereÃ§o de memÃ³ria descrito pelo contador $c_{1}$. Caso contrÃ¡rio, nada Ã© feito.
+\subsection{Memória RAM}
+A memória RAM, de acordo com o diagrama elaborado, deve receber como bit de ativação o bit de saída do comparador, chamado de $result$ e a saída de $c_{1}$. Caso $result$ esteja em nível alto, esse nível é armazenado no endereço de memória descrito pelo contador $c_{1}$. Caso contrário, nada é feito.
 
-Como uma entrada extra, foi colocada um bit de $clear$ para a memÃ³ria, o mesmo tem a funÃ§Ã£o de limpar completamente a memÃ³ria em casos que o $reset$ da mesma seja desejado. A figura~\ref{fig:ram-eda} demonstra o resultado final obtido na ferrmenta EDA, sendo possÃ­vel perceber o funcionamento, entradas e saÃ­das do respectivo mÃ³dulo.
+Como uma entrada extra, foi colocada um bit de $clear$ para a memória, o mesmo tem a função de limpar completamente a memória em casos que o $reset$ da mesma seja desejado. A figura~\ref{fig:ram-eda} demonstra o resultado final obtido na ferrmenta EDA, sendo possível perceber o funcionamento, entradas e saídas do respectivo módulo.
 
 \begin{figure}[!htbp]
 \centering
 \includegraphics[width=.6\textwidth]{img/ram-eda.png}
-\caption{DescriÃ§Ã£o da memÃ³ria RAM na EDA}
+\caption{Descrição da memória RAM na EDA}
 \label{fig:ram-eda}
 \end{figure}
 
 \subsection{Multiplexador da Matriz de LEDs}
-ResponsÃ¡vel por acender todos os leds, esse item recebe como entrada todos os 8 bits de saÃ­da da memÃ³ria RAM, todas as saÃ­das da memÃ³ria ROM e as saÃ­das do contador $c_{2}$. A funÃ§Ã£o desse bloco Ã© verificar se, segundo a memÃ³ria RAM, o endereÃ§o $-1<x<8$ foi dado como vÃ¡lido, e caso positivo, acendÃª-lo, dado que 0 endereÃ§o $x$ da memÃ³ria RAM, informa se o endereÃ§o $x$ da ROM foi ativo.
+Responsável por acender todos os leds, esse item recebe como entrada todos os 8 bits de saída da memória RAM, todas as saídas da memória ROM e as saídas do contador $c_{2}$. A função desse bloco é verificar se, segundo a memória RAM, o endereço $-1<x<8$ foi dado como válido, e caso positivo, acendê-lo, dado que 0 endereço $x$ da memória RAM, informa se o endereço $x$ da ROM foi ativo.
 
-Dado a incapacidade da matriz de LED's de acender 8 LED's simultaneamente, o contador $c_{2}$ alterna entre as 8 coordenadas, liberando o acendimento ou nÃ£o, de um LED por vez, numa frequÃªncia de aproximadamente 132.8$Hz$. Essa frequÃªncia foi calculada com base na frequÃªncia mÃ¡xima percebida pelo o olho humano e multiplicando-a por 8, fazendo com que a alternÃ¢ncia entre os acendimentos nÃ£o seja notada a olho-nu.
+Dado a incapacidade da matriz de LED's de acender 8 LED's simultaneamente, o contador $c_{2}$ alterna entre as 8 coordenadas, liberando o acendimento ou não, de um LED por vez, numa frequência de aproximadamente 132.8$Hz$. Essa frequência foi calculada com base na frequência máxima percebida pelo o olho humano e multiplicando-a por 8, fazendo com que a alternância entre os acendimentos não seja notada a olho-nu.
 
 %IMAGEM
 
 \subsection{Multiplexador do Display Dual de Sete Segmentos} \label{sub:mux-matriz}
 
-No problema anterior, o DSS era responsÃ¡vel apenas por exibir a coordenada na forma de (letra, nÃºmero) para o usuÃ¡rio. Em discussÃ£o, a turma decidiu por implementar um requisito do problema 3 na mesma matriz, sem ferramentas fÃ­sicas adicionais. As razÃµes para tal escolha foram a economia de material e de tempo refatorando o circuito fÃ­sico e a aparente facilidade de implementaÃ§Ã£o da soluÃ§Ã£o proposta.
+No problema anterior, o DSS era responsável apenas por exibir a coordenada na forma de (letra, número) para o usuário. Em discussão, a turma decidiu por implementar um requisito do problema 3 na mesma matriz, sem ferramentas físicas adicionais. As razões para tal escolha foram a economia de material e de tempo refatorando o circuito físico e a aparente facilidade de implementação da solução proposta.
 
-Para exibir o nÃºmero correspondente ao endereÃ§o de memÃ³ria atual e tambÃ©m as coordenadas, o multiplexador do DSS recebe como entrada todas as saÃ­das do multiplexador do problema 2 e tambÃ©m as saÃ­das do decodificador do contador de $c_{1}$ para decimal. Para realizar a com exatidÃ£o, o multiplexador tambÃ©m recebe uma frequÃªncia de clock de um perÃ­odo $t=2s$, para tornar a exibiÃ§Ã£o de dois dados em um mesmo display a mais amigÃ¡vel possÃ­vel.
+Para exibir o número correspondente ao endereço de memória atual e também as coordenadas, o multiplexador do DSS recebe como entrada todas as saídas do multiplexador do problema 2 e também as saídas do decodificador do contador de $c_{1}$ para decimal. Para realizar a com exatidão, o multiplexador também recebe uma frequência de clock de um período $t=2s$, para tornar a exibição de dois dados em um mesmo display a mais amigável possível.
 
-\subsection{UnificaÃ§Ã£o dos blocos em um projeto}
-Com todos os blocos prontos e devidamente testados em ambiente lÃ³gico, foram todos unidos em um Ãºnico projeto e ligados como descrito no diagrama elaborado previamente. Tal tarefa foi destinada a todos os membros da equipe, como a justificativa de fortalecer o conhecimento sobre o problema e comparar e discutir os projetos em caso de eventuais discrepÃ¢ncias.
+\subsection{Unificação dos blocos em um projeto}
+Com todos os blocos prontos e devidamente testados em ambiente lógico, foram todos unidos em um único projeto e ligados como descrito no diagrama elaborado previamente. Tal tarefa foi destinada a todos os membros da equipe, como a justificativa de fortalecer o conhecimento sobre o problema e comparar e discutir os projetos em caso de eventuais discrepâncias.
 
-\subsection{RefatoraÃ§Ã£o do circuito na protoboard}
+\subsection{Refatoração do circuito na protoboard}
 
-Nessa seÃ§Ã£o Ã© mostrado o resultado da dedicaÃ§Ã£o da equipe aproveitar ao mÃ¡ximo a plataforma fÃ­sica jÃ¡ existente, atribuindo as funÃ§Ãµes que puder ao circuito lÃ³gico. Para efeitos de comparaÃ§Ã£o, constam abaixo a figura~\ref{fig:circuito-p2} e a figura~\ref{fig:circuito-p3}, representando, respectivamente, os circuitos fÃ­sicos utilizados no problema 2 e no problema 3, respectivamente.
+Nessa seção é mostrado o resultado da dedicação da equipe aproveitar ao máximo a plataforma física já existente, atribuindo as funções que puder ao circuito lógico. Para efeitos de comparação, constam abaixo a figura~\ref{fig:circuito-p2} e a figura~\ref{fig:circuito-p3}, representando, respectivamente, os circuitos físicos utilizados no problema 2 e no problema 3, respectivamente.
 
 \begin{figure}[!htbp]
 \centering
 \includegraphics[width=.9\textwidth]{img/circuito-p2.jpg}
-\caption{Circuito fÃ­sico do problema 2}
+\caption{Circuito físico do problema 2}
 \label{fig:circuito-p2}
 \end{figure}
 
@@ -269,60 +263,60 @@ Nessa seÃ§Ã£o Ã© mostrado o resultado da dedicaÃ§Ã£o da equipe aproveitar ao mÃ¡
 \begin{sideways}
 \includegraphics[width=.6\textwidth]{img/circuito-p3.jpg}
 \end{sideways}
-\caption{Circuito fÃ­sico do problema 3}
+\caption{Circuito físico do problema 3}
 \label{fig:circuito-p3}
 \end{figure}
 
-Como Ã© possÃ­vel ver, a Ãºnica mudanÃ§a foi o acrÃ©scimo de 3 botÃµes ao sistema. As funÃ§Ãµes desses botÃµes sÃ£o, respectivamente, limpar a memÃ³ria, alterar o endereÃ§o de memÃ³ria e ativar a comparaÃ§Ã£o. Tais alteraÃ§Ãµes foram feitas no LaboratÃ³rio de Hardware um dia antes do dia marcado para a realizaÃ§Ã£o dos teste prÃ¡ticos.
+Como é possível ver, a única mudança foi o acréscimo de 3 botões ao sistema. As funções desses botões são, respectivamente, limpar a memória, alterar o endereço de memória e ativar a comparação. Tais alterações foram feitas no Laboratório de Hardware um dia antes do dia marcado para a realização dos teste práticos.
 
-\section{DiscussÃµes e resultados}
+\section{Discussões e resultados}
 
-Nesta sessÃ£o serÃ£o abordados os principais resultados obtidos, os testes realizados e, alÃ©m disso, serÃ£o abordados alguns detalhes que dizem respeito ao circuito lÃ³gico.
+Nesta sessão serão abordados os principais resultados obtidos, os testes realizados e, além disso, serão abordados alguns detalhes que dizem respeito ao circuito lógico.
 
-\subsection{Testes lÃ³gicos no ambiente Quartus II}
+\subsection{Testes lógicos no ambiente Quartus II}
 
-Como de praxe, antes realizar os testes fÃ­sicos, foram realizados testes virtuais com o intuito de avaliar o funcionamento do circuito lÃ³gico.  Para realizar esta anÃ¡lise, foram utilizadas ferramentas fornecidas pelo software da Altera, sendo estes os arquivos de WaveForm e o Simulator Tool.
+Como de praxe, antes realizar os testes físicos, foram realizados testes virtuais com o intuito de avaliar o funcionamento do circuito lógico.  Para realizar esta análise, foram utilizadas ferramentas fornecidas pelo software da Altera, sendo estes os arquivos de WaveForm e o Simulator Tool.
 
-Foram realizados uma sÃ©rie de testes em cada bloco componente do produto final. Todos apresentavam a eficÃ¡cia pretendida, com a exceÃ§Ã£o da memÃ³ria RAM. De inÃ­cio, tal componente nÃ£o apresentou resultados compatÃ­veis com os desejados e, ao analisar cuidadosamente, foi percebida que a abordagem inicial de usar FF's do tipo D com o D ligado em $VCC$ e utilizar o $result$ do comparador multiplicado com o pulso do botÃ£o como clock nÃ£o daria certo, uma vez que o pulso do botÃ£o, mesmo com o Debounce, se mostra irregular. Para corrigir esse erro, o FF foi substituÃ­do por um FF do tipo JK com o K aterrado, o J contendo a multiplicaÃ§Ã£o do $result$ com a entrada do botÃ£o e a entrada de clock com o clock do sistema. 
+Foram realizados uma série de testes em cada bloco componente do produto final. Todos apresentavam a eficácia pretendida, com a exceção da memória RAM. De início, tal componente não apresentou resultados compatíveis com os desejados e, ao analisar cuidadosamente, foi percebida que a abordagem inicial de usar FF's do tipo D com o D ligado em $VCC$ e utilizar o $result$ do comparador multiplicado com o pulso do botão como clock não daria certo, uma vez que o pulso do botão, mesmo com o Debounce, se mostra irregular. Para corrigir esse erro, o FF foi substituído por um FF do tipo JK com o K aterrado, o J contendo a multiplicação do $result$ com a entrada do botão e a entrada de clock com o clock do sistema. 
 
-Como demonstrado na figura~\ref{fig:teste-ram}, ao receber $result$ em nÃ­vel alto, estando o $clear$ em estado tambÃ©m alto, a cÃ©lula de memÃ³ria passa a armazenar 1 na coordenada apontada pelo contador(o valor em decimal apontado pelo contador corresponde ao endereÃ§o da cÃ©lula de memÃ³ria). Caso $result$ seja 0, o valor armazenado na cÃ©lula atual Ã© mantido. Se utilizando da operaÃ§Ã£o de $clear$, toda a memÃ³ria Ã© limpa e volta ao seu estado primitivo.
+Como demonstrado na figura~\ref{fig:teste-ram}, ao receber $result$ em nível alto, estando o $clear$ em estado também alto, a célula de memória passa a armazenar 1 na coordenada apontada pelo contador(o valor em decimal apontado pelo contador corresponde ao endereço da célula de memória). Caso $result$ seja 0, o valor armazenado na célula atual é mantido. Se utilizando da operação de $clear$, toda a memória é limpa e volta ao seu estado primitivo.
 
 \begin{figure}[!htbp]
 \centering
 \includegraphics[width=1\textwidth]{img/testeram.png}
-\caption{Teste da MemÃ³ria RAM na EDA}
+\caption{Teste da Memória RAM na EDA}
 \label{fig:teste-ram}
 \end{figure}
 
-Analisando os requisitos necessÃ¡rios e o comportamento demonstrado pelo dispositivo nos testes, concluiu-se que o mesmo corresponde ao desejado.
+Analisando os requisitos necessários e o comportamento demonstrado pelo dispositivo nos testes, concluiu-se que o mesmo corresponde ao desejado.
 
 \subsection{Funcionamento do Circuito}
 
-O circuito deve receber uma entrada oriunda de um barramento paralelo de oito bits, que deve ser diretamente impressa em um $DSS$, e comparÃ¡-la com a memÃ³ria presente no endereÃ§o atual, endereÃ§o esse que deve tambÃ©m estar sendo impresso em um $DSS$ que alterna as duas informaÃ§Ãµes (coordenadas e endereÃ§amento) para exibiÃ§Ã£o. Caso a entrada e os dados da memÃ³ria sejam iguais, o LED correspondente a coordenada inserida deverÃ¡ ser aceso. O controle de endereÃ§amento e de comparaÃ§Ã£o Ã© dado por meio de dois botÃµes distintos. AlÃ©m disso, a matriz deve voltar ao estado original quando o botÃ£o de $clear$ for selecionado.
+O circuito deve receber uma entrada oriunda de um barramento paralelo de oito bits, que deve ser diretamente impressa em um $DSS$, e compará-la com a memória presente no endereço atual, endereço esse que deve também estar sendo impresso em um $DSS$ que alterna as duas informações (coordenadas e endereçamento) para exibição. Caso a entrada e os dados da memória sejam iguais, o LED correspondente a coordenada inserida deverá ser aceso. O controle de endereçamento e de comparação é dado por meio de dois botões distintos. Além disso, a matriz deve voltar ao estado original quando o botão de $clear$ for selecionado.
 
 
-\subsection{Testes prÃ¡ticos}
-Antes de realizar os testes do circuito na Protoboard, fazia-se necessÃ¡rio fazer a demarcaÃ§Ã£o dos pinos adicionais na ferramenta Quartus II e  gravar o circuito lÃ³gico do mesmo na FPGA disponÃ­vel no laboratÃ³rio. ApÃ³s a demarcaÃ§Ã£o dos pinos, realizada com experiÃªncia adquirida no problema 1, ligou-se o circuito e a gravaÃ§Ã£o foi feita.
+\subsection{Testes práticos}
+Antes de realizar os testes do circuito na Protoboard, fazia-se necessário fazer a demarcação dos pinos adicionais na ferramenta Quartus II e  gravar o circuito lógico do mesmo na FPGA disponível no laboratório. Após a demarcação dos pinos, realizada com experiência adquirida no problema 1, ligou-se o circuito e a gravação foi feita.
 
 
-Dispondo-se de todas as ferramentas necessÃ¡rias, o teste foi realizado introduzindo-se todas as coordenadas possÃ­veis e tentando gravÃ¡-las na memÃ³ria. Inicialmente, ao por em prÃ¡tica todo o planejado, foram grandes as falhas. ExibiÃ§Ã£o da coordenada errada, o DSS nÃ£o alternava entre seus dois estados e a matriz de LED's nÃ£o acendia mesmo enviando comparaÃ§Ãµes vÃ¡lidas. Como um resultado das prÃ¡ticas de projeto usadas, boa parte da equipe tinha um alto conhecimento em relaÃ§Ã£o a estrutura do circuito, entÃ£o, em uma revisÃ£o de todo o projeto pelo grupo, percebeu-se que tudo nÃ£o passou de um descuido na hora de interligar os blocos, pois haviam diversos fios desencaixados ou encaixados no lugar errado.
+Dispondo-se de todas as ferramentas necessárias, o teste foi realizado introduzindo-se todas as coordenadas possíveis e tentando gravá-las na memória. Inicialmente, ao por em prática todo o planejado, foram grandes as falhas. Exibição da coordenada errada, o DSS não alternava entre seus dois estados e a matriz de LED's não acendia mesmo enviando comparações válidas. Como um resultado das práticas de projeto usadas, boa parte da equipe tinha um alto conhecimento em relação a estrutura do circuito, então, em uma revisão de todo o projeto pelo grupo, percebeu-se que tudo não passou de um descuido na hora de interligar os blocos, pois haviam diversos fios desencaixados ou encaixados no lugar errado.
 
-ApÃ³s a detecÃ§Ã£o e correÃ§Ã£o dos erros citados, o circuito funcionou como o imaginado pelo grupo, exibindo, comparando e alternando tudo que deveria na forma que deveria.
+Após a detecção e correção dos erros citados, o circuito funcionou como o imaginado pelo grupo, exibindo, comparando e alternando tudo que deveria na forma que deveria.
 
 
-\section{ConclusÃ£o}
+\section{Conclusão}
 
-Observando os requisitos que foram solicitados para o desenvolvimento deste sistema digital, Ã© notÃ³rio que todas as funcionalidades foram cumpridas. Isto se torna mais concreto devido ao sucesso alcanÃ§ado atravÃ©s dos testes prÃ¡ticos realizados. Em suma, todos os prÃ©-requisitos para a elaboraÃ§Ã£o do projeto das coordenadas foram obtidos com totalidade.
+Observando os requisitos que foram solicitados para o desenvolvimento deste sistema digital, é notório que todas as funcionalidades foram cumpridas. Isto se torna mais concreto devido ao sucesso alcançado através dos testes práticos realizados. Em suma, todos os pré-requisitos para a elaboração do projeto das coordenadas foram obtidos com totalidade.
 
-Tendo sido revisado vÃ¡rias vezes e tentando melhorar quando possÃ­vel, o grupo chegou num resultado simples e funcional, e, alÃ©m de tudo, totalmente compatÃ­vel com o problema anterior.
+Tendo sido revisado várias vezes e tentando melhorar quando possível, o grupo chegou num resultado simples e funcional, e, além de tudo, totalmente compatível com o problema anterior.
 
-AlÃ©m do aspecto tÃ©cnico, houve uma melhora singular no trabalho em equipe a partir do uso das prÃ¡ticas de projeto citadas. Problemas organizacionais, de incompatibilidade e de centralizaÃ§Ã£o de conhecimento, outrora frequÃªntes, foram eliminados ou amenizados.
+Além do aspecto técnico, houve uma melhora singular no trabalho em equipe a partir do uso das práticas de projeto citadas. Problemas organizacionais, de incompatibilidade e de centralização de conhecimento, outrora frequêntes, foram eliminados ou amenizados.
 
-Apesar do circuito como um todo estar sendo melhorado, outras possÃ­veis melhorias apontadas no problema anterior continuam nÃ£o realizadas. Tal fato esclarece que tanto com iniciativas do grupo tanto como exigÃªncias do prÃ³prio problema, atualizaÃ§Ãµes ainda sÃ£o possÃ­veis, como o uso de um teclado para a inserÃ§Ã£o das coordenadas e um aviso de erro mais chamativo, como um aviso sonoro(sugestÃ£o que persiste do problema anterior) e a automatizaÃ§Ã£o da funÃ§Ã£o $comparar$ e da funÃ§Ã£o $clear$, eliminando botÃµes do sistema e o deixando sua interface com o usuÃ¡rio mais simples.
+Apesar do circuito como um todo estar sendo melhorado, outras possíveis melhorias apontadas no problema anterior continuam não realizadas. Tal fato esclarece que tanto com iniciativas do grupo tanto como exigências do próprio problema, atualizações ainda são possíveis, como o uso de um teclado para a inserção das coordenadas e um aviso de erro mais chamativo, como um aviso sonoro(sugestão que persiste do problema anterior) e a automatização da função $comparar$ e da função $clear$, eliminando botões do sistema e o deixando sua interface com o usuário mais simples.
 
-\section{ReferÃªncias}
+\section{Referências}
 
-Nessa seÃ§Ã£o constam os trabalhos utilizados como base teÃ³rica que foram necessÃ¡rios para chegar a soluÃ§Ã£o descrita nesse relat
+Nessa seção constam os trabalhos utilizados como base teórica que foram necessários para chegar a solução descrita nesse relat
 
 
 \bibliographystyle{sbc}
@@ -345,7 +339,7 @@ Nessa seÃ§Ã£o constam os trabalhos utilizados como base teÃ³rica que foram neces
 %RENAMES
 \renewcommand{\figurename}{Figura}
 \renewcommand{\tablename}{Tabela}
-\renewcommand{\refname}{ReferÃªncias}
+\renewcommand{\refname}{Referências}
      
 \sloppy
 
@@ -355,7 +349,7 @@ Nessa seÃ§Ã£o constam os trabalhos utilizados como base teÃ³rica que foram neces
 
 
 \address{MI - Projetos de Circuitos Digitais, Turma P04 \\ Tutor: Marcos Paz\\
-Curso de Engenharia de ComputaÃ§Ã£o \\ Universidade Estadual de Feira de Satana (UEFS)\\
+Curso de Engenharia de Computação \\ Universidade Estadual de Feira de Satana (UEFS)\\
   \email{dcndrd@gmail.com}
 }
 
@@ -364,24 +358,24 @@ Curso de Engenharia de ComputaÃ§Ã£o \\ Universidade Estadual de Feira de Satana 
 \maketitle
 
 \begin{resumo} 
-  O presente relatÃ³rio descreve o processo de resoluÃ§Ã£o do terceiro problema do MI - Circuitos Digitais, da correspondente turma, no perÃ­odo de 2015.1, na Universidade Estadual de Feira de Santana. O problema propÃ´s que os estudantes integrassem ao projeto do problema anterior a funcionalidade de comparar a presente entrada com um conjunto de outras previamente conhecidas, e, caso a comparaÃ§Ã£o for vÃ¡lida, exibir um \textit{feedback} visual acendendo o led cuja comparaÃ§Ã£o foi dada como vÃ¡lida.
+  O presente relatório descreve o processo de resolução do terceiro problema do MI - Circuitos Digitais, da correspondente turma, no período de 2015.1, na Universidade Estadual de Feira de Santana. O problema propôs que os estudantes integrassem ao projeto do problema anterior a funcionalidade de comparar a presente entrada com um conjunto de outras previamente conhecidas, e, caso a comparação for válida, exibir um \textit{feedback} visual acendendo o led cuja comparação foi dada como válida.
 \end{resumo}
 
-\section{IntroduÃ§Ã£o} \label{sec:firstpage}
+\section{Introdução} \label{sec:firstpage}
 
-Ao se fazer o uso de qualquer dispositivo, o mesmo apresenta um conjunto de caracterÃ­sticas resultantes que correspondem diretamente ao modo que ele Ã© manuseado e seu estado atual. Por exemplo, ao inserir uma chave em uma fechadura que estava fechada, pressupondo que a chave Ã© a correta e girada no sentido correto, a fechadura Ã© destravada. Esse procedimento Ã© repetido diversas vezes diariamente e por vÃ¡rias pessoas ao redor do globo. Para tornar, em teoria, esse procedimento mais automatizado, Ã© possÃ­vel imaginar que a fechadura Ã© capaz de girar a chave e, tambÃ©m, reconhecer quando a sua respectiva chave Ã© inserida nela. Desse modo, ao inserir a chave correta na fechadura, a mesma abrirÃ¡ automaticamente. Caso contrÃ¡rio, nenhuma aÃ§Ã£o serÃ¡ realizada. Caso fosse um caso real, o mesmo sÃ³ seria possÃ­vel pela capacidade da fechadura de \textit{memorizar} a chave que a pertence e de \textit{comparÃ¡-la} com qualquer outra chave inserida nela.
+Ao se fazer o uso de qualquer dispositivo, o mesmo apresenta um conjunto de características resultantes que correspondem diretamente ao modo que ele é manuseado e seu estado atual. Por exemplo, ao inserir uma chave em uma fechadura que estava fechada, pressupondo que a chave é a correta e girada no sentido correto, a fechadura é destravada. Esse procedimento é repetido diversas vezes diariamente e por várias pessoas ao redor do globo. Para tornar, em teoria, esse procedimento mais automatizado, é possível imaginar que a fechadura é capaz de girar a chave e, também, reconhecer quando a sua respectiva chave é inserida nela. Desse modo, ao inserir a chave correta na fechadura, a mesma abrirá automaticamente. Caso contrário, nenhuma ação será realizada. Caso fosse um caso real, o mesmo só seria possível pela capacidade da fechadura de \textit{memorizar} a chave que a pertence e de \textit{compará-la} com qualquer outra chave inserida nela.
 
-Facilitando o manuseio de dispositivos existentes e fornecendo novas possibilidades de desenvolvimento, as estruturas capazes de armazenar dados, conhecidas como memÃ³rias, tem se tornado cada vez mais presente nos diversos equipamentos eletrÃ´nicos, independente do qual seja seu objetivo e usuÃ¡rio final, pois cada um desses equipamentos realizam processos que exigem a permanÃªncia, temporÃ¡ria ou nÃ£o, de um dado. No caso citado, o dado seria a combinaÃ§Ã£o de ranhuras na chave que a torna vÃ¡lida. AlÃ©m disso, a coordenada entrada no barramento paralelo, sendo vÃ¡lida ou nÃ£o, e o endereÃ§o de memÃ³ria atual devem ser exibidos em forma numÃ©rica em dispositivo(s) de visualizaÃ§Ã£o de dÃ­gitos.
+Facilitando o manuseio de dispositivos existentes e fornecendo novas possibilidades de desenvolvimento, as estruturas capazes de armazenar dados, conhecidas como memórias, tem se tornado cada vez mais presente nos diversos equipamentos eletrônicos, independente do qual seja seu objetivo e usuário final, pois cada um desses equipamentos realizam processos que exigem a permanência, temporária ou não, de um dado. No caso citado, o dado seria a combinação de ranhuras na chave que a torna válida. Além disso, a coordenada entrada no barramento paralelo, sendo válida ou não, e o endereço de memória atual devem ser exibidos em forma numérica em dispositivo(s) de visualização de dígitos.
 
-Com o objetivo de tornar seu dispositivo mais interessante ao mercado, o grupo Inova Digital Bahia S.A resolveu adaptÃ¡-lo para o tornar capaz de realizar comparaÃ§Ãµes sucessivas entre uma entrada e valores armazenados em uma estrutura de memÃ³ria. Sabendo que a entrada das coordenadas de um LED Ã© oriunda de um barramento paralelo de oito bits, que o controle do endereÃ§amento de memÃ³ria deve ser dado atravÃ©s de um \textit{push button} e que a estrutura de memÃ³ria contÃ©m 8 bytes para armazenar informaÃ§Ãµes correspondentes as 8 coordenadas de memÃ³ria prÃ©-definidas, o dispositivo deve ser capaz de manter acesso, na matriz de LEDs, todos os LEDs cuja comparaÃ§Ã£o entre a entrada e a cÃ©lula de memÃ³ria selecionada atual foi dada como vÃ¡lida.
+Com o objetivo de tornar seu dispositivo mais interessante ao mercado, o grupo Inova Digital Bahia S.A resolveu adaptá-lo para o tornar capaz de realizar comparações sucessivas entre uma entrada e valores armazenados em uma estrutura de memória. Sabendo que a entrada das coordenadas de um LED é oriunda de um barramento paralelo de oito bits, que o controle do endereçamento de memória deve ser dado através de um \textit{push button} e que a estrutura de memória contém 8 bytes para armazenar informações correspondentes as 8 coordenadas de memória pré-definidas, o dispositivo deve ser capaz de manter acesso, na matriz de LEDs, todos os LEDs cuja comparação entre a entrada e a célula de memória selecionada atual foi dada como válida.
 
-\section{FundamentaÃ§Ã£o TeÃ³rica}
+\section{Fundamentação Teórica}
 
-Na presente seÃ§Ã£o, serÃ£o descritos os conceitos que contribuÃ­ram para a soluÃ§Ã£o do problema, de forma direta ou indireta.
+Na presente seção, serão descritos os conceitos que contribuíram para a solução do problema, de forma direta ou indireta.
 
-\subsection{Contador BinÃ¡rio}
+\subsection{Contador Binário}
 
-Parte dos equipamentos digitais precisam operar em uma sequÃªncia, ou realizar um procedimento de acordo com a o Ãºltimo nÃºmero fornecido por uma sequÃªncia. Um contador Ã© um circuito sequencial composto por uma sÃ©rie de Flip Flops interligados de uma maneira que os tornem capaz de enumerar os pulsos de clock que entram no sistema. Tal contagem Ã© feita pela alternÃ¢ncia da saÃ­da de cada FF(Flip Flop) de acordo com o nÃºmero de pulsos de clock recebidos. Uma das formas de analisar o estado dos FF's e saber mais sobre o funcionamento de um contador especÃ­fico, Ã© construir um diagrama de transiÃ§Ã£o de estados.\cite{tocci1997digital}.
+Parte dos equipamentos digitais precisam operar em uma sequência, ou realizar um procedimento de acordo com a o último número fornecido por uma sequência. Um contador é um circuito sequencial composto por uma série de Flip Flops interligados de uma maneira que os tornem capaz de enumerar os pulsos de clock que entram no sistema. Tal contagem é feita pela alternância da saída de cada FF(Flip Flop) de acordo com o número de pulsos de clock recebidos. Uma das formas de analisar o estado dos FF's e saber mais sobre o funcionamento de um contador específico, é construir um diagrama de transição de estados.\cite{tocci1997digital}.
 
 \begin{figure}[!htbp]
 \centering
@@ -390,25 +384,25 @@ Parte dos equipamentos digitais precisam operar em uma sequÃªncia, ou realizar u
 \label{fig:diagrama-estados}
 \end{figure}
 
-Como retratado na figura~\ref{fig:diagrama-estados}, um contador passa de um estado para outro ao alternar um de seus bits, sendo essa mudanÃ§a  causada por um pulso de clock. PorÃ©m, nÃ£o existe sÃ³ um tipo de dispositivo capaz de enumerar os pulsos de clock. Segundo \cite{singh2006digital}, os contadores podem ser, majoritariamente, divididos em:
+Como retratado na figura~\ref{fig:diagrama-estados}, um contador passa de um estado para outro ao alternar um de seus bits, sendo essa mudança  causada por um pulso de clock. Porém, não existe só um tipo de dispositivo capaz de enumerar os pulsos de clock. Segundo \cite{singh2006digital}, os contadores podem ser, majoritariamente, divididos em:
 
 \begin{itemize}
-\item{Contadores SÃ­ncronos: }
-Um contador Ã© chamado de sÃ­ncronos quando o mesmo sinal de clock Ã© aplicado em todos os FF's ao mesmo tempo.
+\item{Contadores Síncronos: }
+Um contador é chamado de síncronos quando o mesmo sinal de clock é aplicado em todos os FF's ao mesmo tempo.
 \end{itemize}
 
 \begin{itemize}
-\item{Contadores AssÃ­ncronos: }
-Os contadores sÃ­ncronos quando o pulso de clock destinado ao contador Ã© aplicado apenas no primeiro FF. Os outros FF's do conjunto utilizam como sinal de clock a saÃ­da \textit{Q} do FF anterior.
+\item{Contadores Assíncronos: }
+Os contadores síncronos quando o pulso de clock destinado ao contador é aplicado apenas no primeiro FF. Os outros FF's do conjunto utilizam como sinal de clock a saída \textit{Q} do FF anterior.
 \end{itemize}
 
-Uma caracterÃ­stica previsÃ­vel atravÃ©s da categorizaÃ§Ã£o desses circuitos, Ã© que a forma de externalizar o resultado nÃ£o Ã© a mesma. Outra razÃ£o para isso Ã© a variedade de FF's que podem ser usados para implementar um contador. Ou seja, o diagrama de estados para um contador de 3 bits varia de acordo com a implementaÃ§Ã£o do mesmo e com os tipos de FF's usados. Tal comportamento torna o diagrama de estados, anteriormente importante, algo indispensÃ¡vel.
+Uma característica previsível através da categorização desses circuitos, é que a forma de externalizar o resultado não é a mesma. Outra razão para isso é a variedade de FF's que podem ser usados para implementar um contador. Ou seja, o diagrama de estados para um contador de 3 bits varia de acordo com a implementação do mesmo e com os tipos de FF's usados. Tal comportamento torna o diagrama de estados, anteriormente importante, algo indispensável.
 
-\subsection{Comparador BinÃ¡rio}
+\subsection{Comparador Binário}
 
-Muitas vezes em circuitos digitais Ã© necessÃ¡rio, independente do objetivo final, comparar dois dados ou valores binÃ¡rios. Um circuito comparador bÃ¡sico tem como entrada \textit{2*n} entradas, sendo \textit{n} entradas correspondentes ao valor de referÃªncia e \textit{n} entradas correspondendo ao valor que deverÃ¡ ser comparado com o valor de referÃªncia. A saÃ­da corresponde a 1 bit em nÃ­vel alto, caso as entradas forem iguais e em nÃ­vel baixo se as entradas forem diferentes\cite{tocci1997digital,  floyd2011digital}.
+Muitas vezes em circuitos digitais é necessário, independente do objetivo final, comparar dois dados ou valores binários. Um circuito comparador básico tem como entrada \textit{2*n} entradas, sendo \textit{n} entradas correspondentes ao valor de referência e \textit{n} entradas correspondendo ao valor que deverá ser comparado com o valor de referência. A saída corresponde a 1 bit em nível alto, caso as entradas forem iguais e em nível baixo se as entradas forem diferentes\cite{tocci1997digital,  floyd2011digital}.
 
-Apesar poder comparar conjuntos de \textit{n} bits, a base do funcionamento do comparador Ã© a operaÃ§Ã£o \textit{ou exclusiva(XNOR)} entre bits de igual magnitude, resultando em \textit{n} comparaÃ§Ãµes. A justificativa para a utilizaÃ§Ã£o dessa porta lÃ³gica, pode ser obtida observando sua tabela verdade, demonstrada na tabela~\ref{tab:verdade-xnor}:
+Apesar poder comparar conjuntos de \textit{n} bits, a base do funcionamento do comparador é a operação \textit{ou exclusiva(XNOR)} entre bits de igual magnitude, resultando em \textit{n} comparações. A justificativa para a utilização dessa porta lógica, pode ser obtida observando sua tabela verdade, demonstrada na tabela~\ref{tab:verdade-xnor}:
 
 \begin{table}[!htbp]
 \centering
@@ -426,24 +420,24 @@ Apesar poder comparar conjuntos de \textit{n} bits, a base do funcionamento do c
 \label{tab:verdade-xnor}
 \end{table}
 
-Em suma, a porta XNOR tem $S$ em nÃ­vel alto quando as duas entradas sÃ£o iguais, caracterÃ­stica ideal para o circuito em discussÃ£o. ApÃ³s comparar todos os bits de mesma magnitude, tem-se \textit{n} saÃ­das de portas XNOR. Para completar o comparador, liga-se todas essas saÃ­das em uma porta multiplicativa(AND). O resultado serÃ¡ 1 se as entradas forem equivalentes e 0 caso contrÃ¡rio\cite{ref-xnor}. A figura ~\ref{fig:portas-xnor} mostra a implementaÃ§Ã£o descrita em um comparador de 4 bits.
+Em suma, a porta XNOR tem $S$ em nível alto quando as duas entradas são iguais, característica ideal para o circuito em discussão. Após comparar todos os bits de mesma magnitude, tem-se \textit{n} saídas de portas XNOR. Para completar o comparador, liga-se todas essas saídas em uma porta multiplicativa(AND). O resultado será 1 se as entradas forem equivalentes e 0 caso contrário\cite{ref-xnor}. A figura ~\ref{fig:portas-xnor} mostra a implementação descrita em um comparador de 4 bits.
 
 \begin{figure}[!htbp]
 \centering
 \includegraphics[width=.4\textwidth]{comparador-xnor.jpeg}
-\caption{Esquema lÃ³gico de um comparador de 4 bits\cite{ref-xnor}}
+\caption{Esquema lógico de um comparador de 4 bits\cite{ref-xnor}}
 \label{fig:portas-xnor}
 \end{figure}
 
 
 \subsection{Circuito Debounce}
 
-No ambiente de aprendizagem, para facilitar o entendimento dos circuitos digitais, faz-se uso de artifÃ­cios como aproximaÃ§Ã£o e arredondamento. PorÃ©m, quando se trata da implementaÃ§Ã£o fÃ­sica, na prÃ¡tica, esses fatos nÃ£o podem ser ignorados. Como exemplo, um botÃ£o ideal, ao ser pressionado, emite um pulso igual ao descrito na figura~\ref{fig:btn-ideal}. JÃ¡ considerando todas as variÃ¡veis presentes no ambiente de prototipagem, testes e uso do produto, o pulso do botÃ£o se torna semelhante ao descrito na figura~\ref{fig:btn-real}.
+No ambiente de aprendizagem, para facilitar o entendimento dos circuitos digitais, faz-se uso de artifícios como aproximação e arredondamento. Porém, quando se trata da implementação física, na prática, esses fatos não podem ser ignorados. Como exemplo, um botão ideal, ao ser pressionado, emite um pulso igual ao descrito na figura~\ref{fig:btn-ideal}. Já considerando todas as variáveis presentes no ambiente de prototipagem, testes e uso do produto, o pulso do botão se torna semelhante ao descrito na figura~\ref{fig:btn-real}.
 
 \begin{figure}[!htbp]
 \centering
 \includegraphics[width=.4\textwidth]{btn-ideal.jpg}
-\caption{Pulso de um botÃ£o ideal ao ser pressionado\cite{btn-ideal}}
+\caption{Pulso de um botão ideal ao ser pressionado\cite{btn-ideal}}
 \label{fig:btn-ideal}
 \end{figure}
 
@@ -451,15 +445,15 @@ No ambiente de aprendizagem, para facilitar o entendimento dos circuitos digitai
 \begin{figure}[!htbp]
 \centering
 \includegraphics[width=.5\textwidth]{btn-real.png}
-\caption{Pulso de um botÃ£o real ao ser pressionado\cite{btn-real}}
+\caption{Pulso de um botão real ao ser pressionado\cite{btn-real}}
 \label{fig:btn-real}
 \end{figure}
 
-Como pode ser visto na figura~\ref{fig:btn-real}, ao ser pressinado, o botÃ£o gera uma onda com vÃ¡rias oscilaÃ§Ãµes. O problema dessa variÃ¢ncia Ã© que o circuito disparado pelo botÃ£o pode ser ativo mais de uma vez quando o mesmo Ã© pressionado apenas uma Ãºnica vez. A razÃ£o disso acontecer Ã© que entre tais oscilaÃ§Ãµes, pode ocorrer uma tÃ£o grande que seja capaz de alternar entre os nÃ­veis lÃ³gicos\cite{debouncing-reason}.
+Como pode ser visto na figura~\ref{fig:btn-real}, ao ser pressinado, o botão gera uma onda com várias oscilações. O problema dessa variância é que o circuito disparado pelo botão pode ser ativo mais de uma vez quando o mesmo é pressionado apenas uma única vez. A razão disso acontecer é que entre tais oscilações, pode ocorrer uma tão grande que seja capaz de alternar entre os níveis lógicos\cite{debouncing-reason}.
 
-Para garantir que o pulso do botÃ£o seja devidamente interpretado, ou seja, que a cada pressionar o disparo apresente uma forma de onda regular, Ã© feito um circuito de \textit{debouncing} que regulariza o pulso proveniente do botÃ£o. Tal circuito pode ser feito utilizando multiplicando vÃ¡rias frequÃªncias diferentes, sendo que a entrada dos FF's que compÃµe tal divisor serÃ¡ a saÃ­da do botÃ£o. Realizando essa operaÃ§Ã£o, a saÃ­da serÃ¡ regulada pelas frequÃªncias, uma vez ativadas pelo botÃ£o, a saÃ­da serÃ¡ 1 quando elas todas se encontrarem em pico, atrasando a regularizando o pulso\cite{debouncing-theory}.
+Para garantir que o pulso do botão seja devidamente interpretado, ou seja, que a cada pressionar o disparo apresente uma forma de onda regular, é feito um circuito de \textit{debouncing} que regulariza o pulso proveniente do botão. Tal circuito pode ser feito utilizando multiplicando várias frequências diferentes, sendo que a entrada dos FF's que compõe tal divisor será a saída do botão. Realizando essa operação, a saída será regulada pelas frequências, uma vez ativadas pelo botão, a saída será 1 quando elas todas se encontrarem em pico, atrasando a regularizando o pulso\cite{debouncing-theory}.
 
-Um exemplo do circuito abordado Ã© descrito na figura~\ref{fig:debouncing-ex}, na qual $Sig$ corresponde a entrada do botÃ£o, $CLK$ ao clock do sistema e $Deb\_Sig$ ao pulso regularizado pelo circuito.
+Um exemplo do circuito abordado é descrito na figura~\ref{fig:debouncing-ex}, na qual $Sig$ corresponde a entrada do botão, $CLK$ ao clock do sistema e $Deb\_Sig$ ao pulso regularizado pelo circuito.
 
 
 \begin{figure}[H]
@@ -469,29 +463,29 @@ Um exemplo do circuito abordado Ã© descrito na figura~\ref{fig:debouncing-ex}, n
 \label{fig:debouncing-ex}
 \end{figure}
 
-\subsection{MemÃ³rias RAM e ROM}
+\subsection{Memórias RAM e ROM}
 
-Os computadores e outros tipos de sistemas necessitam de armazenamento permanente ou semi-permanente de uma grande quantidade de dados binÃ¡rios\cite{floyd2011digital}. Para armazenar esses dados, sÃ£o utilizados dispositivos chamados de memÃ³ria, sendo os principais tipos as memÃ³rias RAM e ROM.
+Os computadores e outros tipos de sistemas necessitam de armazenamento permanente ou semi-permanente de uma grande quantidade de dados binários\cite{floyd2011digital}. Para armazenar esses dados, são utilizados dispositivos chamados de memória, sendo os principais tipos as memórias RAM e ROM.
 
-A memÃ³ria RAM(\textit{Random-Access Memory}), possui capacidade de escrita e gravaÃ§Ã£o e em qualquer ordem, mas os dados sÃ£o perdidos se a alimentaÃ§Ã£o for desligada, ou seja, sÃ£o \textit{memÃ³rias volÃ¡teis}. Esse tipo de memÃ³ria Ã© composto por mÃ³dulos bÃ¡sicos de armazenamento, os quais podem ser diretamente acessados por meio de endereÃ§amento\cite{tocci1997digital}. A memÃ³ria RAM pode ser construÃ­da por um conjunto de mÃ³dulos bÃ¡sicos, sendo que estes sÃ£o elaborados com FF's. Para que seja funcional, sÃ£o requeridos, no mÃ­nimo, dois dados: o dado de liberaÃ§Ã£o para gravaÃ§Ã£o e o dado a ser gravado. A capacidade de armazenamento da memÃ³ria RAM, em bits,  vai ser delimitada, no caso bÃ¡sico, pela quantidade de FF's em cada unidade de memÃ³ria vezes a quantidade de unidades de memÃ³ria.
+A memória RAM(\textit{Random-Access Memory}), possui capacidade de escrita e gravação e em qualquer ordem, mas os dados são perdidos se a alimentação for desligada, ou seja, são \textit{memórias voláteis}. Esse tipo de memória é composto por módulos básicos de armazenamento, os quais podem ser diretamente acessados por meio de endereçamento\cite{tocci1997digital}. A memória RAM pode ser construída por um conjunto de módulos básicos, sendo que estes são elaborados com FF's. Para que seja funcional, são requeridos, no mínimo, dois dados: o dado de liberação para gravação e o dado a ser gravado. A capacidade de armazenamento da memória RAM, em bits,  vai ser delimitada, no caso básico, pela quantidade de FF's em cada unidade de memória vezes a quantidade de unidades de memória.
 
-A memÃ³ria ROM(\textit{Read-Only Memory} Ã© um tipo de memÃ³ria na qual os dados sÃ£o armazenados permanentemente ou semi-permanentemente. Toda memÃ³ria ROM possui capacidade de leitura, mas nÃ£o de escrita e sÃ£o chamadas de memÃ³rias \textit{nÃ£o volÃ¡teis} pelo fato de manter os dados mesmo de a alimentaÃ§Ã£o for desligada. Apesar da nomenclatura, a memÃ³ria ROM tambÃ©m se trata de uma memÃ³ria RAM, uma vez que os dados tambÃ©m podem ser acessados de modo aleatÃ³rio, sendo melhor definida como \textit{memÃ³ria RAM de apenas leitura}\cite{floyd2011digital}. O tipo mais simples de memÃ³ria ROM pode ser construÃ­do decodificando sinais GCC e GND para obter a saÃ­da desejada, e, em seguida, construindo seletores para endereÃ§amento.
+A memória ROM(\textit{Read-Only Memory} é um tipo de memória na qual os dados são armazenados permanentemente ou semi-permanentemente. Toda memória ROM possui capacidade de leitura, mas não de escrita e são chamadas de memórias \textit{não voláteis} pelo fato de manter os dados mesmo de a alimentação for desligada. Apesar da nomenclatura, a memória ROM também se trata de uma memória RAM, uma vez que os dados também podem ser acessados de modo aleatório, sendo melhor definida como \textit{memória RAM de apenas leitura}\cite{floyd2011digital}. O tipo mais simples de memória ROM pode ser construído decodificando sinais GCC e GND para obter a saída desejada, e, em seguida, construindo seletores para endereçamento.
 
 \section{Metodologia}
-Como definido pela metodologia do PBL, a resoluÃ§Ã£o do problema 3 do MI de Circuitos Digitais, iniciou-se com o levantamento de ideias pelos membros do grupo de quais seriam as possÃ­veis resoluÃ§Ãµes para o problema. Como de praxe, surgiram diversas ideias sobre como realizar o mesmo procedimento e dÃºvidas relacionadas ao texto do problema. 
+Como definido pela metodologia do PBL, a resolução do problema 3 do MI de Circuitos Digitais, iniciou-se com o levantamento de ideias pelos membros do grupo de quais seriam as possíveis resoluções para o problema. Como de praxe, surgiram diversas ideias sobre como realizar o mesmo procedimento e dúvidas relacionadas ao texto do problema. 
 
-Os membros da sessÃ£o, solucionando as questÃµes um dos outros quando possÃ­vel durante o processo, buscaram tomar decisÃµes de projeto para formalizaÃ§Ã£o das obrigaÃ§Ãµes, analisando fatores positivos e negativos das soluÃ§Ãµes propostas, optando pela soluÃ§Ã£o que fosse mais simples e que estivesse de acordo com o problema, de acordo com a visÃ£o dos alunos. Com esse mÃ©todo deu-se inÃ­cio a construÃ§Ã£o da soluÃ§Ã£o do problema 3 do MI - Circuitos Digitais, comeÃ§ando pela formalizaÃ§Ã£o e definiÃ§Ã£o de padrÃµes de projeto e de um diagrama que as mostrasse aplicadas ao circuito.
+Os membros da sessão, solucionando as questões um dos outros quando possível durante o processo, buscaram tomar decisões de projeto para formalização das obrigações, analisando fatores positivos e negativos das soluções propostas, optando pela solução que fosse mais simples e que estivesse de acordo com o problema, de acordo com a visão dos alunos. Com esse método deu-se início a construção da solução do problema 3 do MI - Circuitos Digitais, começando pela formalização e definição de padrões de projeto e de um diagrama que as mostrasse aplicadas ao circuito.
 
-\subsection{DecisÃµes de Projeto}
+\subsection{Decisões de Projeto}
 
-Antes de iniciar a implementaÃ§Ã£o do projeto em si, Ã© necessÃ¡rio traÃ§ar o caminho a percorrer durante todo o processo de soluÃ§Ã£o do problema. Essa metodologia foi adotada pelos membros da sessÃ£o apÃ³s algumas decisÃµes de projeto que nÃ£o deram o resultado esperado nos problemas anteriores, causando incongruÃªncias entre os mÃ³dulos projetados entre diferentes membros da turma. 
+Antes de iniciar a implementação do projeto em si, é necessário traçar o caminho a percorrer durante todo o processo de solução do problema. Essa metodologia foi adotada pelos membros da sessão após algumas decisões de projeto que não deram o resultado esperado nos problemas anteriores, causando incongruências entre os módulos projetados entre diferentes membros da turma. 
 
-De inÃ­cio, foi de comum acordo que, mais uma vez, modularizar o problema e dividir tais mÃ³dulos entre pequenos subgrupos, sendo que cada subgrupo deveria enviar um pequeno relatÃ³rio contendo todas as informaÃ§Ãµes necessÃ¡rias para a elaboraÃ§Ã£o do mesmo, para conscientizar os outros alunos do processo de construÃ§Ã£o, alÃ©m da descriÃ§Ã£o do bloco na ferramenta EDA \textit{Quartus II 9.0}. A partir desse ponto, a abordagem mudou em relaÃ§Ã£o aos problemas anteriores, uma vez que houveram problemas com essa segmentaÃ§Ã£o. Para resolver esses problemas de incompatibilidade, a turma resolvou elaborar um diagrama completo do problema, estabelecendo padrÃµes para cada segmento.
+De início, foi de comum acordo que, mais uma vez, modularizar o problema e dividir tais módulos entre pequenos subgrupos, sendo que cada subgrupo deveria enviar um pequeno relatório contendo todas as informações necessárias para a elaboração do mesmo, para conscientizar os outros alunos do processo de construção, além da descrição do bloco na ferramenta EDA \textit{Quartus II 9.0}. A partir desse ponto, a abordagem mudou em relação aos problemas anteriores, uma vez que houveram problemas com essa segmentação. Para resolver esses problemas de incompatibilidade, a turma resolvou elaborar um diagrama completo do problema, estabelecendo padrões para cada segmento.
 
-\subsection{ElaboraÃ§Ã£o do Diagrama}
-Iniciado na primeira sessÃ£o do problema 3 e finalizado na segunda sessÃ£o do mesmo problema, o diagrama teve como objetivo fazer com que todos os alunos tivessem consciÃªncia plena do funcionamento do circuito, da entrada a saÃ­da. Descrevendo as relaÃ§Ãµes entre os blocos e a funÃ§Ã£o, a quantidade de entrada e a quantidade de saÃ­das de cada um deles e, tambÃ©m,  padrÃµes de nomenclatura, o diagrama descreve o que cada subgrupo deve fazer para que, quando combinadas, as fraÃ§Ãµes do problema resultem em um circuito funcional e dentro da perspectiva do problema. 
+\subsection{Elaboração do Diagrama}
+Iniciado na primeira sessão do problema 3 e finalizado na segunda sessão do mesmo problema, o diagrama teve como objetivo fazer com que todos os alunos tivessem consciência plena do funcionamento do circuito, da entrada a saída. Descrevendo as relações entre os blocos e a função, a quantidade de entrada e a quantidade de saídas de cada um deles e, também,  padrões de nomenclatura, o diagrama descreve o que cada subgrupo deve fazer para que, quando combinadas, as frações do problema resultem em um circuito funcional e dentro da perspectiva do problema. 
 
-O resultado desse processo de descriÃ§Ã£o am alto nÃ­vel do projeto pode ser conferido na figura~\ref{fig:diagrama}, que destaca tambÃ©m as tarefas de cada subgrupo. Por exemplo, o subgrupo amarelo Ã© responsÃ¡vel pela elaboraÃ§Ã£o dos mÃ³dulos correspondentes ao \textit{decodificador da matriz} e \textit{Bloco do Mux-Coordenada}.
+O resultado desse processo de descrição am alto nível do projeto pode ser conferido na figura~\ref{fig:diagrama}, que destaca também as tarefas de cada subgrupo. Por exemplo, o subgrupo amarelo é responsável pela elaboração dos módulos correspondentes ao \textit{decodificador da matriz} e \textit{Bloco do Mux-Coordenada}.
 
 \begin{figure}[H]
 \centering
@@ -503,25 +497,25 @@ O resultado desse processo de descriÃ§Ã£o am alto nÃ­vel do projeto pode ser con
 
 
 \subsection{Circuito Debounce}
-Circuito utilizado para amenizar a trepidaÃ§Ã£o da onda do botÃ£o, recebe como entrada uma frequÃªncia de clock dividida resultando em 33$Hz$ e o pulso do botÃ£o, e tem como saÃ­da um pulso com baixa oscilaÃ§Ã£o caso o botÃ£o seja pressionado. A implementaÃ§Ã£o desse circuito pode ser vista na figura~\ref{fig:debounce}.
+Circuito utilizado para amenizar a trepidação da onda do botão, recebe como entrada uma frequência de clock dividida resultando em 33$Hz$ e o pulso do botão, e tem como saída um pulso com baixa oscilação caso o botão seja pressionado. A implementação desse circuito pode ser vista na figura~\ref{fig:debounce}.
 
 \begin{figure}[!htbp]
 \centering
 \includegraphics[width=.7\textwidth]{debounce.png}
-\caption{ImplementaÃ§Ã£o do circuito Debounce na EDA}
+\caption{Implementação do circuito Debounce na EDA}
 \label{fig:debounce}
 \end{figure}
 
 
-\subsection{MemÃ³ria ROM}
+\subsection{Memória ROM}
 
-NecessÃ¡ria para armazenar os dados das coordenadas prÃ© definidas no problema, guarda os dados das coordenadas(linha e coluna) em forma de um arranjo de nÃºmeros binÃ¡rios. Respeitando os endereÃ§os fornecidos junto aos pares de coordenadas e convertendo os mesmos para valores binÃ¡rios(demonstrados na tabela~\ref{tab:rom-memory}), foram elaborados os conjuntos de dados a serem programados na memÃ³ria ROM.
+Necessária para armazenar os dados das coordenadas pré definidas no problema, guarda os dados das coordenadas(linha e coluna) em forma de um arranjo de números binários. Respeitando os endereços fornecidos junto aos pares de coordenadas e convertendo os mesmos para valores binários(demonstrados na tabela~\ref{tab:rom-memory}), foram elaborados os conjuntos de dados a serem programados na memória ROM.
 
 \begin{table}[!htbp]
 \centering
 \begin{tabular}{||c||c||c||c||}
 \hline 
-\rule[-1ex]{0pt}{2.5ex} EndereÃ§o & Coordenada(CxL) & Valor BinÃ¡rio(C) & Valor BinÃ¡rio(L) \\ 
+\rule[-1ex]{0pt}{2.5ex} Endereço & Coordenada(CxL) & Valor Binário(C) & Valor Binário(L) \\ 
 \hline 
 \hline
 \rule[-1ex]{0pt}{2.5ex} 0 & B,5 & 1011 & 0101 \\ 
@@ -541,84 +535,84 @@ NecessÃ¡ria para armazenar os dados das coordenadas prÃ© definidas no problema, 
 \rule[-1ex]{0pt}{2.5ex} 7 & E,2 & 1110 & 0010 \\ 
 \hline 
 \end{tabular} 
-\caption{InformaÃ§Ãµes que devem ser armazenadas e suas versÃµes e binÃ¡rio}
+\caption{Informações que devem ser armazenadas e suas versões e binário}
 \label{tab:rom-memory}
 \end{table}
 
-Para obter os conjuntos de dados desejados, foram dispostos 8 conjuntos de 8 saÃ­das cada, de modo que as saÃ­das de cada conjunto correspondessem aos dados de cada um dos pares de coordenadas. Como pode ser visto na figura~\ref{fig:mem-rom}, as saÃ­das foram nomeadas no padrÃ£o $m\alpha b\beta$, onde $\alpha$ corresponde ao endereÃ§o de memÃ³ria e $\beta$ o bit de saÃ­da(para $\beta>4$, os bits representam a saÃ­da da linha e para $3<\beta<8$ a saÃ­da da coluna).
+Para obter os conjuntos de dados desejados, foram dispostos 8 conjuntos de 8 saídas cada, de modo que as saídas de cada conjunto correspondessem aos dados de cada um dos pares de coordenadas. Como pode ser visto na figura~\ref{fig:mem-rom}, as saídas foram nomeadas no padrão $m\alpha b\beta$, onde $\alpha$ corresponde ao endereço de memória e $\beta$ o bit de saída(para $\beta>4$, os bits representam a saída da linha e para $3<\beta<8$ a saída da coluna).
 
 \begin{figure}[!htbp]
 \centering
 \includegraphics[width=.8\textwidth]{rom-memory.png}
-\caption{DescriÃ§Ã£o da memÃ³ria ROM na EDA}
+\caption{Descrição da memória ROM na EDA}
 \label{fig:mem-rom}
 \end{figure}
 
-\subsubsection{Seletor de MemÃ³ria}
-Para efetuar o acesso a memÃ³ria ROM, Ã© necessÃ¡rio endereÃ§Ã¡-la. Buscando isolar os componentes, a turma optou por elaborar um circuito multiplexador que recebe como entrada padrÃ£o todas as saÃ­das da memÃ³ria ROM e, atravÃ©s de 3 seletores $b_{0}, b_{1}, b_{2}$ que devem ser um contador binÃ¡rio de 3 bits, sendo $b_{0}$ o bit menos significativo, pÃµe em uma saÃ­da $S$ de 8 bits somente os bits da coordenada de endereÃ§o apontado no contador. Para ajudar na tarefa da seleÃ§Ã£o, sabendo que o contador Ã© um contador binÃ¡rio de 3 bits, foi implementado um decodificador do contador para 8 saÃ­das, cada um representando um endereÃ§o e sendo apenas uma ativa por vez. O bloco do multiplexador implementado pode ser visto na ~\ref{fig:mux-mem}.
+\subsubsection{Seletor de Memória}
+Para efetuar o acesso a memória ROM, é necessário endereçá-la. Buscando isolar os componentes, a turma optou por elaborar um circuito multiplexador que recebe como entrada padrão todas as saídas da memória ROM e, através de 3 seletores $b_{0}, b_{1}, b_{2}$ que devem ser um contador binário de 3 bits, sendo $b_{0}$ o bit menos significativo, põe em uma saída $S$ de 8 bits somente os bits da coordenada de endereço apontado no contador. Para ajudar na tarefa da seleção, sabendo que o contador é um contador binário de 3 bits, foi implementado um decodificador do contador para 8 saídas, cada um representando um endereço e sendo apenas uma ativa por vez. O bloco do multiplexador implementado pode ser visto na ~\ref{fig:mux-mem}.
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=.9\textwidth]{mem-mux.png}
-\caption{DescriÃ§Ã£o do seletor da memÃ³ria ROM na EDA}
+\caption{Descrição do seletor da memória ROM na EDA}
 \label{fig:mux-mem}
 \end{figure}
 
 \subsection{Contadores}
 
-Usados para controlar o endereÃ§amento da memÃ³ria e para oscilar as saÃ­das na Matriz de Leds, os contadores $c_{1}$ e $c_{1}$, respectivamente, sÃ£o contadores binÃ¡rios sÃ­ncronos de 3 bits. Por ser responsÃ¡vel pelo endereÃ§amento da memÃ³ria $c_{1}$ tem como entrada o pulso do botÃ£o normalizado pelo Debounce, jÃ¡ $c_{2}$ um pulso de clock dividido de, aproximadamente, 132.8$Hz$. A razÃ£o para esse nÃºmero serÃ¡ explicada em ~\ref{sub:mux-matriz}. 
+Usados para controlar o endereçamento da memória e para oscilar as saídas na Matriz de Leds, os contadores $c_{1}$ e $c_{1}$, respectivamente, são contadores binários síncronos de 3 bits. Por ser responsável pelo endereçamento da memória $c_{1}$ tem como entrada o pulso do botão normalizado pelo Debounce, já $c_{2}$ um pulso de clock dividido de, aproximadamente, 132.8$Hz$. A razão para esse número será explicada em ~\ref{sub:mux-matriz}. 
 
 \subsection{Comparador}
-Sendo o tipo de comparador mais simples possÃ­vel, o comparador utilizado no problema Ã© capaz de comparar dois conjuntos de 8 bits e determinar se eles sÃ£o iguais ao comparar os bits de mesma magnitude. O comparador presente no problema recebe como entrada o conjunto de dados bruto, oriundo do barramento paralelo de oito bits, e  o conjunto de dados armazenados na unidade da memÃ³ria ROM correspondente ao endereÃ§amento atual determinado pelo contador $c_{1}$. Ou seja, caso o contador $c_{1}$ esteja em 1, as dados presentes no bloco 1 da memÃ³ria ROM serÃ£o enviados pelo seletor de memÃ³ria para o comparador.
+Sendo o tipo de comparador mais simples possível, o comparador utilizado no problema é capaz de comparar dois conjuntos de 8 bits e determinar se eles são iguais ao comparar os bits de mesma magnitude. O comparador presente no problema recebe como entrada o conjunto de dados bruto, oriundo do barramento paralelo de oito bits, e  o conjunto de dados armazenados na unidade da memória ROM correspondente ao endereçamento atual determinado pelo contador $c_{1}$. Ou seja, caso o contador $c_{1}$ esteja em 1, as dados presentes no bloco 1 da memória ROM serão enviados pelo seletor de memória para o comparador.
 
-Como uma caracterÃ­stica extra, foi implementado no comparador usado um bit a mais. Tal bit funciona como um $enable$ e Ã© alterado por um botÃ£o ligado a um circuito de Debounce.
+Como uma característica extra, foi implementado no comparador usado um bit a mais. Tal bit funciona como um $enable$ e é alterado por um botão ligado a um circuito de Debounce.
 
-Sendo $D\_L\alpha$, $D\_L\beta$ e $M\_L\alpha$, $M\_C\beta$ as entradas correspondentes para a entrada do valor inerente linha a coluna disposta no barramento e linha e coluna de referÃªncia, respectivamente, o comparados descrito na figura~\ref{fig:comparador} mostra o circuito responsÃ¡vel por comparar coordenadas feito e utilizado pela equipe.
+Sendo $D\_L\alpha$, $D\_L\beta$ e $M\_L\alpha$, $M\_C\beta$ as entradas correspondentes para a entrada do valor inerente linha a coluna disposta no barramento e linha e coluna de referência, respectivamente, o comparados descrito na figura~\ref{fig:comparador} mostra o circuito responsável por comparar coordenadas feito e utilizado pela equipe.
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=.8\textwidth]{comparador.png}
-\caption{DescriÃ§Ã£o do comparador de coordenadas na EDA}
+\caption{Descrição do comparador de coordenadas na EDA}
 \label{fig:comparador}
 \end{figure}
 
 
-\subsection{MemÃ³ria RAM}
-A memÃ³ria RAM, de acordo com o diagrama elaborado, deve receber como bit de ativaÃ§Ã£o o bit de saÃ­da do comparador, chamado de $result$ e a saÃ­da de $c_{1}$. Caso $result$ esteja em nÃ­vel alto, esse nÃ­vel Ã© armazenado no endereÃ§o de memÃ³ria descrito pelo contador $c_{1}$. Caso contrÃ¡rio, nada Ã© feito.
+\subsection{Memória RAM}
+A memória RAM, de acordo com o diagrama elaborado, deve receber como bit de ativação o bit de saída do comparador, chamado de $result$ e a saída de $c_{1}$. Caso $result$ esteja em nível alto, esse nível é armazenado no endereço de memória descrito pelo contador $c_{1}$. Caso contrário, nada é feito.
 
-Como uma entrada extra, foi colocada um bit de $clear$ para a memÃ³ria, o mesmo tem a funÃ§Ã£o de limpar completamente a memÃ³ria em casos que o $reset$ da mesma seja desejado. A figura~\ref{fig:ram-eda} demonstra o resultado final obtido na ferrmenta EDA, sendo possÃ­vel perceber o funcionamento, entradas e saÃ­das do respectivo mÃ³dulo.
+Como uma entrada extra, foi colocada um bit de $clear$ para a memória, o mesmo tem a função de limpar completamente a memória em casos que o $reset$ da mesma seja desejado. A figura~\ref{fig:ram-eda} demonstra o resultado final obtido na ferrmenta EDA, sendo possível perceber o funcionamento, entradas e saídas do respectivo módulo.
 
 \begin{figure}[!htbp]
 \centering
 \includegraphics[width=.6\textwidth]{ram-eda.png}
-\caption{DescriÃ§Ã£o da memÃ³ria RAM na EDA}
+\caption{Descrição da memória RAM na EDA}
 \label{fig:ram-eda}
 \end{figure}
 
 \subsection{Multiplexador da Matriz de LEDs}
-ResponsÃ¡vel por acender todos os leds, esse item recebe como entrada todos os 8 bits de saÃ­da da memÃ³ria RAM, todas as saÃ­das da memÃ³ria ROM e as saÃ­das do contador $c_{2}$. A funÃ§Ã£o desse bloco Ã© verificar se, segundo a memÃ³ria RAM, o endereÃ§o $-1<x<8$ foi dado como vÃ¡lido, e caso positivo, acendÃª-lo, dado que 0 endereÃ§o $x$ da memÃ³ria RAM, informa se o endereÃ§o $x$ da ROM foi ativo.
+Responsável por acender todos os leds, esse item recebe como entrada todos os 8 bits de saída da memória RAM, todas as saídas da memória ROM e as saídas do contador $c_{2}$. A função desse bloco é verificar se, segundo a memória RAM, o endereço $-1<x<8$ foi dado como válido, e caso positivo, acendê-lo, dado que 0 endereço $x$ da memória RAM, informa se o endereço $x$ da ROM foi ativo.
 
-Dado a incapacidade da matriz de LED's de acender 8 LED's simultaneamente, o contador $c_{2}$ alterna entre as 8 coordenadas, liberando o acendimento ou nÃ£o, de um LED por vez, numa frequÃªncia de aproximadamente 132.8$Hz$. Essa frequÃªncia foi calculada com base na frequÃªncia mÃ¡xima percebida pelo o olho humano e multiplicando-a por 8, fazendo com que a alternÃ¢ncia entre os acendimentos nÃ£o seja notada a olho-nu.
+Dado a incapacidade da matriz de LED's de acender 8 LED's simultaneamente, o contador $c_{2}$ alterna entre as 8 coordenadas, liberando o acendimento ou não, de um LED por vez, numa frequência de aproximadamente 132.8$Hz$. Essa frequência foi calculada com base na frequência máxima percebida pelo o olho humano e multiplicando-a por 8, fazendo com que a alternância entre os acendimentos não seja notada a olho-nu.
 
 %IMAGEM
 
 \subsection{Multiplexador do Display Dual de Sete Segmentos} \label{sub:mux-matriz}
 
-No problema anterior, o DSS era responsÃ¡vel apenas por exibir a coordenada na forma de (letra, nÃºmero) para o usuÃ¡rio. Em discussÃ£o, a turma decidiu por implementar um requisito do problema 3 na mesma matriz, sem ferramentas fÃ­sicas adicionais. As razÃµes para tal escolha foram a economia de material e de tempo refatorando o circuito fÃ­sico e a aparente facilidade de implementaÃ§Ã£o da soluÃ§Ã£o proposta.
+No problema anterior, o DSS era responsável apenas por exibir a coordenada na forma de (letra, número) para o usuário. Em discussão, a turma decidiu por implementar um requisito do problema 3 na mesma matriz, sem ferramentas físicas adicionais. As razões para tal escolha foram a economia de material e de tempo refatorando o circuito físico e a aparente facilidade de implementação da solução proposta.
 
-Para exibir o nÃºmero correspondente ao endereÃ§o de memÃ³ria atual e tambÃ©m as coordenadas, o multiplexador do DSS recebe como entrada todas as saÃ­das do multiplexador do problema 2 e tambÃ©m as saÃ­das do decodificador do contador de $c_{1}$ para decimal. Para realizar a com exatidÃ£o, o multiplexador tambÃ©m recebe uma frequÃªncia de clock de um perÃ­odo $t=2s$, para tornar a exibiÃ§Ã£o de dois dados em um mesmo display a mais amigÃ¡vel possÃ­vel.
+Para exibir o número correspondente ao endereço de memória atual e também as coordenadas, o multiplexador do DSS recebe como entrada todas as saídas do multiplexador do problema 2 e também as saídas do decodificador do contador de $c_{1}$ para decimal. Para realizar a com exatidão, o multiplexador também recebe uma frequência de clock de um período $t=2s$, para tornar a exibição de dois dados em um mesmo display a mais amigável possível.
 
-\subsection{UnificaÃ§Ã£o dos blocos em um projeto}
-Com todos os blocos prontos e devidamente testados em ambiente lÃ³gico, foram todos unidos em um Ãºnico projeto e ligados como descrito no diagrama elaborado previamente. Tal tarefa foi destinada a todos os membros da equipe, como a justificativa de fortalecer o conhecimento sobre o problema e comparar e discutir os projetos em caso de eventuais discrepÃ¢ncias.
+\subsection{Unificação dos blocos em um projeto}
+Com todos os blocos prontos e devidamente testados em ambiente lógico, foram todos unidos em um único projeto e ligados como descrito no diagrama elaborado previamente. Tal tarefa foi destinada a todos os membros da equipe, como a justificativa de fortalecer o conhecimento sobre o problema e comparar e discutir os projetos em caso de eventuais discrepâncias.
 
-\subsection{RefatoraÃ§Ã£o do circuito na protoboard}
+\subsection{Refatoração do circuito na protoboard}
 
-Nessa seÃ§Ã£o Ã© mostrado o resultado da dedicaÃ§Ã£o da equipe aproveitar ao mÃ¡ximo a plataforma fÃ­sica jÃ¡ existente, atribuindo as funÃ§Ãµes que puder ao circuito lÃ³gico. Para efeitos de comparaÃ§Ã£o, constam abaixo a figura~\ref{fig:circuito-p2} e a figura~\ref{fig:circuito-p3}, representando, respectivamente, os circuitos fÃ­sicos utilizados no problema 2 e no problema 3, respectivamente.
+Nessa seção é mostrado o resultado da dedicação da equipe aproveitar ao máximo a plataforma física já existente, atribuindo as funções que puder ao circuito lógico. Para efeitos de comparação, constam abaixo a figura~\ref{fig:circuito-p2} e a figura~\ref{fig:circuito-p3}, representando, respectivamente, os circuitos físicos utilizados no problema 2 e no problema 3, respectivamente.
 
 \begin{figure}[!htbp]
 \centering
 \includegraphics[width=.9\textwidth]{circuito-p2.jpg}
-\caption{Circuito fÃ­sico do problema 2}
+\caption{Circuito físico do problema 2}
 \label{fig:circuito-p2}
 \end{figure}
 
@@ -627,60 +621,60 @@ Nessa seÃ§Ã£o Ã© mostrado o resultado da dedicaÃ§Ã£o da equipe aproveitar ao mÃ¡
 \begin{sideways}
 \includegraphics[width=.6\textwidth]{circuito-p3.jpg}
 \end{sideways}
-\caption{Circuito fÃ­sico do problema 3}
+\caption{Circuito físico do problema 3}
 \label{fig:circuito-p3}
 \end{figure}
 
-Como Ã© possÃ­vel ver, a Ãºnica mudanÃ§a foi o acrÃ©scimo de 3 botÃµes ao sistema. As funÃ§Ãµes desses botÃµes sÃ£o, respectivamente, limpar a memÃ³ria, alterar o endereÃ§o de memÃ³ria e ativar a comparaÃ§Ã£o. Tais alteraÃ§Ãµes foram feitas no LaboratÃ³rio de Hardware um dia antes do dia marcado para a realizaÃ§Ã£o dos teste prÃ¡ticos.
+Como é possível ver, a única mudança foi o acréscimo de 3 botões ao sistema. As funções desses botões são, respectivamente, limpar a memória, alterar o endereço de memória e ativar a comparação. Tais alterações foram feitas no Laboratório de Hardware um dia antes do dia marcado para a realização dos teste práticos.
 
-\section{DiscussÃµes e resultados}
+\section{Discussões e resultados}
 
-Nesta sessÃ£o serÃ£o abordados os principais resultados obtidos, os testes realizados e, alÃ©m disso, serÃ£o abordados alguns detalhes que dizem respeito ao circuito lÃ³gico.
+Nesta sessão serão abordados os principais resultados obtidos, os testes realizados e, além disso, serão abordados alguns detalhes que dizem respeito ao circuito lógico.
 
-\subsection{Testes lÃ³gicos no ambiente Quartus II}
+\subsection{Testes lógicos no ambiente Quartus II}
 
-Como de praxe, antes realizar os testes fÃ­sicos, foram realizados testes virtuais com o intuito de avaliar o funcionamento do circuito lÃ³gico.  Para realizar esta anÃ¡lise, foram utilizadas ferramentas fornecidas pelo software da Altera, sendo estes os arquivos de WaveForm e o Simulator Tool.
+Como de praxe, antes realizar os testes físicos, foram realizados testes virtuais com o intuito de avaliar o funcionamento do circuito lógico.  Para realizar esta análise, foram utilizadas ferramentas fornecidas pelo software da Altera, sendo estes os arquivos de WaveForm e o Simulator Tool.
 
-Foram realizados uma sÃ©rie de testes em cada bloco componente do produto final. Todos apresentavam a eficÃ¡cia pretendida, com a exceÃ§Ã£o da memÃ³ria RAM. De inÃ­cio, tal componente nÃ£o apresentou resultados compatÃ­veis com os desejados e, ao analisar cuidadosamente, foi percebida que a abordagem inicial de usar FF's do tipo D com o D ligado em $VCC$ e utilizar o $result$ do comparador multiplicado com o pulso do botÃ£o como clock nÃ£o daria certo, uma vez que o pulso do botÃ£o, mesmo com o Debounce, se mostra irregular. Para corrigir esse erro, o FF foi substituÃ­do por um FF do tipo JK com o K aterrado, o J contendo a multiplicaÃ§Ã£o do $result$ com a entrada do botÃ£o e a entrada de clock com o clock do sistema. 
+Foram realizados uma série de testes em cada bloco componente do produto final. Todos apresentavam a eficácia pretendida, com a exceção da memória RAM. De início, tal componente não apresentou resultados compatíveis com os desejados e, ao analisar cuidadosamente, foi percebida que a abordagem inicial de usar FF's do tipo D com o D ligado em $VCC$ e utilizar o $result$ do comparador multiplicado com o pulso do botão como clock não daria certo, uma vez que o pulso do botão, mesmo com o Debounce, se mostra irregular. Para corrigir esse erro, o FF foi substituído por um FF do tipo JK com o K aterrado, o J contendo a multiplicação do $result$ com a entrada do botão e a entrada de clock com o clock do sistema. 
 
-Como demonstrado na figura~\ref{fig:teste-ram}, ao receber $result$ em nÃ­vel alto, estando o $clear$ em estado tambÃ©m alto, a cÃ©lula de memÃ³ria passa a armazenar 1 na coordenada apontada pelo contador(o valor em decimal apontado pelo contador corresponde ao endereÃ§o da cÃ©lula de memÃ³ria). Caso $result$ seja 0, o valor armazenado na cÃ©lula atual Ã© mantido. Se utilizando da operaÃ§Ã£o de $clear$, toda a memÃ³ria Ã© limpa e volta ao seu estado primitivo.
+Como demonstrado na figura~\ref{fig:teste-ram}, ao receber $result$ em nível alto, estando o $clear$ em estado também alto, a célula de memória passa a armazenar 1 na coordenada apontada pelo contador(o valor em decimal apontado pelo contador corresponde ao endereço da célula de memória). Caso $result$ seja 0, o valor armazenado na célula atual é mantido. Se utilizando da operação de $clear$, toda a memória é limpa e volta ao seu estado primitivo.
 
 \begin{figure}[!htbp]
 \centering
 \includegraphics[width=1\textwidth]{testeram.png}
-\caption{Teste da MemÃ³ria RAM na EDA}
+\caption{Teste da Memória RAM na EDA}
 \label{fig:teste-ram}
 \end{figure}
 
-Analisando os requisitos necessÃ¡rios e o comportamento demonstrado pelo dispositivo nos testes, concluiu-se que o mesmo corresponde ao desejado.
+Analisando os requisitos necessários e o comportamento demonstrado pelo dispositivo nos testes, concluiu-se que o mesmo corresponde ao desejado.
 
 \subsection{Funcionamento do Circuito}
 
-O circuito deve receber uma entrada oriunda de um barramento paralelo de oito bits, que deve ser diretamente impressa em um $DSS$, e comparÃ¡-la com a memÃ³ria presente no endereÃ§o atual, endereÃ§o esse que deve tambÃ©m estar sendo impresso em um $DSS$ que alterna as duas informaÃ§Ãµes (coordenadas e endereÃ§amento) para exibiÃ§Ã£o. Caso a entrada e os dados da memÃ³ria sejam iguais, o LED correspondente a coordenada inserida deverÃ¡ ser aceso. O controle de endereÃ§amento e de comparaÃ§Ã£o Ã© dado por meio de dois botÃµes distintos. AlÃ©m disso, a matriz deve voltar ao estado original quando o botÃ£o de $clear$ for selecionado.
+O circuito deve receber uma entrada oriunda de um barramento paralelo de oito bits, que deve ser diretamente impressa em um $DSS$, e compará-la com a memória presente no endereço atual, endereço esse que deve também estar sendo impresso em um $DSS$ que alterna as duas informações (coordenadas e endereçamento) para exibição. Caso a entrada e os dados da memória sejam iguais, o LED correspondente a coordenada inserida deverá ser aceso. O controle de endereçamento e de comparação é dado por meio de dois botões distintos. Além disso, a matriz deve voltar ao estado original quando o botão de $clear$ for selecionado.
 
 
-\subsection{Testes prÃ¡ticos}
-Antes de realizar os testes do circuito na Protoboard, fazia-se necessÃ¡rio fazer a demarcaÃ§Ã£o dos pinos adicionais na ferramenta Quartus II e  gravar o circuito lÃ³gico do mesmo na FPGA disponÃ­vel no laboratÃ³rio. ApÃ³s a demarcaÃ§Ã£o dos pinos, realizada com experiÃªncia adquirida no problema 1, ligou-se o circuito e a gravaÃ§Ã£o foi feita.
+\subsection{Testes práticos}
+Antes de realizar os testes do circuito na Protoboard, fazia-se necessário fazer a demarcação dos pinos adicionais na ferramenta Quartus II e  gravar o circuito lógico do mesmo na FPGA disponível no laboratório. Após a demarcação dos pinos, realizada com experiência adquirida no problema 1, ligou-se o circuito e a gravação foi feita.
 
 
-Dispondo-se de todas as ferramentas necessÃ¡rias, o teste foi realizado introduzindo-se todas as coordenadas possÃ­veis e tentando gravÃ¡-las na memÃ³ria. Inicialmente, ao por em prÃ¡tica todo o planejado, foram grandes as falhas. ExibiÃ§Ã£o da coordenada errada, o DSS nÃ£o alternava entre seus dois estados e a matriz de LED's nÃ£o acendia mesmo enviando comparaÃ§Ãµes vÃ¡lidas. Como um resultado das prÃ¡ticas de projeto usadas, boa parte da equipe tinha um alto conhecimento em relaÃ§Ã£o a estrutura do circuito, entÃ£o, em uma revisÃ£o de todo o projeto pelo grupo, percebeu-se que tudo nÃ£o passou de um descuido na hora de interligar os blocos, pois haviam diversos fios desencaixados ou encaixados no lugar errado.
+Dispondo-se de todas as ferramentas necessárias, o teste foi realizado introduzindo-se todas as coordenadas possíveis e tentando gravá-las na memória. Inicialmente, ao por em prática todo o planejado, foram grandes as falhas. Exibição da coordenada errada, o DSS não alternava entre seus dois estados e a matriz de LED's não acendia mesmo enviando comparações válidas. Como um resultado das práticas de projeto usadas, boa parte da equipe tinha um alto conhecimento em relação a estrutura do circuito, então, em uma revisão de todo o projeto pelo grupo, percebeu-se que tudo não passou de um descuido na hora de interligar os blocos, pois haviam diversos fios desencaixados ou encaixados no lugar errado.
 
-ApÃ³s a detecÃ§Ã£o e correÃ§Ã£o dos erros citados, o circuito funcionou como o imaginado pelo grupo, exibindo, comparando e alternando tudo que deveria na forma que deveria.
+Após a detecção e correção dos erros citados, o circuito funcionou como o imaginado pelo grupo, exibindo, comparando e alternando tudo que deveria na forma que deveria.
 
 
-\section{ConclusÃ£o}
+\section{Conclusão}
 
-Observando os requisitos que foram solicitados para o desenvolvimento deste sistema digital, Ã© notÃ³rio que todas as funcionalidades foram cumpridas. Isto se torna mais concreto devido ao sucesso alcanÃ§ado atravÃ©s dos testes prÃ¡ticos realizados. Em suma, todos os prÃ©-requisitos para a elaboraÃ§Ã£o do projeto das coordenadas foram obtidos com totalidade.
+Observando os requisitos que foram solicitados para o desenvolvimento deste sistema digital, é notório que todas as funcionalidades foram cumpridas. Isto se torna mais concreto devido ao sucesso alcançado através dos testes práticos realizados. Em suma, todos os pré-requisitos para a elaboração do projeto das coordenadas foram obtidos com totalidade.
 
-Tendo sido revisado vÃ¡rias vezes e tentando melhorar quando possÃ­vel, o grupo chegou num resultado simples e funcional, e, alÃ©m de tudo, totalmente compatÃ­vel com o problema anterior.
+Tendo sido revisado várias vezes e tentando melhorar quando possível, o grupo chegou num resultado simples e funcional, e, além de tudo, totalmente compatível com o problema anterior.
 
-AlÃ©m do aspecto tÃ©cnico, houve uma melhora singular no trabalho em equipe a partir do uso das prÃ¡ticas de projeto citadas. Problemas organizacionais, de incompatibilidade e de centralizaÃ§Ã£o de conhecimento, outrora frequÃªntes, foram eliminados ou amenizados.
+Além do aspecto técnico, houve uma melhora singular no trabalho em equipe a partir do uso das práticas de projeto citadas. Problemas organizacionais, de incompatibilidade e de centralização de conhecimento, outrora frequêntes, foram eliminados ou amenizados.
 
-Apesar do circuito como um todo estar sendo melhorado, outras possÃ­veis melhorias apontadas no problema anterior continuam nÃ£o realizadas. Tal fato esclarece que tanto com iniciativas do grupo tanto como exigÃªncias do prÃ³prio problema, atualizaÃ§Ãµes ainda sÃ£o possÃ­veis, como o uso de um teclado para a inserÃ§Ã£o das coordenadas e um aviso de erro mais chamativo, como um aviso sonoro(sugestÃ£o que persiste do problema anterior) e a automatizaÃ§Ã£o da funÃ§Ã£o $comparar$ e da funÃ§Ã£o $clear$, eliminando botÃµes do sistema e o deixando sua interface com o usuÃ¡rio mais simples.
+Apesar do circuito como um todo estar sendo melhorado, outras possíveis melhorias apontadas no problema anterior continuam não realizadas. Tal fato esclarece que tanto com iniciativas do grupo tanto como exigências do próprio problema, atualizações ainda são possíveis, como o uso de um teclado para a inserção das coordenadas e um aviso de erro mais chamativo, como um aviso sonoro(sugestão que persiste do problema anterior) e a automatização da função $comparar$ e da função $clear$, eliminando botões do sistema e o deixando sua interface com o usuário mais simples.
 
-\section{ReferÃªncias}
+\section{Referências}
 
-Nessa seÃ§Ã£o constam os trabalhos utilizados como base teÃ³rica que foram necessÃ¡rios para chegar a soluÃ§Ã£o descrita nesse relatÃ³rio.
+Nessa seção constam os trabalhos utilizados como base teórica que foram necessários para chegar a solução descrita nesse relatório.
 
 
 \bibliographystyle{sbc}

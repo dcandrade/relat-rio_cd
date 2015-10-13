@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2015.6.19)  11 OCT 2015 22:09
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2015.6.19)  13 OCT 2015 11:14
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -175,19 +175,19 @@ File: latin1.def 2008/03/30 v1.1d Input encoding file
 )) (./relatorio.aux)
 \openout1 = `relatorio.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Try loading font information for OT1+ptm on input line 31.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 30.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
@@ -286,187 +286,136 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <16> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 33.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 32.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 33.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 32.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 33.
+(Font)              <12> on input line 32.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 33.
+(Font)              <8> on input line 32.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 33.
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 33.
-
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pcr.fd
-File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
-)
+(Font)              <6> on input line 32.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 35.
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 34.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <13> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 39.
- [1
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 38.
+
+[1
 
 {/usr/share/texlive/texmf-dist/fonts/map/pdftex/updmap/pdftex.map}]
-<img/diagrama-estados.png, id=12, 504.88625pt x 445.665pt>
+Underfull \hbox (badness 1546) in paragraph at lines 53--54
+\OT1/ptm/m/n/12 Em se tratando de Cir-cuitos Dig-i-tais, di-ver-sos dis-pos-i-t
+ivos t[]em uma am-pla im-
+ []
+
+
+Underfull \hbox (badness 3838) in paragraph at lines 53--54
+\OT1/ptm/m/n/12 port[]ancia, den-tre estes dis-pos-i-tivos temos os con-heci-do
+s con-ta-dores, os quais
+ []
+
+<img/diagrama-estados.png, id=11, 504.88625pt x 445.665pt>
 File: img/diagrama-estados.png Graphic file (type png)
 
 <use img/diagrama-estados.png>
-Package pdftex.def Info: img/diagrama-estados.png used on input line 57.
+Package pdftex.def Info: img/diagrama-estados.png used on input line 61.
 (pdftex.def)             Requested size: 213.39568pt x 188.36807pt.
-LaTeX Font Info:    Try loading font information for OT1+phv on input line 58.
+LaTeX Font Info:    Try loading font information for OT1+phv on input line 62.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1phv.fd
 File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
 )
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <10> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 58.
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 65.
-
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/omsptm.fd
-File: omsptm.fd 
-)
-LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 65.
- [2 <./img/diagrama-estados.png>] <img/comparador-xnor.jpeg, id=20, 401.5pt x 3
-92.46625pt>
-File: img/comparador-xnor.jpeg Graphic file (type jpg)
-
-<use img/comparador-xnor.jpeg>
-Package pdftex.def Info: img/comparador-xnor.jpeg used on input line 102.
-(pdftex.def)             Requested size: 170.71393pt x 166.87679pt.
-
-<img/btn-ideal.jpg, id=21, 458.71375pt x 244.915pt>
-File: img/btn-ideal.jpg Graphic file (type jpg)
- <use img/btn-ideal.jpg>
-Package pdftex.def Info: img/btn-ideal.jpg used on input line 114.
-(pdftex.def)             Requested size: 170.71393pt x 91.14778pt.
-
-<img/btn-real.png, id=22, 474.3877pt x 267.76962pt>
-File: img/btn-real.png Graphic file (type png)
- <use img/btn-real.png>
-Package pdftex.def Info: img/btn-real.png used on input line 122.
-(pdftex.def)             Requested size: 213.39568pt x 120.45435pt.
-
-[3] [4 <./img/comparador-xnor.jpeg> <./img/btn-ideal.jpg> <./img/btn-real.png (
-PNG copy)>] <img/debouncing-ex.png, id=30, 86.9649pt x 42.8802pt>
-File: img/debouncing-ex.png Graphic file (type png)
-
-<use img/debouncing-ex.png>
-Package pdftex.def Info: img/debouncing-ex.png used on input line 136.
-(pdftex.def)             Requested size: 298.75264pt x 147.35316pt.
- [5 <./img/debouncing-ex.png (PNG copy)>]
-<img/diagrama.jpg, id=34, 2055.68pt x 1094.0875pt>
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 62.
+ [2 <./img/diagrama-estados.png>] [3] [4] [5] <img/diagrama.jpg, id=29, 2055.68
+pt x 1094.0875pt>
 File: img/diagrama.jpg Graphic file (type jpg)
- <use img/diagrama.jpg>
-Package pdftex.def Info: img/diagrama.jpg used on input line 167.
+
+<use img/diagrama.jpg>
+Package pdftex.def Info: img/diagrama.jpg used on input line 134.
 (pdftex.def)             Requested size: 426.79135pt x 227.14413pt.
-
-[6] <img/debounce.png, id=38, 947.54pt x 515.9275pt>
+ <img/debounce.png, id=30, 947.54pt x 515.9275pt>
 File: img/debounce.png Graphic file (type png)
- <use img/debounce.png>
-Package pdftex.def Info: img/debounce.png used on input line 179.
-(pdftex.def)             Requested size: 298.75264pt x 162.66759pt.
 
-[7 <./img/diagrama.jpg> <./img/debounce.png>]
-<img/rom-memory.png, id=44, 1316.92pt x 480.79625pt>
+<use img/debounce.png>
+Package pdftex.def Info: img/debounce.png used on input line 146.
+(pdftex.def)             Requested size: 298.75264pt x 162.66759pt.
+ [6 <./img/diagrama.jpg>] [7 <./img/debounce.png>]
+<img/rom-memory.png, id=40, 1316.92pt x 480.79625pt>
 File: img/rom-memory.png Graphic file (type png)
  <use img/rom-memory.png>
-Package pdftex.def Info: img/rom-memory.png used on input line 221.
+Package pdftex.def Info: img/rom-memory.png used on input line 188.
 (pdftex.def)             Requested size: 341.43437pt x 124.65192pt.
 
-<img/mem-mux.png, id=45, 1129.21875pt x 98.3675pt>
+<img/mem-mux.png, id=41, 1129.21875pt x 98.3675pt>
 File: img/mem-mux.png Graphic file (type png)
  <use img/mem-mux.png>
-Package pdftex.def Info: img/mem-mux.png used on input line 231.
+Package pdftex.def Info: img/mem-mux.png used on input line 198.
 (pdftex.def)             Requested size: 384.1096pt x 33.461pt.
 
 [8 <./img/rom-memory.png> <./img/mem-mux.png>]
-<img/comparador.png, id=52, 700.6175pt x 628.3475pt>
+<img/comparador.png, id=47, 700.6175pt x 628.3475pt>
 File: img/comparador.png Graphic file (type png)
  <use img/comparador.png>
-Package pdftex.def Info: img/comparador.png used on input line 249.
+Package pdftex.def Info: img/comparador.png used on input line 216.
 (pdftex.def)             Requested size: 341.43437pt x 306.2151pt.
 
-[9 <./img/comparador.png>] <img/ram-eda.png, id=57, 744.7825pt x 614.295pt>
+<img/ram-eda.png, id=48, 744.7825pt x 614.295pt>
 File: img/ram-eda.png Graphic file (type png)
-
-<use img/ram-eda.png>
-Package pdftex.def Info: img/ram-eda.png used on input line 262.
+ <use img/ram-eda.png>
+Package pdftex.def Info: img/ram-eda.png used on input line 229.
 (pdftex.def)             Requested size: 256.07741pt x 211.21962pt.
- [10 <./img/ram-eda.png>]
-<img/circuito-p2.jpg, id=62, 2380.895pt x 1731.46875pt>
+ [9 <./img/comparador.png>] [10 <./img/ram-eda.png>]
+<img/circuito-p2.jpg, id=58, 2380.895pt x 1731.46875pt>
 File: img/circuito-p2.jpg Graphic file (type jpg)
 
 <use img/circuito-p2.jpg>
-Package pdftex.def Info: img/circuito-p2.jpg used on input line 289.
+Package pdftex.def Info: img/circuito-p2.jpg used on input line 256.
 (pdftex.def)             Requested size: 384.1096pt x 279.3392pt.
 
-<img/circuito-p3.jpg, id=63, 283.0575pt x 414.54875pt>
+<img/circuito-p3.jpg, id=59, 283.0575pt x 414.54875pt>
 File: img/circuito-p3.jpg Graphic file (type jpg)
 
 <use img/circuito-p3.jpg>
-Package pdftex.def Info: img/circuito-p3.jpg used on input line 297.
+Package pdftex.def Info: img/circuito-p3.jpg used on input line 264.
 (pdftex.def)             Requested size: 256.07741pt x 375.06398pt.
  [11 <./img/circuito-p2.jpg>]
-<img/testeram.png, id=67, 1091.07625pt x 266.9975pt>
+<img/testeram.png, id=63, 1091.07625pt x 266.9975pt>
 File: img/testeram.png Graphic file (type png)
  <use img/testeram.png>
-Package pdftex.def Info: img/testeram.png used on input line 319.
+Package pdftex.def Info: img/testeram.png used on input line 286.
 (pdftex.def)             Requested size: 426.79135pt x 104.43822pt.
 
-[12 <./img/circuito-p3.jpg>]
-Underfull \hbox (badness 4096) in paragraph at lines 335--336
+[12 <./img/circuito-p3.jpg> <./img/testeram.png>]
+Underfull \hbox (badness 4096) in paragraph at lines 302--303
 []\OT1/ptm/m/n/12 Dispondo-se de to-das as fer-ra-men-tas necess[]arias, o test
 e foi re-al-izado
  []
 
-[13 <./img/testeram.png>] (./relatorio.bbl
-Underfull \hbox (badness 10000) in paragraph at lines 4--8
-[]\OT1/ptm/m/n/12 Coates, E. (2001).  Bi-nary Com-para-tors.  $\OT1/pcr/m/n/12 
-http : / / www .
- []
-
-
-Underfull \hbox (badness 4752) in paragraph at lines 4--8
-\OT1/pcr/m/n/12 learnabout-[]electronics . org / Digital / dig43 . php$\OT1/ptm
-/m/n/12 .  [On-line; ac-
- []
-
-
-Underfull \hbox (badness 1237) in paragraph at lines 34--39
-[]\OT1/ptm/m/n/12 Larson, S. (2013).  De-bounce Logic Cir-cuit (with VHDL ex-am
--ple).  $\OT1/pcr/m/n/12 https :
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 34--39
-\OT1/pcr/m/n/12 / / www . eewiki . net / display / LOGIC / Debounce + Logic + C
-ircuit +
- []
-
-) [14] (./relatorio.aux) ) 
+[13] (./relatorio.bbl) [14] (./relatorio.aux) ) 
 Here is how much of TeX's memory you used:
- 3587 strings out of 494971
- 53835 string characters out of 6180013
- 117799 words of memory out of 5000000
- 6723 multiletter control sequences out of 15000+600000
- 21548 words of font info for 46 fonts, out of 8000000 for 9000
+ 3501 strings out of 494971
+ 52387 string characters out of 6180013
+ 118613 words of memory out of 5000000
+ 6651 multiletter control sequences out of 15000+600000
+ 20011 words of font info for 41 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 43i,12n,40p,981b,290s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8
-r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb>
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/s
-hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/tex
-live/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/t
-exmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fon
-ts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw
-/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.
-pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share
-/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on relatorio.pdf (14 pages, 1359273 bytes).
+ 43i,12n,40p,1165b,244s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texlive/texmf-dist/f
+onts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
+12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><
+/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/s
+hare/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive
+/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fon
+ts/type1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/t
+imes/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pf
+b>
+Output written on relatorio.pdf (14 pages, 1289425 bytes).
 PDF statistics:
- 113 PDF objects out of 1000 (max. 8388607)
+ 109 PDF objects out of 1000 (max. 8388607)
  65 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 71 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 51 words of extra memory for PDF output out of 10000 (max. 10000000)
 
