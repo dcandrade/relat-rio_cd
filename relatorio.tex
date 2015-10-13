@@ -62,23 +62,23 @@ Em se tratando de Circuitos Digitais, diversos dispositivos têm uma ampla impor
 \label{fig:diagrama-estados}
 \end{figure}
 
-Existem basicamente, dois modelos de máquinas de estados, a saber, máquina Moore e máquina Mealy. Na máquina Moore, a saída depende única e exlcusivamente dos seus estados atuais, enquanto na máquina Mealy além de depender dos seus estados atuais, a saída depende, também, das variáveis de entrada naquele instante. Na \textbf{figura 2} podemos observar  o digrama de transiçao de estado para uma máquina Moore, já na \textbf{figura 3} temos o diagrama para uma máquina Mealy. É importante notarmos, através dos diagramas, a diferença referente a saída de cada máquina.    
+Existem basicamente, dois modelos de máquinas de estados, a saber, máquina Moore e máquina Mealy. Na máquina Moore, a saída depende única e exlcusivamente dos seus estados atuais, enquanto na máquina Mealy além de depender dos seus estados atuais, a saída depende, também, das variáveis de entrada naquele instante. Na \textbf{figura 2} podemos observar  o digrama de transição de estados para uma máquina Moore, já na \textbf{figura 3} temos o diagrama para uma máquina Mealy. É importante notarmos, através dos diagramas, a diferença referente a saída de cada máquina.   
 
 %COLOCAR AS IMAGENS REFERENTES AOS DIAGRAMS QUE SERÃO UTILIZADOS PARA REPRESENTAR OS TIPOS DE MAQUINAS DE ESTADOS EXISTENTES.
 
 \subsection{Flip-Flop T}
 
-Além dos Flip-Flops até o momento estudados, temos na literatura, outro flip-flop que é amplamente utilizado, qual seja, o Flip-flop T. Na \textbf{figura 3} podemos analisar o bloco lógico e a tabela verdade para este Flip-Flop. Quando a entrada T estiver em estado alto, o flip-flop T, onde T significa \textit{toggle}, comutará quando o \textit{clock} for aplicado. Se a entrada T for baixa, o flip-flop mantém o valor do seu estado.
+Além dos Flip-Flops até o momento estudados, temos na literatura, outro Flip-flop que é amplamente utilizado, qual seja, o Flip-flop T. Na \textbf{figura 4} podemos analisar o bloco lógico e a tabela verdade para este Flip-Flop. Quando a entrada T estiver em estado alto, o flip-flop T, onde T significa \textit{toggle}, comutará quando o \textit{clock} for aplicado. Se a entrada T for baixa, o flip-flop mantém o valor do seu estado. Vale lembrar, que o Flip-flop T pode ser obtido utilizando um Flip-flop J-K, basta conecatar as entradas J e K em nível lógico alto de maneira intermitente.  
 
 %colocar a figura do flip flop t
 
 \subsection{Registrador de Deslocamento}
 
-No universo dos circuitos digitais, principalmente no que diz respeito aos Flip-Flops, encontramos diversas aplicações. Uma, das várias aplicações é na forma de registrador de deslocamento, os quais são amplamente utilizados hoje em dia no desenvolvimento de circuitos robustos. Segundo \cite{floyd2011digital} os registradores de deslocamento consistem de arranjos de Flip-Flops e são importantes em aplicações que envolvem o armazenamento e a transferência de dados em sistemas digitais. É importante esclarecer, que o funcionamente do registrdor de dslocamento é diferente de um contador comum, ou seja, ele não tem uma sequência específica de estados, apesar de em alguns casos poder ser utilizado como tal. Na \textbf{figura 4} podemos ver um circuito típico para um registrador de deslocamento de quatro bits com entrada e saída serial de dados.
+No universo dos circuitos digitais, principalmente no que diz respeito aos Flip-Flops, encontramos diversas aplicações. Uma, das várias aplicações é na forma de registrador de deslocamento, os quais são amplamente utilizados hoje em dia no desenvolvimento de circuitos robustos. Segundo \cite{floyd2011digital} os registradores de deslocamento consistem de arranjos de Flip-Flops e são importantes em aplicações que envolvem o armazenamento e a transferência de dados em sistemas digitais. É importante esclarecer, que o funcionamente do registrdor de dslocamento é diferente de um contador comum, ou seja, ele não tem uma sequência específica de estados, apesar de em alguns casos poder ser utilizado como tal. Na \textbf{figura 5} podemos ver um circuito típico para um registrador de deslocamento de quatro bits com entrada e saída serial de dados.
 
 %Colocar Fgura do registrador de deslocamento
 
-São diversos, os tipos de registradores de deslocamento, na \textbf{figura 5} pode-se observar os diversos tipos de registradores de delocamento existentes, sendo ilustrados de forma abstrata. Dentre eles, um dos mais importantes está o registrador com entrada serial e saída paralela, o qual será abordado com mais detalhe na próxima subsubseção.
+São diversos, os tipos de registradores de deslocamento, na \textbf{figura 6} pode-se observar os diversos tipos de registradores de delocamento existentes, sendo ilustrados de forma abstrata. Dentre eles, um dos mais importantes está o registrador com entrada serial e saída paralela, o qual será abordado com mais detalhe na próxima subsubseção.
 
 
 %COLOCAR FIGURA DOS TIPOS DE REGISTRADORES DE DESLOCAMENTO.
@@ -86,7 +86,7 @@ São diversos, os tipos de registradores de deslocamento, na \textbf{figura 5} p
 
 \subsubsection{Registrador de deslocamento com entrada serial e saída paralela}
 
-Como o própio nome já designa, neste tipo de registrador a entrada de dados se dá de forma serial, contudo, a saída não será serial e sim paralela. Desta forma, segundo \cite{floyd2011digital} uma vez armazenados os dados, cada bit aparece em sua linha de saída respectiva e todos os bits são disponibilizados simultaneamente, em vez de um bit de cada vez como no registrador com saída serial. Na \textbf{figura 6} podemos ver uma exemplificação para este circuito. Notem que neste tipo de registrador a saída de cada estágio está disponível.
+Como o própio nome já designa, neste tipo de registrador a entrada de dados se dá de forma serial, contudo, a saída não será serial e sim paralela. Desta forma, segundo \cite{floyd2011digital} uma vez armazenados os dados, cada bit aparece em sua linha de saída respectiva e todos os bits são disponibilizados simultaneamente, em vez de um bit de cada vez como no registrador com saída serial. Na \textbf{figura 7} podemos ver uma exemplificação para este circuito. Notem que neste tipo de registrador a saída de cada estágio está disponível.
 
 %COLOCAR FIGURA DO REGISTRADOR DE DESLOCAMENTO SERIAL\PARALELO.
 
@@ -95,18 +95,22 @@ Como o própio nome já designa, neste tipo de registrador a entrada de dados se
 No contexto computacional, temos duas formas de comunicação principais, são elas: comunicação serial e comunicação paralela. cada uma com suas vantagens e desvantagens. Na comunicação paralela os bits são transferidos de maneira simultanea, conferindo para este tipo de comunicação a vantagem de rapidez e simplicidade de interface, contudo essa mesma vantagem acaba gerando algumas desvantagens, pois há um maior número de conexões, o que pode gerar ruído, perda de sincronismo além de um custo maior. Já na comunicação serial os dados são tranferidos  bit a bit, conferindo a vantagem de se ter menos fios, ou seja, baixo custo, além de ser capaz de transmitir dados em distâncias maiores. Contudo, nesta forma de comunicação, justamente por haver apenas um fio que transmite os dados, ela acaba sendo mais lenta, e com um grau de complexidade maior. Todavia, apesar das desvantagens da comunicação serial, a mesma se mostra mais robusta e mais viável, a ser aplicada em sistemas onde a confiabilidade dos dados são importantes. Assim, esta subseção tratará especificamente deste tipo de comunicação. 
 
 \subsubsection{Transmissão de Dados}
-Antes de falarmos acerca de como ocorrer a transmissão de dados de forma serial, é importante lembrar que existe diversas interfaces que empregam este tipo de comunicação, entre as interfaces mais antigas estão as portas DB9 e DB25, as quais podem ser encontradas nos computadores mais antigos. Na \textbf{figura 7} temos um exemplo para estas duas portas. Cada pino nestas portas tem uma determinada função, podendo variar de acordo com o seu tipo. Na  \textbf{figura 8} podemos ver a função de cada pindo na porta DB9.
+Antes de falarmos acerca de como ocorrer a transmissão de dados de forma serial, é importante lembrar que existe diversas interfaces que empregam este tipo de comunicação, entre as interfaces mais antigas estão as portas DB9 e DB25, as quais podem ser encontradas nos computadores mais antigos. Na \textbf{figura 8} temos um exemplo para estas duas portas. Cada pino nestas portas tem uma determinada função, podendo variar de acordo com o seu tipo. Na  \textbf{figura 9} podemos ver a função de cada pindo na porta DB9.
 
 %Colocar figura das portas.
 
+
+
+%colocar tambem a figura da funçao de cada pino para o porta db9
+
 Na maioria das aplicações, a comunicação serial acontece de forma assíncrona, onde geralmente se tem 11 bits sendo transfiridos. Um desses bits é o \textit{start bit}, o qual notifica um receptor que um novo dado serial esta disponível, seguido pelos bits de dados, um bit opcional de paridade \textit{parity} e um ou mais bits de parada \textit{stop bits}. %COLOCAR ESTE SITE COMO REFERENCIA(http://www.c2o.pro.br/automacao/x834.html)
-percebam que o número de bits de paridade, de parada podem variar, dependendo apenas do padrão de transmissão escolhido pelo projetista. Na \textbf{figura 9} pode-se analisar esta forma de comunicação de maneira mais concreta. Vale acrescentar, que enquanto o bit de paraada se manter em nível alto, os dados não estrão sendo transmitidos, e sim, apenas, quando ocorrer a mudança de estado do nível lógico alto para baixo, caracterizando assim, o bit de início, ou \textit{start bit}. 
+percebam que o número de bits de paridade, de parada podem variar, dependendo apenas do padrão de transmissão escolhido pelo projetista. Na \textbf{figura 10} pode-se analisar esta forma de comunicação de maneira mais concreta. Vale acrescentar, que enquanto o bit de paraada se manter em nível alto, os dados não estrão sendo transmitidos, e sim, apenas, quando ocorrer a mudança de estado do nível lógico alto para baixo, caracterizando assim, o bit de início, ou \textit{start bit}. 
 
 
 %COLOCAR IMAGEM DOS BITS SENDO TRANSMITIDOS.
 
 
-%PAREI AQUI.
+
 
 Cada dispositivo que emprega a comunicação serial, tem uma determinada taxa de velocidade, sendo que para se referir a velocidade de tranferência devemos usar o termo bps \textit{bits-per-second}, ou seja, bits por segundo. Em alguns equipamentos, costuma-se chamar esta taxa  como \textit{baud}. Desta forma, a expressão 9600 bps é equivalente a 9600 bauds.
 
@@ -114,7 +118,7 @@ Cada dispositivo que emprega a comunicação serial, tem uma determinada taxa de
 Segundo (http://www.c2o.pro.br/automacao/x834.html) RS-232 é um padrão definido pela \textit{EIA-Eletronic Industries Associatio}n para os dispositivos usados para comunicaçao serial. Este padrão está disponível em três versões, quais sejam, (A, B e C). Cada um especifica uma faixa de voltagens para os níveis ligado e desligado. Por exemplo, na versão RS-232 para representar  nível lógico alto utiliza-se as tensões de -3V a -12V, enquanto para representar nível lógico baixo é utilizado tensão na faixa de +3V e +12V. É importante notar que a representação de nível lógico alto e nível baixo nesse padrão não utiliza o modelo convencinal de tensão. Vale lembrar que este padrão é utilzado marjoritariamente nas portas DB9 e DB25.  
 
 \subsubsection{Conversor de nível MAX-232}
-Os dispositivos eletrônicos utilizam níveis de tensão diferentes para identificar nível lógico baixo e nível lógico alto, dependendo apenas da tecnologia que está sendo empregada. Desta forma, quando se vai utilizar a porta serial do computador pessoal para se comunicar com algum dispositivo controlador, tem-se que analisar o padrão que o mesmo utilza,pois a depender das especificações, será necessário fazer a conversão do nível. Por exemplo, vamos supor que queremos fazer uma comunicação entre o computador pesssoal através da porta serial, com uma \textit{FPGA}. No entanto, a \textit{FPGA} utiliza a tecnologia \textit{TTL}, ou seja, 0V a 0,8V representa nível lógico baixo e 2V a 5V representa nível lógico alto. Percebe-se, assim, uma imcompatibilidade entre o padrão RS-232 e o \textit{TTL}, desta forma é necessário fazer a conversão. Todavia, existe alguns dispositivos que tem a capacidade de fazer essa conversão, um deles é o MAX-232, o qual faz  a conversão entre os níveis utlizados pelo padrão RS-232 para TTL, e vice-versa. Na \textbf{figura 10} podemos ver uma configuração comum utilizando um conversor MAX-232. 
+Os dispositivos eletrônicos utilizam níveis de tensão diferentes para identificar nível lógico baixo e nível lógico alto, dependendo apenas da tecnologia que está sendo empregada. Desta forma, quando se vai utilizar a porta serial do computador pessoal para se comunicar com algum dispositivo controlador, tem-se que analisar o padrão que o mesmo utilza,pois a depender das especificações, será necessário fazer a conversão do nível. Por exemplo, vamos supor que queremos fazer uma comunicação entre o computador pesssoal através da porta serial, com uma \textit{FPGA}. No entanto, a \textit{FPGA} utiliza a tecnologia \textit{TTL}, ou seja, 0V a 0,8V representa nível lógico baixo e 2V a 5V representa nível lógico alto. Percebe-se, assim, uma imcompatibilidade entre o padrão RS-232 e o \textit{TTL}, desta forma é necessário fazer a conversão. Todavia, existe alguns dispositivos que tem a capacidade de fazer essa conversão, um deles é o MAX-232, o qual faz  a conversão entre os níveis utlizados pelo padrão RS-232 para TTL, e vice-versa. Na \textbf{figura 11} podemos ver uma configuração comum utilizando um conversor MAX-232. 
 
 
 %COLOCAR IMAGEM DO CIRCUITO DO MAX
