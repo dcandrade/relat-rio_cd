@@ -1,5 +1,5 @@
 \documentclass[12pt]{article}
-
+\usepackage[utf8]{inputenc}
 \usepackage{sbc-template}
 
 \usepackage{graphicx,url}
@@ -14,17 +14,17 @@
 %RENAMES
 \renewcommand{\figurename}{Figura}
 \renewcommand{\tablename}{Tabela}
-\renewcommand{\refname}{ReferÍncias}
+\renewcommand{\refname}{Refer√™ncias}
      
 \sloppy
 
-\title{Problema 4: "NOME DO PROBLEMA AQUI E EM UMA FIGURA AI"}
+\title{Problema 4: "Batalha Naval"}
 
 \author{Turma P04}
 
 
-\address{MI - Projetos de Circuitos Digitais, PerÌodo 2015.1\\ Tutor: Marcos Paz\\
-Curso de Engenharia de ComputaÁ„o \\ Universidade Estadual de Feira de Santana (UEFS)
+\address{MI - Projetos de Circuitos Digitais, Per√≠odo 2015.1\\ Tutor: Marcos Paz\\
+Curso de Engenharia de Computa√ß√£o \\ Universidade Estadual de Feira de Santana (UEFS)
 }
 
 \begin{document} 
@@ -32,25 +32,25 @@ Curso de Engenharia de ComputaÁ„o \\ Universidade Estadual de Feira de Santana (
 \maketitle
 
 \begin{resumo} 
-O presente relatÛrio descreve o processo de resoluÁ„o do terceiro problema do MI - Circuitos Digitais, da supracitada turma,no perÌodo de 2015.1, na Universidade Estadual de Feira de Santana. O problema propÙs, dado o sucesso dos projetos pretÈritos, que os estudantes desenvolvessem um protÛtipo do jogo Batalha Naval em \textit{FPGA}, tomando como base o  protÛtipo do controlador para matriz de \textit{LED}, sendo que a comunicaÁ„o com este novo circuito deveria acontecer atravÈs de um computador pessoal utilizando o conceito de comunicaÁ„o serial, tornando o projeto a ser desenvolvido, mais confi·vel em relaÁ„o a transmiss„o de dados.
+O presente relat√≥rio descreve o processo de resolu√ß√£o do terceiro problema do MI - Circuitos Digitais, da supracitada turma,no per√≠odo de 2015.1, na Universidade Estadual de Feira de Santana. O problema prop√¥s, dado o sucesso dos projetos pret√©ritos, que os estudantes desenvolvessem um prot√≥tipo do jogo Batalha Naval em \textit{FPGA}, tomando como base o  prot√≥tipo do controlador para matriz de \textit{LED}, sendo que a comunica√ß√£o com este novo circuito deveria acontecer atrav√©s de um computador pessoal utilizando o conceito de comunica√ß√£o serial, tornando o projeto a ser desenvolvido, mais confi√°vel em rela√ß√£o a transmiss√£o de dados.
 \end{resumo}
 
-\section{IntroduÁ„o} \label{sec:firstpage}
+\section{Introdu√ß√£o} \label{sec:firstpage}
 
-Hoje em dia cresce, substancialmente, a ampla utilizaÁ„o de jogos no segmento l˙dico de simulaÁ„o 2D. Estes s„o utilizados em diversas ·reas conhecidas, tendo uma mais elevada utilizaÁ„o na educaÁ„o. AlÈm do papel que os mesmos podem fornecer ‡ educaÁ„o, podem servir , tambÈm, ˙nica e exclusivamente como forma de entretenimento entre os mais jovens, bem como para o p˙blico mais adulto. Um exemplo destes jogos, È famigerado Batalha Naval. Sendo no Brasil no ano de 1988, o jogo batalha naval È um dos jogos de maiores sucessos entre o p˙blico mundial. Em sua forma mais r˙stica, dois advers·rios desenhavam em folhas de papel, navios posicionados em um mar imagin·rio quadriculado, formando uma grade. Todavia, no contexto atual, alÈm de encontrar versıes deste jogo de maneira similar aos seus primÛrdios, encontra-se, tambÈm, aplicativos para diversas arquiteturas que executam o mesmo processo, facilitando assim a sua disseminaÁ„o entre as pessoas.
+Hoje em dia cresce, substancialmente, a ampla utiliza√ß√£o de jogos no segmento l√∫dico de simula√ß√£o 2D. Estes s√£o utilizados em diversas √°reas conhecidas, tendo uma mais elevada utiliza√ß√£o na educa√ß√£o. Al√©m do papel que os mesmos podem fornecer √† educa√ß√£o, podem servir , tamb√©m, √∫nica e exclusivamente como forma de entretenimento entre os mais jovens, bem como para o p√∫blico mais adulto. Um exemplo destes jogos, √© famigerado Batalha Naval. Sendo no Brasil no ano de 1988, o jogo batalha naval √© um dos jogos de maiores sucessos entre o p√∫blico mundial. Em sua forma mais r√∫stica, dois advers√°rios desenhavam em folhas de papel, navios posicionados em um mar imagin√°rio quadriculado, formando uma grade. Todavia, no contexto atual, al√©m de encontrar vers√µes deste jogo de maneira similar aos seus prim√≥rdios, encontra-se, tamb√©m, aplicativos para diversas arquiteturas que executam o mesmo processo, facilitando assim a sua dissemina√ß√£o entre as pessoas.
 
-AlÈm da existÍncia, como visto, deste tipo de jogo na forma de aplicativos mÛveis, existe a possibilidade, tambÈm, de desenvolvÍ-lo utilizando circuitos digitais, visando a criaÁ„o de um jogo l˙dico de simulaÁ„o 2D.  … de se notar, que para desenvolvÍ-lo, faz-se necess·rio utilizar um conceito muito importante na eletrÙnica digital, a saber, memÛria RAM. A criaÁ„o deste tipo de jogo, traz diversas vantagens para o empreendedor que o desenvolve, justamente pelo fato do mercado de jogos est· sempre em constante expans„o. lembrando que hoje em dia, aplicaÁıes envolvendo a tecnologia digital tem ampla aceitaÁ„o no mercado, o ser humano necessita de recursos tecnolÛgicos, com forma tambÈm de pertenÁa, e inclus„o no mundo global tecnolÛgico. 
+Al√©m da exist√™ncia, como visto, deste tipo de jogo na forma de aplicativos m√≥veis, existe a possibilidade, tamb√©m, de desenvolv√™-lo utilizando circuitos digitais, visando a cria√ß√£o de um jogo l√∫dico de simula√ß√£o 2D.  √â de se notar, que para desenvolv√™-lo, faz-se necess√°rio utilizar um conceito muito importante na eletr√¥nica digital, a saber, mem√≥ria RAM. A cria√ß√£o deste tipo de jogo, traz diversas vantagens para o empreendedor que o desenvolve, justamente pelo fato do mercado de jogos est√° sempre em constante expans√£o. lembrando que hoje em dia, aplica√ß√µes envolvendo a tecnologia digital tem ampla aceita√ß√£o no mercado, o ser humano necessita de recursos tecnol√≥gicos, com forma tamb√©m de perten√ßa, e inclus√£o no mundo global tecnol√≥gico. 
 
-Desta forma, observando a mudanÁa atual do mercado, principalmente no que diz respeito a alta receptividade em relaÁ„o a jogos eletrÙnicos, o grupo Inova Digital Bahia S.A  resolveu adaptar o projeto desenvolvido anteriormente, para que o mesmo funcionasse como uma espÈcie de jogo Batalha Naval, seguindo um modelo de simulaÁ„o $2D$. Sendo que este novo protÛtipo deveria ser controlado remotamente, a partir de um computador pessoal, enviando os dados por meio de canal de comunicaÁ„o serial. Neste jogo, dois modos estar„o disponÌveis, o modo de gravaÁ„o e o modo de jogo propriamente dito, cada modo contendo suas especificaÁıes e caracterÌsticas prÛprias, as quais ser„o descritas nas seÁıes posteriores.
+Desta forma, observando a mudan√ßa atual do mercado, principalmente no que diz respeito a alta receptividade em rela√ß√£o a jogos eletr√¥nicos, o grupo Inova Digital Bahia S.A  resolveu adaptar o projeto desenvolvido anteriormente, para que o mesmo funcionasse como uma esp√©cie de jogo Batalha Naval, seguindo um modelo de simula√ß√£o $2D$. Sendo que este novo prot√≥tipo deveria ser controlado remotamente, a partir de um computador pessoal, enviando os dados por meio de canal de comunica√ß√£o serial. Neste jogo, dois modos estar√£o dispon√≠veis, o modo de grava√ß√£o e o modo de jogo propriamente dito, cada modo contendo suas especifica√ß√µes e caracter√≠sticas pr√≥prias, as quais ser√£o descritas nas se√ß√µes posteriores.
 
-… importante lembrar, que para desenvolver este projeto, foram utilizados alÈm dos recursos j· conhecidos, fez-se uso tambÈm de M·quinas de estados, registrador de descolocamento, porta serial, protocolo de comunicaÁ„o RS-232, conversores de nÌveis elÈtricos e, por ˙ltimo, mas n„o menos importante, Software para comunicaÁ„o com Hardware.
+√â importante lembrar, que para desenvolver este projeto, foram utilizados al√©m dos recursos j√° conhecidos, fez-se uso tamb√©m de M√°quinas de estados, registrador de descolocamento, porta serial, protocolo de comunica√ß√£o RS-232, conversores de n√≠veis el√©tricos e, por √∫ltimo, mas n√£o menos importante, Software para comunica√ß√£o com Hardware.
 
-\section{FundamentaÁ„o TeÛrica}
+\section{Fundamenta√ß√£o Te√≥rica}
 
-Na seÁ„o que segue, ser„o descritos os conceitos utilizados para resoluÁ„o do problema proposto, frisando os conceitos que foram de fundamental import‚ncia para solucionar o mesmo, tendo contribuiÁ„o de maneira direta ou indireta.
+Na se√ß√£o que segue, ser√£o descritos os conceitos utilizados para resolu√ß√£o do problema proposto, frisando os conceitos que foram de fundamental import√¢ncia para solucionar o mesmo, tendo contribui√ß√£o de maneira direta ou indireta.
 
-\subsection{M·quinas de Estados}
-Em se tratando de Circuitos Digitais, diversos dispositivos tÍm uma ampla import‚ncia, dentre estes dispositivos temos os conhecidos contadores, os quais segundo\cite{tocci1997digital} s„o M·quinas de estados especÌficas. Floyd, por sua vez, vai mais adiante, e fala que M·quinas de estados ou circuito sequencial È um circuito que  consiste de uma seÁ„o de lÛgica combinacional e uma seÁ„o de memÛria (flip-flops)\cite{floyd2011digital}. Na figura~\ref{fig:diagrama} podemos observar o circuito tÌpico para uma m·quina de estados. Vale acrescentar que a quantidade de estados que uma m·quina pode interpretar È diretamente ligada a quantidade de Flip-Flop, a quantidade de estados pode ser obtido fazendo $2^{n}$, sendo n o n˙mero de Flip-flops.  
+\subsection{M√°quinas de Estados}
+Em se tratando de Circuitos Digitais, diversos dispositivos t√™m uma ampla import√¢ncia, dentre estes dispositivos temos os conhecidos contadores, os quais segundo\cite{tocci1997digital} s√£o M√°quinas de estados espec√≠ficas. Floyd, por sua vez, vai mais adiante, e fala que M√°quinas de estados ou circuito sequencial √© um circuito que  consiste de uma se√ß√£o de l√≥gica combinacional e uma se√ß√£o de mem√≥ria (flip-flops)\cite{floyd2011digital}. Na figura~\ref{fig:diagrama} podemos observar o circuito t√≠pico para uma m√°quina de estados. Vale acrescentar que a quantidade de estados que uma m√°quina pode interpretar √© diretamente ligada a quantidade de Flip-Flop, a quantidade de estados pode ser obtido fazendo $2^{n}$, sendo n o n√∫mero de Flip-flops.  
 
 \begin{figure}[!htbp]
 \centering
@@ -59,26 +59,26 @@ Em se tratando de Circuitos Digitais, diversos dispositivos tÍm uma ampla import
 \label{fig:diagrama}
 \end{figure}
 
-Existem basicamente, dois modelos de m·quinas de estados, a saber, m·quina Moore e m·quina Mealy. Na m·quina Moore, a saÌda depende ˙nica e exclusivamente dos seus estados atuais, enquanto na m·quina Mealy alÈm de depender dos seus estados atuais, a saÌda depende, tambÈm, das vari·veis de entrada naquele instante. Na figura~\ref{fig:diagrama-mealy}  podemos observar  o digrama de transiÁ„o de estados para uma m·quina Moore, j· na figura~\ref{fig:diagrama-moore} temos o diagrama para uma m·quina Mealy. … importante notarmos, atravÈs dos diagramas, a diferenÁa referente a saÌda de cada m·quina.   
+Existem basicamente, dois modelos de m√°quinas de estados, a saber, m√°quina Moore e m√°quina Mealy. Na m√°quina Moore, a sa√≠da depende √∫nica e exclusivamente dos seus estados atuais, enquanto na m√°quina Mealy al√©m de depender dos seus estados atuais, a sa√≠da depende, tamb√©m, das vari√°veis de entrada naquele instante. Na figura~\ref{fig:diagrama-mealy}  podemos observar  o digrama de transi√ß√£o de estados para uma m√°quina Moore, j√° na figura~\ref{fig:diagrama-moore} temos o diagrama para uma m√°quina Mealy. √â importante notarmos, atrav√©s dos diagramas, a diferen√ßa referente a sa√≠da de cada m√°quina.   
 
 %Figura 2 e 3
 \begin{figure}[!htbp]
 \centering
 \includegraphics[width=.5\textwidth]{img/p4/fig2MaquinaMealy.png}
-\caption{Exemplo de diagrama de estados usando uma m·quina Mealy}
+\caption{Exemplo de diagrama de estados usando uma m√°quina Mealy}
 \label{fig:diagrama-mealy}
 \end{figure}
 
 \begin{figure}[!htbp]
 \centering
 \includegraphics[width=.5\textwidth]{img/p4/fig3MaquinaMoore.png}
-\caption{Exemplo de diagrama de estados usando uma m·quina Moore}
+\caption{Exemplo de diagrama de estados usando uma m√°quina Moore}
 \label{fig:diagrama-moore}
 \end{figure}
 
 \subsection{Flip-Flop T}
 
-AlÈm dos Flip-Flops atÈ o momento estudados, temos na literatura, outro Flip-flop que È amplamente utilizado, qual seja, o Flip-flop T. Na figura~\ref{fig:fft} podemos analisar o bloco lÛgico e a tabela verdade para este Flip-Flop. Quando a entrada T estiver em estado alto, o flip-flop T, onde T significa \textit{toggle}, comutar· quando o \textit{clock} for aplicado. Se a entrada T for baixa, o flip-flop mantÈm o valor do seu estado. Vale lembrar, que o Flip-flop T pode ser obtido utilizando um Flip-flop J-K, basta conectar as entradas J e K em nÌvel lÛgico alto de maneira intermitente.  
+Al√©m dos Flip-Flops at√© o momento estudados, temos na literatura, outro Flip-flop que √© amplamente utilizado, qual seja, o Flip-flop T. Na figura~\ref{fig:fft} podemos analisar o bloco l√≥gico e a tabela verdade para este Flip-Flop. Quando a entrada T estiver em estado alto, o flip-flop T, onde T significa \textit{toggle}, comutar√° quando o \textit{clock} for aplicado. Se a entrada T for baixa, o flip-flop mant√©m o valor do seu estado. Vale lembrar, que o Flip-flop T pode ser obtido utilizando um Flip-flop J-K, basta conectar as entradas J e K em n√≠vel l√≥gico alto de maneira intermitente.  
 
 \begin{figure}[!htbp]
 \centering
@@ -89,19 +89,19 @@ AlÈm dos Flip-Flops atÈ o momento estudados, temos na literatura, outro Flip-flo
 
 \subsection{Registrador de Deslocamento}
 
-No universo dos circuitos digitais, principalmente no que diz respeito aos Flip-Flops, encontramos diversas aplicaÁıes. Uma, das v·rias aplicaÁıes È na forma de registrador de deslocamento, os quais s„o amplamente utilizados hoje em dia no desenvolvimento de circuitos robustos. Segundo \cite{floyd2011digital} os registradores de deslocamento consistem de arranjos de Flip-Flops e s„o importantes em aplicaÁıes que envolvem o armazenamento e a transferÍncia de dados em sistemas digitais. … importante esclarecer, que o funcionamente do registrador de deslocamento È diferente de um contador comum, ou seja, ele n„o tem uma sequÍncia especÌfica de estados, apesar de em alguns casos poder ser utilizado como tal. Na figura~\ref{fig:rdeslocamento} podemos ver um circuito tÌpico para um registrador de deslocamento de quatro bits com entrada e saÌda serial de dados.
+No universo dos circuitos digitais, principalmente no que diz respeito aos Flip-Flops, encontramos diversas aplica√ß√µes. Uma, das v√°rias aplica√ß√µes √© na forma de registrador de deslocamento, os quais s√£o amplamente utilizados hoje em dia no desenvolvimento de circuitos robustos. Segundo \cite{floyd2011digital} os registradores de deslocamento consistem de arranjos de Flip-Flops e s√£o importantes em aplica√ß√µes que envolvem o armazenamento e a transfer√™ncia de dados em sistemas digitais. √â importante esclarecer, que o funcionamente do registrador de deslocamento √© diferente de um contador comum, ou seja, ele n√£o tem uma sequ√™ncia espec√≠fica de estados, apesar de em alguns casos poder ser utilizado como tal. Na figura~\ref{fig:rdeslocamento} podemos ver um circuito t√≠pico para um registrador de deslocamento de quatro bits com entrada e sa√≠da serial de dados.
 
 \begin{figure}[!htbp]
 \centering
 \includegraphics[width=.7\textwidth]{img/p4/Fig5RegistradorDeslocamento.png}
-\caption{RepresentaÁ„o de um registrador de deslocamento de 4 bits \cite{floyd2011digital}}
+\caption{Representa√ß√£o de um registrador de deslocamento de 4 bits \cite{floyd2011digital}}
 \label{fig:rdeslocamento}
 \end{figure}
 
 
 \subsection{Flip-Flop T}
 
-S„o diversos, os tipos de registradores de deslocamento, na figura~\ref{fig:registradores} pode-se observar os diversos tipos de registradores de deslocamento existentes, sendo ilustrados de forma abstrata. Dentre eles, um dos mais importantes est· o registrador com entrada serial e saÌda paralela, o qual ser· abordado com mais detalhe na prÛxima sub-subseÁ„o.
+S√£o diversos, os tipos de registradores de deslocamento, na figura~\ref{fig:registradores} pode-se observar os diversos tipos de registradores de deslocamento existentes, sendo ilustrados de forma abstrata. Dentre eles, um dos mais importantes est√° o registrador com entrada serial e sa√≠da paralela, o qual ser√° abordado com mais detalhe na pr√≥xima sub-subse√ß√£o.
 
 \begin{figure}[!htbp]
 \centering
@@ -110,9 +110,9 @@ S„o diversos, os tipos de registradores de deslocamento, na figura~\ref{fig:regi
 \label{fig:registradores}
 \end{figure}
 
-\subsubsection{Registrador de deslocamento com entrada serial e saÌda paralela}
+\subsubsection{Registrador de deslocamento com entrada serial e sa√≠da paralela}
 
-Como o prÛprio nome j· designa, neste tipo de registrador a entrada de dados se d· de forma serial, contudo, a saÌda n„o ser· serial e sim paralela. Desta forma, segundo \cite{floyd2011digital} uma vez armazenados os dados, cada bit aparece em sua linha de saÌda respectiva e todos os bits s„o disponibilizados simultaneamente, em vez de um bit de cada vez como no registrador com saÌda serial. Na figura~\ref{fig:registradorsp} podemos ver uma exemplificaÁ„o para este circuito. Notem que neste tipo de registrador a saÌda de cada est·gio est· disponÌvel.
+Como o pr√≥prio nome j√° designa, neste tipo de registrador a entrada de dados se d√° de forma serial, contudo, a sa√≠da n√£o ser√° serial e sim paralela. Desta forma, segundo \cite{floyd2011digital} uma vez armazenados os dados, cada bit aparece em sua linha de sa√≠da respectiva e todos os bits s√£o disponibilizados simultaneamente, em vez de um bit de cada vez como no registrador com sa√≠da serial. Na figura~\ref{fig:registradorsp} podemos ver uma exemplifica√ß√£o para este circuito. Notem que neste tipo de registrador a sa√≠da de cada est√°gio est√° dispon√≠vel.
 
 \begin{figure}[!htbp]
 \centering
@@ -121,11 +121,11 @@ Como o prÛprio nome j· designa, neste tipo de registrador a entrada de dados se 
 \label{fig:registradorsp}
 \end{figure}
 
-\subsection{ComunicaÁ„o Serial}
-No contexto computacional, temos duas formas de comunicaÁ„o principais, s„o elas: comunicaÁ„o serial e comunicaÁ„o paralela. cada uma com suas vantagens e desvantagens. Na comunicaÁ„o paralela os bits s„o transferidos de maneira simult‚nea, conferindo para este tipo de comunicaÁ„o a vantagem de rapidez e simplicidade de interface, contudo essa mesma vantagem acaba gerando algumas desvantagens, pois h· um maior n˙mero de conexıes, o que pode gerar ruÌdo, perda de sincronismo alÈm de um custo maior. J· na comunicaÁ„o serial os dados s„o transferidos  bit a bit, conferindo a vantagem de se ter menos fios, ou seja, baixo custo, alÈm de ser capaz de transmitir dados em dist‚ncias maiores. Contudo, nesta forma de comunicaÁ„o, justamente por haver apenas um fio que transmite os dados, ela acaba sendo mais lenta, e com um grau de complexidade maior. Todavia, apesar das desvantagens da comunicaÁ„o serial, a mesma se mostra mais robusta e mais vi·vel, a ser aplicada em sistemas onde a confiabilidade dos dados s„o importantes. Assim, esta subseÁ„o tratar· especificamente deste tipo de comunicaÁ„o. 
+\subsection{Comunica√ß√£o Serial}
+No contexto computacional, temos duas formas de comunica√ß√£o principais, s√£o elas: comunica√ß√£o serial e comunica√ß√£o paralela. cada uma com suas vantagens e desvantagens. Na comunica√ß√£o paralela os bits s√£o transferidos de maneira simult√¢nea, conferindo para este tipo de comunica√ß√£o a vantagem de rapidez e simplicidade de interface, contudo essa mesma vantagem acaba gerando algumas desvantagens, pois h√° um maior n√∫mero de conex√µes, o que pode gerar ru√≠do, perda de sincronismo al√©m de um custo maior. J√° na comunica√ß√£o serial os dados s√£o transferidos  bit a bit, conferindo a vantagem de se ter menos fios, ou seja, baixo custo, al√©m de ser capaz de transmitir dados em dist√¢ncias maiores. Contudo, nesta forma de comunica√ß√£o, justamente por haver apenas um fio que transmite os dados, ela acaba sendo mais lenta, e com um grau de complexidade maior. Todavia, apesar das desvantagens da comunica√ß√£o serial, a mesma se mostra mais robusta e mais vi√°vel, a ser aplicada em sistemas onde a confiabilidade dos dados s√£o importantes. Assim, esta subse√ß√£o tratar√° especificamente deste tipo de comunica√ß√£o. 
 
-\subsubsection{Transmiss„o de Dados}
-Antes de falarmos acerca de como ocorrer a transmiss„o de dados de forma serial, È importante lembrar que existe diversas interfaces que empregam este tipo de comunicaÁ„o, entre as interfaces mais antigas est„o as portas $DB9$ e $DB25$, as quais podem ser encontradas nos computadores mais antigos. Na figura~\ref{fig:db9db25} temos um exemplo para estas duas portas. Cada pino nestas portas tem uma determinada funÁ„o, podendo variar de acordo com o seu tipo. Na  figura~\ref{fig:pinosdb9} podemos ver a funÁ„o de cada pino na porta $DB9$.
+\subsubsection{Transmiss√£o de Dados}
+Antes de falarmos acerca de como ocorrer a transmiss√£o de dados de forma serial, √© importante lembrar que existe diversas interfaces que empregam este tipo de comunica√ß√£o, entre as interfaces mais antigas est√£o as portas $DB9$ e $DB25$, as quais podem ser encontradas nos computadores mais antigos. Na figura~\ref{fig:db9db25} temos um exemplo para estas duas portas. Cada pino nestas portas tem uma determinada fun√ß√£o, podendo variar de acordo com o seu tipo. Na  figura~\ref{fig:pinosdb9} podemos ver a fun√ß√£o de cada pino na porta $DB9$.
 
 
 \begin{figure}[!htbp]
@@ -144,25 +144,25 @@ Antes de falarmos acerca de como ocorrer a transmiss„o de dados de forma serial,
 
 
 
-Na maioria das aplicaÁıes, a comunicaÁ„o serial acontece de forma assÌncrona, onde geralmente se tem 11 bits sendo transferidos. Um desses bits È o \textit{start bit}, o qual notifica um receptor que um novo dado serial esta disponÌvel, seguido pelos bits de dados, um bit opcional de paridade \textit{parity} e um ou mais bits de parada \textit{stop bits}\cite{porta-serial}. Percebam que o n˙mero de bits de paridade, de parada podem variar, dependendo apenas do padr„o de transmiss„o escolhido pelo projetista. Na figura~\ref{fig:cserial} pode-se analisar esta forma de comunicaÁ„o de maneira mais concreta. Vale acrescentar, que enquanto o bit de parada se manter em nÌvel alto, os dados n„o estar„o sendo transmitidos, e sim, apenas, quando ocorrer a mudanÁa de estado do nÌvel lÛgico alto para baixo, caracterizando assim, o bit de inÌcio, ou \textit{start bit}. 
+Na maioria das aplica√ß√µes, a comunica√ß√£o serial acontece de forma ass√≠ncrona, onde geralmente se tem 11 bits sendo transferidos. Um desses bits √© o \textit{start bit}, o qual notifica um receptor que um novo dado serial esta dispon√≠vel, seguido pelos bits de dados, um bit opcional de paridade \textit{parity} e um ou mais bits de parada \textit{stop bits}\cite{porta-serial}. Percebam que o n√∫mero de bits de paridade, de parada podem variar, dependendo apenas do padr√£o de transmiss√£o escolhido pelo projetista. Na figura~\ref{fig:cserial} pode-se analisar esta forma de comunica√ß√£o de maneira mais concreta. Vale acrescentar, que enquanto o bit de parada se manter em n√≠vel alto, os dados n√£o estar√£o sendo transmitidos, e sim, apenas, quando ocorrer a mudan√ßa de estado do n√≠vel l√≥gico alto para baixo, caracterizando assim, o bit de in√≠cio, ou \textit{start bit}. 
 
 
 \begin{figure}[!htbp]
 \centering
 \includegraphics[width=.5\textwidth]{img/p4/Fig10rs232.jpg}
-\caption{CaracterÌsticas de uma transferÍncia de dados serial.}
+\caption{Caracter√≠sticas de uma transfer√™ncia de dados serial.}
 \label{fig:cserial}
 \end{figure}
 
 
 
-Cada dispositivo que emprega a comunicaÁ„o serial, tem uma determinada taxa de velocidade, sendo que para se referir a velocidade de transferÍncia devemos usar o termo bps \textit{bits-per-second}, ou seja, bits por segundo. Em alguns equipamentos, costuma-se chamar esta taxa  como \textit{baud}. Desta forma, a express„o 9600 bps È equivalente a 9600 bauds.
+Cada dispositivo que emprega a comunica√ß√£o serial, tem uma determinada taxa de velocidade, sendo que para se referir a velocidade de transfer√™ncia devemos usar o termo bps \textit{bits-per-second}, ou seja, bits por segundo. Em alguns equipamentos, costuma-se chamar esta taxa  como \textit{baud}. Desta forma, a express√£o 9600 bps √© equivalente a 9600 bauds.
 
-\subsubsection{Padr„o RS-232}
-Segundo (http://www.c2o.pro.br/automacao/x834.html) RS-232 È um padr„o definido pela \textit{EIA-Eletronic Industries Association} para os dispositivos usados para comunicaÁ„o serial. Este padr„o est· disponÌvel em trÍs versıes, quais sejam, (A, B e C). Cada um especifica uma faixa de voltagens para os nÌveis ligado e desligado. Por exemplo, na vers„o RS-232 para representar  nÌvel lÛgico alto utiliza-se as tensıes de $-3V$ a $-12V$, enquanto para representar nÌvel lÛgico baixo È utilizado tens„o na faixa de $+3V$ e $+12V$. … importante notar que a representaÁ„o de nÌvel lÛgico alto e nÌvel baixo nesse padr„o n„o utiliza o modelo convencional de tens„o. Vale lembrar que este padr„o È utilizado marjoritariamente nas portas $DB9$ e $DB25$.  
+\subsubsection{Padr√£o RS-232}
+Segundo (http://www.c2o.pro.br/automacao/x834.html) RS-232 √© um padr√£o definido pela \textit{EIA-Eletronic Industries Association} para os dispositivos usados para comunica√ß√£o serial. Este padr√£o est√° dispon√≠vel em tr√™s vers√µes, quais sejam, (A, B e C). Cada um especifica uma faixa de voltagens para os n√≠veis ligado e desligado. Por exemplo, na vers√£o RS-232 para representar  n√≠vel l√≥gico alto utiliza-se as tens√µes de $-3V$ a $-12V$, enquanto para representar n√≠vel l√≥gico baixo √© utilizado tens√£o na faixa de $+3V$ e $+12V$. √â importante notar que a representa√ß√£o de n√≠vel l√≥gico alto e n√≠vel baixo nesse padr√£o n√£o utiliza o modelo convencional de tens√£o. Vale lembrar que este padr√£o √© utilizado marjoritariamente nas portas $DB9$ e $DB25$.  
 
-\subsubsection{Conversor de nÌvel MAX-232}
-Os dispositivos eletrÙnicos utilizam nÌveis de tens„o diferentes para identificar nÌvel lÛgico baixo e nÌvel lÛgico alto, dependendo apenas da tecnologia que est· sendo empregada. Desta forma, quando se vai utilizar a porta serial do computador pessoal para se comunicar com algum dispositivo controlador, tem-se que analisar o padr„o que o mesmo utiliza,pois a depender das especificaÁıes, ser· necess·rio fazer a convers„o do nÌvel. Por exemplo, vamos supor que queremos fazer uma comunicaÁ„o entre o computador pessoal atravÈs da porta serial, com uma \textit{FPGA}. No entanto, a \textit{FPGA} utiliza a tecnologia \textit{TTL}, ou seja, 0V a 0,8V representa nÌvel lÛgico baixo e $2V$ a $5V$ representa nÌvel lÛgico alto. Percebe-se, assim, uma incompatibilidade entre o padr„o RS-232 e o \textit{TTL}, desta forma È necess·rio fazer a convers„o. Todavia, existe alguns dispositivos que tem a capacidade de fazer essa convers„o, um deles È o MAX-232, o qual faz  a convers„o entre os nÌveis utilizados pelo padr„o RS-232 para TTL, e vice-versa. Na figura~\ref{fig:232} podemos ver uma configuraÁ„o comum utilizando um conversor MAX-232. 
+\subsubsection{Conversor de n√≠vel MAX-232}
+Os dispositivos eletr√¥nicos utilizam n√≠veis de tens√£o diferentes para identificar n√≠vel l√≥gico baixo e n√≠vel l√≥gico alto, dependendo apenas da tecnologia que est√° sendo empregada. Desta forma, quando se vai utilizar a porta serial do computador pessoal para se comunicar com algum dispositivo controlador, tem-se que analisar o padr√£o que o mesmo utiliza,pois a depender das especifica√ß√µes, ser√° necess√°rio fazer a convers√£o do n√≠vel. Por exemplo, vamos supor que queremos fazer uma comunica√ß√£o entre o computador pessoal atrav√©s da porta serial, com uma \textit{FPGA}. No entanto, a \textit{FPGA} utiliza a tecnologia \textit{TTL}, ou seja, 0V a 0,8V representa n√≠vel l√≥gico baixo e $2V$ a $5V$ representa n√≠vel l√≥gico alto. Percebe-se, assim, uma incompatibilidade entre o padr√£o RS-232 e o \textit{TTL}, desta forma √© necess√°rio fazer a convers√£o. Todavia, existe alguns dispositivos que tem a capacidade de fazer essa convers√£o, um deles √© o MAX-232, o qual faz  a convers√£o entre os n√≠veis utilizados pelo padr√£o RS-232 para TTL, e vice-versa. Na figura~\ref{fig:232} podemos ver uma configura√ß√£o comum utilizando um conversor MAX-232. 
 
 \begin{figure}[!htbp]
 \centering
@@ -171,27 +171,27 @@ Os dispositivos eletrÙnicos utilizam nÌveis de tens„o diferentes para identifica
 \label{fig:232}
 \end{figure}
 
-\subsubsection{Software de comunicaÁ„o}
+\subsubsection{Software de comunica√ß√£o}
 
-Para poder coletar os dados diretamente do usu·rio e envi·-los para o circuito, os mesmos precisam passar por um tratamento. Entre o caminho percorrido est· abrir a porta de comunicaÁ„o, converter os dados coletados por o usu·rio em bin·rio e, finalmente, envi·-los atravÈs do $DB-9$.
+Para poder coletar os dados diretamente do usu√°rio e envi√°-los para o circuito, os mesmos precisam passar por um tratamento. Entre o caminho percorrido est√° abrir a porta de comunica√ß√£o, converter os dados coletados por o usu√°rio em bin√°rio e, finalmente, envi√°-los atrav√©s do $DB-9$.
 
-Para ajudar as realizar as tarefas correspondentes ao manuseio de permissıes e envio de dados, foi utilizada a biblioteca $RS232$, construÌda em linguagem C e disponÌvel e documentada em $http://www.teuniz.net/RS-232/$.
+Para ajudar as realizar as tarefas correspondentes ao manuseio de permiss√µes e envio de dados, foi utilizada a biblioteca $RS232$, constru√≠da em linguagem C e dispon√≠vel e documentada em $http://www.teuniz.net/RS-232/$.
 \section{Metodologia}
-Utilizando-se, mais uma vez, da base teÛrica fornecida pela metodologia $PBL$, os alunos componentes da turma T04 iniciaram as sessıes destinadas a soluÁ„o do problema com a leitura do mesmo em duas etapas, uma individual e outra coletiva. Tendo como objetivo a detecÁ„o inicial de d˙vidas, fatos importantes relacionados ao problema e ideias de soluÁıes, o $brainstorm$ inicial ajudou e identificar as principais caracterÌsticas do problema, bem assim como ter uma ideia de como iniciar o desenvolvimento do mesmo.
+Utilizando-se, mais uma vez, da base te√≥rica fornecida pela metodologia $PBL$, os alunos componentes da turma T04 iniciaram as sess√µes destinadas a solu√ß√£o do problema com a leitura do mesmo em duas etapas, uma individual e outra coletiva. Tendo como objetivo a detec√ß√£o inicial de d√∫vidas, fatos importantes relacionados ao problema e ideias de solu√ß√µes, o $brainstorm$ inicial ajudou e identificar as principais caracter√≠sticas do problema, bem assim como ter uma ideia de como iniciar o desenvolvimento do mesmo.
 
 
-Os membros da sess„o, solucionando as questıes um dos outros quando possÌvel durante o processo, buscaram tomar decisıes de projeto para formalizaÁ„o das obrigaÁıes, analisando fatores positivos e negativos das soluÁıes propostas, optando pela soluÁ„o que fosse mais simples e que estivesse de acordo com o problema, de acordo com a vis„o dos alunos. Com esse mÈtodo deu-se inÌcio a construÁ„o da soluÁ„o do problema 4 do MI - Circuitos Digitais, comeÁando pela formalizaÁ„o e definiÁ„o de padrıes de projeto e de um diagrama que as mostrasse aplicadas ao circuito.
+Os membros da sess√£o, solucionando as quest√µes um dos outros quando poss√≠vel durante o processo, buscaram tomar decis√µes de projeto para formaliza√ß√£o das obriga√ß√µes, analisando fatores positivos e negativos das solu√ß√µes propostas, optando pela solu√ß√£o que fosse mais simples e que estivesse de acordo com o problema, de acordo com a vis√£o dos alunos. Com esse m√©todo deu-se in√≠cio a constru√ß√£o da solu√ß√£o do problema 4 do MI - Circuitos Digitais, come√ßando pela formaliza√ß√£o e defini√ß√£o de padr√µes de projeto e de um diagrama que as mostrasse aplicadas ao circuito.
 
-\subsection{Decisıes de Projeto}
+\subsection{Decis√µes de Projeto}
 
-Antes de iniciar a implementaÁ„o do projeto em si, È necess·rio traÁar o caminho a percorrer durante todo o processo de soluÁ„o do problema. Essa metodologia foi adotada pelos membros da sess„o apÛs algumas decisıes de projeto que n„o deram o resultado esperado nos problemas anteriores, causando incongruÍncias entre os mÛdulos projetados entre diferentes membros da turma. 
+Antes de iniciar a implementa√ß√£o do projeto em si, √© necess√°rio tra√ßar o caminho a percorrer durante todo o processo de solu√ß√£o do problema. Essa metodologia foi adotada pelos membros da sess√£o ap√≥s algumas decis√µes de projeto que n√£o deram o resultado esperado nos problemas anteriores, causando incongru√™ncias entre os m√≥dulos projetados entre diferentes membros da turma. 
 
-Dado o sucesso da abordagem no problema anterior, foi de comum acordo  que a turma deveria modularizar o problema e dividir tais mÛdulos entre pequenos subgrupos, sendo que cada subgrupo deveria enviar um pequeno relatÛrio contendo todas as informaÁıes necess·rias para a elaboraÁ„o do mesmo, para conscientizar os outros alunos do processo de construÁ„o, alÈm da descriÁ„o do bloco na ferramenta EDA \textit{Quartus II 9.0}. Para garantir que, quando fossem unidos, todos os blocos funcionassem, a turma elaborou um diagrama completo do problema, estabelecendo padrıes para cada segmento.
+Dado o sucesso da abordagem no problema anterior, foi de comum acordo  que a turma deveria modularizar o problema e dividir tais m√≥dulos entre pequenos subgrupos, sendo que cada subgrupo deveria enviar um pequeno relat√≥rio contendo todas as informa√ß√µes necess√°rias para a elabora√ß√£o do mesmo, para conscientizar os outros alunos do processo de constru√ß√£o, al√©m da descri√ß√£o do bloco na ferramenta EDA \textit{Quartus II 9.0}. Para garantir que, quando fossem unidos, todos os blocos funcionassem, a turma elaborou um diagrama completo do problema, estabelecendo padr√µes para cada segmento.
 
-\subsection{ElaboraÁ„o do Diagrama}
-Iniciado na primeira sess„o do problema 4 e finalizado na terceira sess„o do mesmo problema, o diagrama teve como objetivo fazer com que todos os alunos tivessem consciÍncia plena do funcionamento do circuito, da entrada ‡ saÌda. Descrevendo as relaÁıes entre os blocos e a funÁ„o, a quantidade de entrada e a quantidade de saÌdas de cada um deles e, tambÈm,  padrıes de nomenclatura, o diagrama descreve o que cada subgrupo deve fazer para que, quando combinadas, as fraÁıes do problema resultem em um circuito funcional e dentro da perspectiva do problema. 
+\subsection{Elabora√ß√£o do Diagrama}
+Iniciado na primeira sess√£o do problema 4 e finalizado na terceira sess√£o do mesmo problema, o diagrama teve como objetivo fazer com que todos os alunos tivessem consci√™ncia plena do funcionamento do circuito, da entrada √† sa√≠da. Descrevendo as rela√ß√µes entre os blocos e a fun√ß√£o, a quantidade de entrada e a quantidade de sa√≠das de cada um deles e, tamb√©m,  padr√µes de nomenclatura, o diagrama descreve o que cada subgrupo deve fazer para que, quando combinadas, as fra√ß√µes do problema resultem em um circuito funcional e dentro da perspectiva do problema. 
 
-O resultado desse processo de descriÁ„o em alto nÌvel do projeto pode ser conferido na figura~\ref{fig:diagrama}, que destaca tambÈm as tarefas de cada subgrupo. Por exemplo, o subgrupo vermelho È respons·vel pela elaboraÁ„o dos mÛdulos correspondentes ao \textit{comparador} e \textit{Bloco do Mux-Coordenada}.
+O resultado desse processo de descri√ß√£o em alto n√≠vel do projeto pode ser conferido na figura~\ref{fig:diagrama}, que destaca tamb√©m as tarefas de cada subgrupo. Por exemplo, o subgrupo vermelho √© respons√°vel pela elabora√ß√£o dos m√≥dulos correspondentes ao \textit{comparador} e \textit{Bloco do Mux-Coordenada}.
 
 \begin{figure}[!htbp]
 \centering
@@ -201,65 +201,73 @@ O resultado desse processo de descriÁ„o em alto nÌvel do projeto pode ser confer
 \end{figure}
 
 
-\subsection{MemÛrias RAM}
+\subsection{Mem√≥rias RAM}
 
-Como explicitado nas regras determinadas pela turma, o jogo ser· composto de 15 jogadas de preenchimento do tabuleiro mais 20 jogadas na qual o jogador tentar· acertar o barco do oponente. A partir desse dado, È perceptÌvel que precisam ser armazenados 15 posiÁıes diferentes, sendo cada uma correspondente a um pixel de um barco que foi inserido no tabuleiro. Utilizando a codificaÁ„o de 8 $bits$ por coordenada, sendo 4 bits correspondentes a linha e outros 4 correspondentes ao pixel escolhido. A partir dessas informaÁıes, chega-se a conclus„o que a cÈlula da memÛria RAM deve ter 1 byte, e que a memÛria deve conter 15 dessas cÈlulas.
+Como explicitado nas regras determinadas pela turma, o jogo ser√° composto de 15 jogadas de preenchimento do tabuleiro mais 20 jogadas na qual o jogador tentar√° acertar o barco do oponente. A partir desse dado, √© percept√≠vel que precisam ser armazenados 15 posi√ß√µes diferentes, sendo cada uma correspondente a um pixel de um barco que foi inserido no tabuleiro. Utilizando a codifica√ß√£o de 8 $bits$ por coordenada, sendo 4 bits correspondentes a linha e outros 4 correspondentes ao pixel escolhido. A partir dessas informa√ß√µes, chega-se a conclus√£o que a c√©lula da mem√≥ria RAM deve ter 1 byte, e que a mem√≥ria deve conter 15 dessas c√©lulas.
 
-Tendo em vista o mercado e a praticidade para uso em grandes escalas, a equipe resolveu construir uma memÛria com 16 cÈlulas de 1 byte. Tal decis„o foi tomada partindo dos princÌpios que o mÈtodo de endereÁamento da mesma n„o seria alterado, mas a 16™ cÈlula ficaria ociosa. PorÈm, por ser uma potÍncia de $2$, tal memÛria pode ser ligada em cascata de modo que um conjunto das mesmas possa, com facilidade, originar uma memÛria das capacidades comuns e requisitadas do mercado, como 512$mb$, 1$gb$, 4$gb$ e entre outras.
+Tendo em vista o mercado e a praticidade para uso em grandes escalas, a equipe resolveu construir uma mem√≥ria com 16 c√©lulas de 1 byte. Tal decis√£o foi tomada partindo dos princ√≠pios que o m√©todo de endere√ßamento da mesma n√£o seria alterado, mas a 16¬™ c√©lula ficaria ociosa. Por√©m, por ser uma pot√™ncia de $2$, tal mem√≥ria pode ser ligada em cascata de modo que um conjunto das mesmas possa, com facilidade, originar uma mem√≥ria das capacidades comuns e requisitadas do mercado, como 512$mb$, 1$gb$, 4$gb$ e entre outras.
 
-Diferentemente do problema anterior, no Problema 4, o endereÁador de memÛria foi integrado na mesma, objetivando uma maior congruÍncia de projeto e uma vis„o mais limpa e ampla da totalidade do mesmo. AlÈm dessa caracterÌstica, como pode ser visto na figura~\ref{fig:ram15} a memÛria elaborada conta com 8 bits de entrada, um bit de clock, um bit de $clear$, um bit seletor $R/\overline{W}$ e 4 bits de endereÁamento. Essa ˙ltima caracterÌstica segue o padr„o crescente de 0 a 15, ou seja, o endereÁo 0 corresponde a primeira cÈlula de memÛria, o 2 a segunda e assim por diante.
+Diferentemente do problema anterior, no Problema 4, o endere√ßador de mem√≥ria foi integrado na mesma, objetivando uma maior congru√™ncia de projeto e uma vis√£o mais limpa e ampla da totalidade do mesmo. Al√©m dessa caracter√≠stica, como pode ser visto na figura~\ref{fig:ram15} a mem√≥ria elaborada conta com 8 bits de entrada, um bit de clock, um bit de $clear$, um bit seletor $R/\overline{W}$ e 4 bits de endere√ßamento. Essa √∫ltima caracter√≠stica segue o padr√£o crescente de 0 a 15, ou seja, o endere√ßo 0 corresponde a primeira c√©lula de mem√≥ria, o 2 a segunda e assim por diante.
 
 
 \begin{figure}[!htbp]
 \centering
 \includegraphics[width=.3\textwidth]{img/p4/ram15bytes.png}
-\caption{Bloco lÛgico da MemÛria Ram na EDA}
+\caption{Bloco l√≥gico da Mem√≥ria Ram na EDA}
 \label{fig:ram15}
 \end{figure}
 
-\subsubsection{CÈlula de MemÛria}
+\subsubsection{C√©lula de Mem√≥ria}
 
-Para elaborar o item anterior, fez-se necess·ria a elaboraÁ„o de uma unidade menor de memÛria, sendo esta a unidade b·sica utilizada no projeto, 1 byte. Em suma, cada cÈlula de memÛria do tipo demonstrado na figura ~\ref{fig:celulamemoria} funciona como uma miniatura da memÛria anteriormente citada, porÈm sÛ possui um bit de endereÁamento, uma vez que sÛ existem duas possibilidades: estar ou n„o estar selecionada.
+Para elaborar o item anterior, fez-se necess√°ria a elabora√ß√£o de uma unidade menor de mem√≥ria, sendo esta a unidade b√°sica utilizada no projeto, 1 byte. Em suma, cada c√©lula de mem√≥ria do tipo demonstrado na figura ~\ref{fig:celulamemoria} funciona como uma miniatura da mem√≥ria anteriormente citada, por√©m s√≥ possui um bit de endere√ßamento, uma vez que s√≥ existem duas possibilidades: estar ou n√£o estar selecionada.
 
 \begin{figure}[!htbp]
 \centering
 \includegraphics[width=.3\textwidth]{img/p4/celulamemoria.png}
-\caption{Bloco lÛgico da MemÛria Ram na EDA}
+\caption{Bloco l√≥gico da Mem√≥ria Ram na EDA}
 \label{fig:celulamemoria}
 \end{figure}
 
-Buscando melhorar o desempenho da memÛria, em suas cÈlulas foram implementados diferentes mecanismos, um deles permite que a mesma seja ligada, ou desligada completamente, j· o outro faz com que a memÛria sÛ seja gravada uma ˙nica vez, evitando possÌveis dados duplicados e alteraÁ„o indevida dos mesmos. O segundo mecanismo pode ser visto na figura~\ref{fig:ff1}. Esse mecanismo È uma m·quina de estados de Moore que est· representada na figura~\ref{fig:fsm}. O outro mecanismo corresponde a equaÁ„o de excitaÁ„o de um registrador do tipo T para as vari·veis dadas. T deve mudar de estado quando sua saÌda $Q$ e sua entrada $I$ forem diferentes, e, alÈm disso, a $Z$ do mecanismo anterior deve estar em nÌvel lÛgico 1, ou seja: T= Z(Q$\oplus$I).
+Buscando melhorar o desempenho da mem√≥ria, em suas c√©lulas foram implementados diferentes mecanismos, um deles permite que a mesma seja ligada, ou desligada completamente, j√° o outro faz com que a mem√≥ria s√≥ seja gravada uma √∫nica vez, evitando poss√≠veis dados duplicados e altera√ß√£o indevida dos mesmos. O segundo mecanismo pode ser visto na figura~\ref{fig:ff1}. Esse mecanismo √© uma m√°quina de estados de Moore que est√° representada na figura~\ref{fig:fsm}. O outro mecanismo corresponde a equa√ß√£o de excita√ß√£o de um registrador do tipo T para as vari√°veis dadas. T deve mudar de estado quando sua sa√≠da $Q$ e sua entrada $I$ forem diferentes, e, al√©m disso, a $Z$ do mecanismo anterior deve estar em n√≠vel l√≥gico 1, ou seja: T= Z(Q$\oplus$I).
 
 \begin{figure}[!htbp]
 \centering
 \includegraphics[width=.8\textwidth]{img/p4/ff1.png}
-\caption{M·quina de estados para m·quina de uma ˙nica aÁ„o.}
+\caption{M√°quina de estados para m√°quina de uma √∫nica a√ß√£o.}
 \label{fig:ff1}
 \end{figure}
 
 \begin{figure}[!htbp]
 \centering
 \includegraphics[width=.3\textwidth]{img/p4/fsm.png}
-\caption{Diagrama de estados para m·quina de uma ˙nica aÁ„o.}
+\caption{Diagrama de estados para m√°quina de uma √∫nica a√ß√£o.}
 \label{fig:fsm}
 \end{figure}
 
 
-\subsubsection{ComunicaÁ„o Serial}
-%TODO
+\subsubsection{Comunica√ß√£o Serial}
 
-\subsection{Transmiss„o de Dados}
-%TODO
+Um, dos v√°rios requisitos propostos pelo problema quatro, diz respeito a comunica√ß√£o serial que deveria acontecer entre o computador pessoal e o Circuito Digital desenvolvido, onde esta, haveria de ser configurada no modo $start-stop$ ass√≠ncrono, sendo que o frame de dados que seria utilizado nesse modo seria composto por 11 $bits$. Assim, √© de se notar que a transfer√™ncia de dados ocorreria utilizando alguma das portas seriais existentes em um computador pessoal. Desta forma, foi definido entre os membros do grupo que seria utilizada a porta serial $DB9$ para fazer essa comunica√ß√£o no projeto que estava sendo desenvolvido, ou seja, seria utilizado o padr√£o $RS-232$ de comunica√ß√£o de dados.
 
-\subsection{UnificaÁ„o dos blocos em um projeto}
+Depois de definir que seria utilizado a porta $DB9$, era necess√°rio criar um circuito que fosse capaz de identificar quando essa transfer√™ncia estivesse acontecendo, ou seja, um circuito que fosse capaz de reconhecer quando o computador estava enviando um $frame$ de dados para $FPGA$. Este circuito deveria ser capaz, ainda, de transformar os dados que estavam sendo transferidos de forma serial, para o formato paralelo, tornando assim poss√≠vel a leitura correta dos dados, possibilitando o seu uso em outra parte do circuito. A FIGURA AQUI mostra os blocos l√≥gicos para este circuito. Nesta FIGURA podemos observar tr√™s blocos de grande import√¢ncia, a saber, o bloco AtivaRecepcao, outro bloco chamado Contador, e mais chamado RegistraDados.O AtivaRecepcao √© respons√°vel, como o pr√≥prio nome dele j√° deixa explicito, por ativar a recep√ß√£o do $frame$ de dados advindos da porta serial do computador pessoal. Quando o $start-bit$ √© detectado, a entrada $Enable$ deste bloco muda para n√≠vel l√≥gico, alto ativando assim o bloco RegistraDados, o qual inicia de fato a leitura do $frame$ de dados enviados. Percebam que neste mesmo bloco temos uma entrada chamada DadosLidos, esta entrada √© respons√°vel por levar o $Enable$ novamente para n√≠vel baixo, tornando poss√≠vel uma nova leitura. Sendo que a entrada √© correspondente ao $stop-bit$, ou seja, o √∫ltimo bit do $frame$ de dados, indicando que aqueles determinados dados foram lidos com sucesso. Pelo fato da simplicidade do circuito interno, o mesmo n√£o ser√° exibido. 
 
-Diferentemente do problema anterior, no problema 4 a tarefa dada como prioridade a um subgrupo, assim como a tarefa de refatoraÁ„o do circuito e montagem do cabo de transmiss„o foram dados como prioridades a outros grupos. Apesar de estarem respons·veis, o respectivo grupo n„o tirava de ninguÈm a responsabilidade de montar por si sÛ o circuito novamente, em busca de aprender por inteiro o funcionamento do mesmo.
+J√° o bloco Contador, tem uma fun√ß√£o por demasiada simples, ele √© ativado quando se inicia a leitura de um $frame$ de dados. Ele √© um contador de m√≥dulo 10, ou seja, √© capaz de gerar dez estados distintos. Ele √© utilizado para ativar a sa√≠da dos dados lidos de forma serial, ou seja, depois que os $bits$ vindos do canal de comunica√ß√£o serial forem lidos e convertidos para o formato paralelo, o contador estar√° no seu nono estado, qual seja, 1001, esse mesmo valor √© decodificado, ativando assim a sa√≠da de dados do registrador paralelo, pois esse valor decodificado gerar√° um n√≠vel l√≥gico alto, onde esse valor alto √© a entrada do $Clock$ do registrador paralelo. Essa ideia tornar-se-√° mais clara depois que o circuito interno do bloco RegistraDados for observado. √â importante salientar, tamb√©m, que o circuito interno do contador n√£o ser√° mostrado, devido, √© claro, a sua simplicidade de implementa√ß√£o.
 
-Ao receber os blocos, n„o foi difÌcil mont·-los em um ˙nico projeto, uma vez que, semelhante ao problema anterior, teve-se ao lado um diagrama com todas as conexıes e padrıes de cada unidade lÛgica ali presente, e, alÈm disso, todas j· estavam devidamente testadas, eliminando chances de haverem problemas relacionados ao mal funcionamento de alguma das unidades. Feita a montagem, a mesma foi disponibilizada para o grupo para an·lise e verificaÁ„o de erros. Nenhum erro foi apontado.
+O bloco RegistraDados, dentre, os blocos descritos, √© o mais importante, pois ele √© o respons√°vel, por, de fato, armazenar e transformar os $bits$ do formato serial para paralelo. O circuito interno para este bloco pode ser observado no ANEXO 1.  O funcionamento deste bloco √© bem simples. Depois de ativado, inicia-se a leitura e convers√£o dos dados para o formato paraleloa cada pulso do $clock$, sendo que o registrador de entrada de dados, est√° conectado, tamb√©m a outro registrador de sa√≠da de dados, onde cada $Flip-Flop$ de acordo com seu valor posicional est√£o conectados entre si. Observem que os dados que est√£o no registrador de sa√≠da de dados, s√≥ estar√£o dispon√≠veis, realmente, quando o valor do contador estiver em 9, evidenciando assim, que todos os $bits$ foram lidos de forma correta, podendo desta forma, serem disponibilizados para outra aplica√ß√£o fazer uso.  √â importante salientar, que depois que este conjunto de dados forem lidos, tanto o bloco AtivaRecepcao, quanto o bloco Contador, ser√£o resetados, podendo, ent√£o, serem utilizados na recep√ß√£o de outro conjunto de $bits$.
 
-\subsection{RefatoraÁ„o do circuito na protoboard}
+Vale asseverar, que os bits advindos da porta serial est√£o sendo transferidos a uma taxa de 9600 $bits$ por segundo, ou 9,6$kbs$. Isto foi definido no $software$ que fora desenvolvido tendo como objetivo justamente fazer esta interface entre o usu√°rio e o circuito projetado.
 
-Para poder comportar a transmiss„o serial, o circuito fÌsico precisava ser modificado, adicionando suporte a um conversor de tens„o, alguns capacitores e um cabo de transmiss„o serial. AlÈm disso, muitos dos componentes do problema anterior puderam ser retirados, muitos deles relacionados a entrada de dados, tais como o DIP Switch e resistores de $pull-down$. Um dos itens adicionados a protoboard foi o MAX-232, um circuito que converte a tens„o vinda da porta $DB9$ do computador para a tens„o na faixa TTL. Para funcionar corretamente, o mesmo foi adicionado ao circuito seguindo as instruÁıes da figura~\ref{fig:max232}
+Quando se fala em comunica√ß√£o serial, o sincronismo utilizado para recep√ß√£o dos dados, deve ser observado de forma minuciosa, visando a leitura correta dos dados que est√£o no $frame$.  Desta forma, tentando resolver o problema do sincronismo no projeto desenvolvido foi utilizado o seguinte pensamento: como a frequ√™ncia do $clock$ da $FPGA$ √© de 32,768 $MHz$ e a taxa de $bits$ por segundo utilizada na programa√ß√£o √© de 9600 $bps$, fazendo 32768000/x = 9600, teremos X valendo aproximadamente 3413, ou seja, usando um contador de m√≥dulo 17 para alternar um $Flip-Flop T$ e obter uma frequ√™ncia 34 vezes menor, sendo que em seguida foi necess√°rio inserir um contador de m√≥dulo 100 para dividir a frequ√™ncia por 200.Tendo assim, um pulso de clock a cada bit enviado.
+
+\subsection{Unifica√ß√£o dos blocos em um projeto}
+
+Diferentemente do problema anterior, no problema 4 a tarefa dada como prioridade a um subgrupo, assim como a tarefa de refatora√ß√£o do circuito e montagem do cabo de transmiss√£o foram dados como prioridades a outros grupos. Apesar de estarem respons√°veis, o respectivo grupo n√£o tirava de ningu√©m a responsabilidade de montar por si s√≥ o circuito novamente, em busca de aprender por inteiro o funcionamento do mesmo.
+
+Ao receber os blocos, n√£o foi dif√≠cil mont√°-los em um √∫nico projeto, uma vez que, semelhante ao problema anterior, teve-se ao lado um diagrama com todas as conex√µes e padr√µes de cada unidade l√≥gica ali presente, e, al√©m disso, todas j√° estavam devidamente testadas, eliminando chances de haverem problemas relacionados ao mal funcionamento de alguma das unidades. Feita a montagem, a mesma foi disponibilizada para o grupo para an√°lise e verifica√ß√£o de erros. Nenhum erro foi apontado.
+
+\subsection{Refatora√ß√£o do circuito na protoboard}
+
+Para poder comportar a transmiss√£o serial, o circuito f√≠sico precisava ser modificado, adicionando suporte a um conversor de tens√£o, alguns capacitores e um cabo de transmiss√£o serial. Al√©m disso, muitos dos componentes do problema anterior puderam ser retirados, muitos deles relacionados a entrada de dados, tais como o DIP Switch e resistores de $pull-down$. Um dos itens adicionados a protoboard foi o MAX-232, um circuito que converte a tens√£o vinda da porta $DB9$ do computador para a tens√£o na faixa TTL. Para funcionar corretamente, o mesmo foi adicionado ao circuito seguindo as instru√ß√µes da figura~\ref{fig:max232}
 
 \begin{figure}[!htbp]
 \centering
@@ -268,58 +276,58 @@ Para poder comportar a transmiss„o serial, o circuito fÌsico precisava ser modif
 \label{fig:max232}
 \end{figure}
 
-Para o cabo de comunicaÁ„o, foi utilizado um cabo antigo e uma porta $DB9$ fÍmea. No $DB9$ foram soldados fios nas entradas $TX$, $RX$ e $GND$, mesmo sabendo que apenas a porta $TX$ seria usada, uma vez que os dados seguiriam uma via ˙nica do computador para o circuito.
+Para o cabo de comunica√ß√£o, foi utilizado um cabo antigo e uma porta $DB9$ f√™mea. No $DB9$ foram soldados fios nas entradas $TX$, $RX$ e $GND$, mesmo sabendo que apenas a porta $TX$ seria usada, uma vez que os dados seguiriam uma via √∫nica do computador para o circuito.
 
-\section{Discussıes e resultados}
+\section{Discuss√µes e resultados}
 
-Nesta sess„o ser„o abordados os principais resultados obtidos, os testes realizados e, alÈm disso, ser„o abordados alguns detalhes que dizem respeito ao circuito lÛgico.
+Nesta sess√£o ser√£o abordados os principais resultados obtidos, os testes realizados e, al√©m disso, ser√£o abordados alguns detalhes que dizem respeito ao circuito l√≥gico.
 
-\subsection{Testes lÛgicos no ambiente Quartus II}
+\subsection{Testes l√≥gicos no ambiente Quartus II}
 
-Passados como tarefas para os subgrupos, os testes lÛgicos foram realizados bloco-a-bloco, tentando diminuir ao m·ximo a chance de qualquer erro de implementaÁ„o de lÛgica. Para os testes da memÛria RAM de 15 bytes e do conversor serial-paralelo, dado o fato que esses s„o os ˙nicos itens que o grupo n„o trabalhou ou conhece na escala exigida pelo problema.
+Passados como tarefas para os subgrupos, os testes l√≥gicos foram realizados bloco-a-bloco, tentando diminuir ao m√°ximo a chance de qualquer erro de implementa√ß√£o de l√≥gica. Para os testes da mem√≥ria RAM de 15 bytes e do conversor serial-paralelo, dado o fato que esses s√£o os √∫nicos itens que o grupo n√£o trabalhou ou conhece na escala exigida pelo problema.
 
-\subsubsection{Testes da MemÛria RAM}
+\subsubsection{Testes da Mem√≥ria RAM}
 
-Inicialmente, foi feito um conjunto de testes b·sicos para verificar se a memÛria estava sendo capaz de distinguir os momentos de gravaÁ„o/leitura e gravando apenas um dado por cÈlula. Para isso, foi fixado uma cÈlula(no caso da figura~\ref{fig:ramtest}, a do endereÁo $EB0=0, EB1=0, EB2=0, EB3=0$). Avaliando os resultados, percebe-se uma constante nas saÌdas $0,1,2,3,4,5,6,7$ que equivalem aos primeiros valores enviados no modo de gravaÁ„o, apontando o sucesso do teste.
+Inicialmente, foi feito um conjunto de testes b√°sicos para verificar se a mem√≥ria estava sendo capaz de distinguir os momentos de grava√ß√£o/leitura e gravando apenas um dado por c√©lula. Para isso, foi fixado uma c√©lula(no caso da figura~\ref{fig:ramtest}, a do endere√ßo $EB0=0, EB1=0, EB2=0, EB3=0$). Avaliando os resultados, percebe-se uma constante nas sa√≠das $0,1,2,3,4,5,6,7$ que equivalem aos primeiros valores enviados no modo de grava√ß√£o, apontando o sucesso do teste.
 
 \begin{figure}[!htbp]
 \centering
 \includegraphics[width=1\textwidth]{img/p4/testram1.png}
-\caption{Teste de persistÍncia e modo de operaÁ„o}
+\caption{Teste de persist√™ncia e modo de opera√ß√£o}
 \label{fig:ramtest}
 \end{figure}
 
-Prosseguindo os testes, o teste anterior foi repetido em uma escala de variaÁ„o maior e utilizando-se todos os endereÁos disponÌveis da memÛria RAM. O esperado È que a saÌda equivalesse ao primeiro valor de entrada em cada uma das cÈlulas, e para cada perÌodo de clock entre 1 e 15, as entradas deveriam equivaler as saÌdas quando a memÛria estivesse em modo leitura. Ou seja, se em loop de entradas constantes, quando for colocada em modo de leitura, a memÛria vai "imitar" as 16 primeiras sequÍncias de entrada, como demonstrado com sucesso no teste descrito na figura~\ref{fig:ramtest2}.
+Prosseguindo os testes, o teste anterior foi repetido em uma escala de varia√ß√£o maior e utilizando-se todos os endere√ßos dispon√≠veis da mem√≥ria RAM. O esperado √© que a sa√≠da equivalesse ao primeiro valor de entrada em cada uma das c√©lulas, e para cada per√≠odo de clock entre 1 e 15, as entradas deveriam equivaler as sa√≠das quando a mem√≥ria estivesse em modo leitura. Ou seja, se em loop de entradas constantes, quando for colocada em modo de leitura, a mem√≥ria vai "imitar" as 16 primeiras sequ√™ncias de entrada, como demonstrado com sucesso no teste descrito na figura~\ref{fig:ramtest2}.
 
 \begin{figure}[!htbp]
 \centering
 \includegraphics[width=1\textwidth]{img/p4/testram2.png}
-\caption{Teste de persistÍncia e modo de operaÁ„o}
+\caption{Teste de persist√™ncia e modo de opera√ß√£o}
 \label{fig:ramtest2}
 \end{figure}
 
 \subsection{Funcionamento do Circuito}
-Segundo os requisitos do Problema 4, o usu·rio deve entrar com coordenadas em um software que se encarregar· de direcionar os dados para o circuito, no qual o tratamento de dados ser· feito. A partir desses dados, existem dois momentos:
+Segundo os requisitos do Problema 4, o usu√°rio deve entrar com coordenadas em um software que se encarregar√° de direcionar os dados para o circuito, no qual o tratamento de dados ser√° feito. A partir desses dados, existem dois momentos:
 
 \begin{itemize}
-\item Modo Planejamento: O usu·rio insere 15 coordenadas nas quais deseja que fiquem seus barcos, inicialmente todos os pixels da matriz est„o apagados.
-\item Modo Jogo: O usu·rio tenta acertar os pixels que representam barcos, caso acerte, o pixel acende. O n˙mero m·ximo de tentativas È de 20, e caso n„o consiga encontrar todos os barcos, o jogo È encerrado.
+\item Modo Planejamento: O usu√°rio insere 15 coordenadas nas quais deseja que fiquem seus barcos, inicialmente todos os pixels da matriz est√£o apagados.
+\item Modo Jogo: O usu√°rio tenta acertar os pixels que representam barcos, caso acerte, o pixel acende. O n√∫mero m√°ximo de tentativas √© de 20, e caso n√£o consiga encontrar todos os barcos, o jogo √© encerrado.
 \end{itemize}
 
-\subsection{Testes pr·ticos}
-Antes de realizar os testes do circuito na Protoboard, fazia-se necess·rio fazer a demarcaÁ„o dos pinos adicionais na ferramenta Quartus II e  gravar o circuito lÛgico do mesmo na FPGA disponÌvel no laboratÛrio. Dada significante queda de uso dos pinos do problema 3 para o problema 4, n„o foi necess·ria a demarcaÁ„o de pinos e os menos foram reaproveitados. Ligados os novos componentes, o circuito foi ligado e a gravaÁ„o foi feita.
+\subsection{Testes pr√°ticos}
+Antes de realizar os testes do circuito na Protoboard, fazia-se necess√°rio fazer a demarca√ß√£o dos pinos adicionais na ferramenta Quartus II e  gravar o circuito l√≥gico do mesmo na FPGA dispon√≠vel no laborat√≥rio. Dada significante queda de uso dos pinos do problema 3 para o problema 4, n√£o foi necess√°ria a demarca√ß√£o de pinos e os menos foram reaproveitados. Ligados os novos componentes, o circuito foi ligado e a grava√ß√£o foi feita.
 
 
-Dispondo-se de todas as ferramentas necess·rias, o teste foi realizado introduzindo-se todas as coordenadas possÌveis via software... %TODO
+Dispondo-se de todas as ferramentas necess√°rias, o teste foi realizado introduzindo-se todas as coordenadas poss√≠veis via software... %TODO
 
 
-\section{Conclus„o}
+\section{Conclus√£o}
 
 %TODO
 
-\section{ReferÍncias}
+\section{Refer√™ncias}
 
-Nessa seÁ„o constam os trabalhos utilizados como base teÛrica que foram necess·rios para chegar a soluÁ„o descrita nesse relatÛrio.
+Nessa se√ß√£o constam os trabalhos utilizados como base te√≥rica que foram necess√°rios para chegar a solu√ß√£o descrita nesse relat√≥rio.
 
 
 \bibliographystyle{sbc}
