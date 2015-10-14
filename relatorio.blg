@@ -3,44 +3,44 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: relatorio.aux
 The style file: sbc.bst
 Database file #1: sbc-template.bib
-You've used 3 entries,
+You've used 4 entries,
             1935 wiz_defined-function locations,
-            487 strings with 4016 characters,
-and the built_in function-call counts, 782 in all, are:
-= -- 77
-> -- 21
-< -- 3
-+ -- 6
-- -- 6
-* -- 47
-:= -- 156
-add.period$ -- 9
-call.type$ -- 3
-change.case$ -- 17
-chr.to.int$ -- 3
-cite$ -- 3
-duplicate$ -- 34
-empty$ -- 54
-format.name$ -- 9
-if$ -- 145
+            491 strings with 4133 characters,
+and the built_in function-call counts, 1057 in all, are:
+= -- 102
+> -- 28
+< -- 4
++ -- 8
+- -- 8
+* -- 64
+:= -- 207
+add.period$ -- 12
+call.type$ -- 4
+change.case$ -- 22
+chr.to.int$ -- 4
+cite$ -- 4
+duplicate$ -- 48
+empty$ -- 77
+format.name$ -- 12
+if$ -- 199
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 2
-newline$ -- 18
-num.names$ -- 9
-pop$ -- 14
+missing$ -- 4
+newline$ -- 23
+num.names$ -- 12
+pop$ -- 22
 preamble$ -- 1
-purify$ -- 18
+purify$ -- 24
 quote$ -- 0
-skip$ -- 29
+skip$ -- 39
 stack$ -- 0
-substring$ -- 36
-swap$ -- 1
+substring$ -- 48
+swap$ -- 2
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 16
+type$ -- 20
 warning$ -- 0
-while$ -- 6
+while$ -- 8
 width$ -- 0
-write$ -- 38
+write$ -- 50
