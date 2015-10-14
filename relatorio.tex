@@ -54,7 +54,7 @@ Em se tratando de Circuitos Digitais, diversos dispositivos têm uma ampla import
 
 \begin{figure}[!htbp]
 \centering
-\includegraphics[width=.5\textwidth]{img/p4/diagrama-estados.png}
+\includegraphics[width=.4\textwidth]{img/p4/diagrama-estados.png}
 \caption{Diagrama de estados de um contador de 3 bits\cite{floyd2011digital}}
 \label{fig:diagrama}
 \end{figure}
@@ -86,7 +86,6 @@ Além dos Flip-Flops até o momento estudados, temos na literatura, outro Flip-flo
 \caption{Tabela Verdade do Flip Flop T}
 \label{fig:fft}
 \end{figure}
-\subsection{Flip-Flop T}
 
 \subsection{Registrador de Deslocamento}
 
@@ -94,7 +93,7 @@ No universo dos circuitos digitais, principalmente no que diz respeito aos Flip-
 
 \begin{figure}[!htbp]
 \centering
-\includegraphics[width=.5\textwidth]{img/p4/Fig5RegistradorDeslocamento.png}
+\includegraphics[width=.7\textwidth]{img/p4/Fig5RegistradorDeslocamento.png}
 \caption{Representação de um registrador de deslocamento de 4 bits \cite{floyd2011digital}}
 \label{fig:rdeslocamento}
 \end{figure}
@@ -106,7 +105,7 @@ São diversos, os tipos de registradores de deslocamento, na figura~\ref{fig:regi
 
 \begin{figure}[!htbp]
 \centering
-\includegraphics[width=.5\textwidth]{img/p4/Fig6tipodeRegistrador.png}
+\includegraphics[width=.8\textwidth]{img/p4/Fig6tipodeRegistrador.png}
 \caption{Diferentes tipos de registradores, segundo \cite{floyd2011digital}}
 \label{fig:registradores}
 \end{figure}
@@ -172,6 +171,11 @@ Os dispositivos eletrônicos utilizam níveis de tensão diferentes para identifica
 \label{fig:232}
 \end{figure}
 
+\subsubsection{Software de comunicação}
+
+Para poder coletar os dados diretamente do usuário e enviá-los para o circuito, os mesmos precisam passar por um tratamento. Entre o caminho percorrido está abrir a porta de comunicação, converter os dados coletados por o usuário em binário e, finalmente, enviá-los através do $DB-9$.
+
+Para ajudar as realizar as tarefas correspondentes ao manuseio de permissões e envio de dados, foi utilizada a biblioteca $RS232$, construída em linguagem C e disponível e documentada em $http://www.teuniz.net/RS-232/$.
 \section{Metodologia}
 Utilizando-se, mais uma vez, da base teórica fornecida pela metodologia $PBL$, os alunos componentes da turma T04 iniciaram as sessões destinadas a solução do problema com a leitura do mesmo em duas etapas, uma individual e outra coletiva. Tendo como objetivo a detecção inicial de dúvidas, fatos importantes relacionados ao problema e ideias de soluções, o $brainstorm$ inicial ajudou e identificar as principais características do problema, bem assim como ter uma ideia de como iniciar o desenvolvimento do mesmo.
 
@@ -226,15 +230,12 @@ Para elaborar o item anterior, fez-se necessária a elaboração de uma unidade men
 
 Buscando melhorar o desempenho da memória, em suas células foram implementados diferentes mecanismos, um deles permite que a mesma seja ligada, ou desligada completamente, já o outro faz com que a memória só seja gravada uma única vez, evitando possíveis dados duplicados e alteração indevida dos mesmos. O segundo mecanismo pode ser visto na figura~\ref{fig:ff1}. Esse mecanismo é uma máquina de estados de Moore que está representada na figura~\ref{fig:fsm}. O outro mecanismo corresponde a equação de excitação de um registrador do tipo T para as variáveis dadas. T deve mudar de estado quando sua saída $Q$ e sua entrada $I$ forem diferentes, e, além disso, a $Z$ do mecanismo anterior deve estar em nível lógico 1, ou seja: T= Z(Q$\oplus$I).
 
-
-
 \begin{figure}[!htbp]
 \centering
 \includegraphics[width=.8\textwidth]{img/p4/ff1.png}
 \caption{Máquina de estados para máquina de uma única ação.}
 \label{fig:ff1}
 \end{figure}
-
 
 \begin{figure}[!htbp]
 \centering
@@ -245,16 +246,29 @@ Buscando melhorar o desempenho da memória, em suas células foram implementados d
 
 
 \subsubsection{Comunicação Serial}
-
+%TODO
 
 \subsection{Transmissão de Dados}
-
+%TODO
 
 \subsection{Unificação dos blocos em um projeto}
-Com todos os blocos prontos e devidamente testados em ambiente lógico, foram todos unidos em um único projeto e ligados como descrito no diagrama elaborado previamente. Tal tarefa foi destinada a todos os membros da equipe, como a justificativa de fortalecer o conhecimento sobre o problema e comparar e discutir os projetos em caso de eventuais discrepâncias.
+
+Diferentemente do problema anterior, no problema 4 a tarefa dada como prioridade a um subgrupo, assim como a tarefa de refatoração do circuito e montagem do cabo de transmissão foram dados como prioridades a outros grupos. Apesar de estarem responsáveis, o respectivo grupo não tirava de ninguém a responsabilidade de montar por si só o circuito novamente, em busca de aprender por inteiro o funcionamento do mesmo.
+
+Ao receber os blocos, não foi difícil montá-los em um único projeto, uma vez que, semelhante ao problema anterior, teve-se ao lado um diagrama com todas as conexões e padrões de cada unidade lógica ali presente, e, além disso, todas já estavam devidamente testadas, eliminando chances de haverem problemas relacionados ao mal funcionamento de alguma das unidades. Feita a montagem, a mesma foi disponibilizada para o grupo para análise e verificação de erros. Nenhum erro foi apontado.
 
 \subsection{Refatoração do circuito na protoboard}
 
+Para poder comportar a transmissão serial, o circuito físico precisava ser modificado, adicionando suporte a um conversor de tensão, alguns capacitores e um cabo de transmissão serial. Além disso, muitos dos componentes do problema anterior puderam ser retirados, muitos deles relacionados a entrada de dados, tais como o DIP Switch e resistores de $pull-down$. Um dos itens adicionados a protoboard foi o MAX-232, um circuito que converte a tensão vinda da porta $DB9$ do computador para a tensão na faixa TTL. Para funcionar corretamente, o mesmo foi adicionado ao circuito seguindo as instruções da figura~\ref{fig:max232}
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=.8\textwidth]{img/p4/232.jpg}
+\caption{Circuito do MAX-232.}
+\label{fig:max232}
+\end{figure}
+
+Para o cabo de comunicação, foi utilizado um cabo antigo e uma porta $DB9$ fêmea. No $DB9$ foram soldados fios nas entradas $TX$, $RX$ e $GND$, mesmo sabendo que apenas a porta $TX$ seria usada, uma vez que os dados seguiriam uma via única do computador para o circuito.
 
 \section{Discussões e resultados}
 
@@ -262,27 +276,46 @@ Nesta sessão serão abordados os principais resultados obtidos, os testes realiza
 
 \subsection{Testes lógicos no ambiente Quartus II}
 
-\subsection{Funcionamento do Circuito}
+Passados como tarefas para os subgrupos, os testes lógicos foram realizados bloco-a-bloco, tentando diminuir ao máximo a chance de qualquer erro de implementação de lógica. Para os testes da memória RAM de 15 bytes e do conversor serial-paralelo, dado o fato que esses são os únicos itens que o grupo não trabalhou ou conhece na escala exigida pelo problema.
 
+\subsubsection{Testes da Memória RAM}
+
+Inicialmente, foi feito um conjunto de testes básicos para verificar se a memória estava sendo capaz de distinguir os momentos de gravação/leitura e gravando apenas um dado por célula. Para isso, foi fixado uma célula(no caso da figura~\ref{fig:ramtest}, a do endereço $EB0=0, EB1=0, EB2=0, EB3=0$). Avaliando os resultados, percebe-se uma constante nas saídas $0,1,2,3,4,5,6,7$ que equivalem aos primeiros valores enviados no modo de gravação, apontando o sucesso do teste.
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=1\textwidth]{img/p4/testram1.png}
+\caption{Teste de persistência e modo de operação}
+\label{fig:ramtest}
+\end{figure}
+
+Prosseguindo os testes, o teste anterior foi repetido em uma escala de variação maior e utilizando-se todos os endereços disponíveis da memória RAM. O esperado é que a saída equivalesse ao primeiro valor de entrada em cada uma das células, e para cada período de clock entre 1 e 15, as entradas deveriam equivaler as saídas quando a memória estivesse em modo leitura. Ou seja, se em loop de entradas constantes, quando for colocada em modo de leitura, a memória vai "imitar" as 16 primeiras sequências de entrada, como demonstrado com sucesso no teste descrito na figura~\ref{fig:ramtest2}.
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=1\textwidth]{img/p4/testram2.png}
+\caption{Teste de persistência e modo de operação}
+\label{fig:ramtest2}
+\end{figure}
+
+\subsection{Funcionamento do Circuito}
+Segundo os requisitos do Problema 4, o usuário deve entrar com coordenadas em um software que se encarregará de direcionar os dados para o circuito, no qual o tratamento de dados será feito. A partir desses dados, existem dois momentos:
+
+\begin{itemize}
+\item Modo Planejamento: O usuário insere 15 coordenadas nas quais deseja que fiquem seus barcos, inicialmente todos os pixels da matriz estão apagados.
+\item Modo Jogo: O usuário tenta acertar os pixels que representam barcos, caso acerte, o pixel acende. O número máximo de tentativas é de 20, e caso não consiga encontrar todos os barcos, o jogo é encerrado.
+\end{itemize}
 
 \subsection{Testes práticos}
-Antes de realizar os testes do circuito na Protoboard, fazia-se necessário fazer a demarcação dos pinos adicionais na ferramenta Quartus II e  gravar o circuito lógico do mesmo na FPGA disponível no laboratório. Após a demarcação dos pinos, realizada com experiência adquirida no problema 1, ligou-se o circuito e a gravação foi feita.
+Antes de realizar os testes do circuito na Protoboard, fazia-se necessário fazer a demarcação dos pinos adicionais na ferramenta Quartus II e  gravar o circuito lógico do mesmo na FPGA disponível no laboratório. Dada significante queda de uso dos pinos do problema 3 para o problema 4, não foi necessária a demarcação de pinos e os menos foram reaproveitados. Ligados os novos componentes, o circuito foi ligado e a gravação foi feita.
 
 
-Dispondo-se de todas as ferramentas necessárias, o teste foi realizado introduzindo-se todas as coordenadas possíveis e tentando gravá-las na memória. Inicialmente, ao por em prática todo o planejado, foram grandes as falhas. Exibição da coordenada errada, o DSS não alternava entre seus dois estados e a matriz de LED's não acendia mesmo enviando comparações válidas. Como um resultado das práticas de projeto usadas, boa parte da equipe tinha um alto conhecimento em relação a estrutura do circuito, então, em uma revisão de todo o projeto pelo grupo, percebeu-se que tudo não passou de um descuido na hora de interligar os blocos, pois haviam diversos fios desencaixados ou encaixados no lugar errado.
-
-Após a detecção e correção dos erros citados, o circuito funcionou como o imaginado pelo grupo, exibindo, comparando e alternando tudo que deveria na forma que deveria.
+Dispondo-se de todas as ferramentas necessárias, o teste foi realizado introduzindo-se todas as coordenadas possíveis via software... %TODO
 
 
 \section{Conclusão}
 
-Observando os requisitos que foram solicitados para o desenvolvimento deste sistema digital, é notório que todas as funcionalidades foram cumpridas. Isto se torna mais concreto devido ao sucesso alcançado através dos testes práticos realizados. Em suma, todos os pré-requisitos para a elaboração do projeto das coordenadas foram obtidos com totalidade.
-
-Tendo sido revisado várias vezes e tentando melhorar quando possível, o grupo chegou num resultado simples e funcional, e, além de tudo, totalmente compatível com o problema anterior.
-
-Além do aspecto técnico, houve uma melhora singular no trabalho em equipe a partir do uso das práticas de projeto citadas. Problemas organizacionais, de incompatibilidade e de centralização de conhecimento, outrora frequentes, foram eliminados ou amenizados.
-
-Apesar do circuito como um todo estar sendo melhorado, outras possíveis melhorias apontadas no problema anterior continuam não realizadas. Tal fato esclarece que tanto com iniciativas do grupo tanto como exigências do próprio problema, atualizações ainda são possíveis, como o uso de um teclado para a inserção das coordenadas e um aviso de erro mais chamativo, como um aviso sonoro(sugestão que persiste do problema anterior) e a automatização da função $comparar$ e da função $clear$, eliminando botões do sistema e o deixando sua interface com o usuário mais simples.
+%TODO
 
 \section{Referências}
 
