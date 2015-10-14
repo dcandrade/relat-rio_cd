@@ -1,5 +1,5 @@
 \documentclass[12pt]{article}
-\usepackage[utf8]{inputenc}
+%\usepackage[utf8]{inputenc}
 \usepackage{sbc-template}
 
 \usepackage{graphicx,url}
@@ -7,7 +7,7 @@
 \usepackage{dcolumn}
 \usepackage{float}
 %\usepackage[brazil]{babel}   
-%\usepackage[latin1]{inputenc}  
+\usepackage[latin1]{inputenc}  
 
 
 
@@ -249,20 +249,20 @@ Buscando melhorar o desempenho da memória, em suas células foram implementados
 
 Um, dos vários requisitos propostos pelo problema quatro, diz respeito a comunicação serial que deveria acontecer entre o computador pessoal e o Circuito Digital desenvolvido, onde esta, haveria de ser configurada no modo $start-stop$ assíncrono, sendo que o frame de dados que seria utilizado nesse modo seria composto por 11 $bits$. Assim, é de se notar que a transferência de dados ocorreria utilizando alguma das portas seriais existentes em um computador pessoal. Desta forma, foi definido entre os membros do grupo que seria utilizada a porta serial $DB9$ para fazer essa comunicação no projeto que estava sendo desenvolvido, ou seja, seria utilizado o padrão $RS-232$ de comunicação de dados.
 
-Depois de definir que seria utilizado a porta $DB9$, era necessário criar um circuito que fosse capaz de identificar quando essa transferência estivesse acontecendo, ou seja, um circuito que fosse capaz de reconhecer quando o computador estava enviando um $frame$ de dados para $FPGA$. Este circuito deveria ser capaz, ainda, de transformar os dados que estavam sendo transferidos de forma serial, para o formato paralelo, tornando assim possível a leitura correta dos dados, possibilitando o seu uso em outra parte do circuito. A figura~\ref{fig:aa2} mostra os blocos lógicos para este circuito. Nesta FIGURA podemos observar três blocos de grande importância, a saber, o bloco AtivaRecepcao, outro bloco chamado Contador, e mais chamado RegistraDados.O AtivaRecepcao é responsável, como o próprio nome dele já deixa explicito, por ativar a recepção do $frame$ de dados advindos da porta serial do computador pessoal. Quando o $start-bit$ é detectado, a entrada $Enable$ deste bloco muda para nível lógico, alto ativando assim o bloco RegistraDados, o qual inicia de fato a leitura do $frame$ de dados enviados. Percebam que neste mesmo bloco temos uma entrada chamada DadosLidos, esta entrada é responsável por levar o $Enable$ novamente para nível baixo, tornando possível uma nova leitura. Sendo que a entrada é correspondente ao $stop-bit$, ou seja, o último bit do $frame$ de dados, indicando que aqueles determinados dados foram lidos com sucesso. Pelo fato da simplicidade do circuito interno, o mesmo não será exibido. 
+Depois de definir que seria utilizado a porta $DB9$, era necessário criar um circuito que fosse capaz de identificar quando essa transferência estivesse acontecendo, ou seja, um circuito que fosse capaz de reconhecer quando o computador estava enviando um $frame$ de dados para $FPGA$. Este circuito deveria ser capaz, ainda, de transformar os dados que estavam sendo transferidos de forma serial, para o formato paralelo, tornando assim possível a leitura correta dos dados, possibilitando o seu uso em outra parte do circuito. A FIGURA AQUI mostra os blocos lógicos para este circuito. Nesta FIGURA podemos observar três blocos de grande importância, a saber, o bloco AtivaRecepcao, outro bloco chamado Contador, e mais chamado RegistraDados.O AtivaRecepcao é responsável, como o próprio nome dele já deixa explicito, por ativar a recepção do $frame$ de dados advindos da porta serial do computador pessoal. Quando o $start-bit$ é detectado, a entrada $Enable$ deste bloco muda para nível lógico, alto ativando assim o bloco RegistraDados, o qual inicia de fato a leitura do $frame$ de dados enviados. Percebam que neste mesmo bloco temos uma entrada chamada DadosLidos, esta entrada é responsável por levar o $Enable$ novamente para nível baixo, tornando possível uma nova leitura. Sendo que a entrada é correspondente ao $stop-bit$, ou seja, o último bit do $frame$ de dados, indicando que aqueles determinados dados foram lidos com sucesso. Pelo fato da simplicidade do circuito interno, o mesmo não será exibido. 
 
 
 \begin{figure}[!htbp]
 \centering
-\includegraphics[width=.8\textwidth]{img/p4/aa2.jpg}
-\caption{Circuito Conversor Serial-Paralelo.}
-\label{fig:aa2}
+\includegraphics[width=.3\textwidth]{img/p4/aa1.png}
+\caption{Circuito RegistraDados}
+\label{fig:fsm}
 \end{figure}
 
 \begin{figure}[!htbp]
 \centering
-\includegraphics[width=.8\textwidth]{img/p4/aa1.jpg}
-\caption{Circuito RegistraDados.}
+\includegraphics[width=.3\textwidth]{img/p4/aa2.png}
+\caption{Circuito AtivaRecepção.}
 \label{fig:fsm}
 \end{figure}
 
