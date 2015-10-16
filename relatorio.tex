@@ -132,6 +132,8 @@ Antes de falarmos acerca de como ocorrer a transmissão de dados de forma serial
 \label{fig:db9db25}
 \end{figure}
 
+
+%TODO: Colocar esta referência para imagem http://www.mecaweb.com.br/eletronica/content/e_serial
 \begin{figure}[h]
 \centering
 \includegraphics[width=.5\textwidth]{img/Fig9serial_pinos.png}
@@ -143,6 +145,7 @@ Antes de falarmos acerca de como ocorrer a transmissão de dados de forma serial
 
 Na maioria das aplicações, a comunicação serial acontece de forma assíncrona, onde geralmente se tem 11 bits sendo transferidos. Um desses bits é o \textit{start-bit}, o qual notifica um receptor que um novo dado serial está disponível, seguido pelos bits de dados, um bit opcional de paridade \textit{parity} e um ou mais bits de parada \textit{stop bits}\cite{porta-serial}. Percebam que o número de bits de paridade e de parada podem variar, dependendo apenas do padrão de transmissão escolhido pelo projetista. Na figura~\ref{fig:cserial} pode-se analisar esta forma de comunicação de maneira mais concreta. Vale acrescentar, que enquanto o bit de parada se manter em nível alto, os dados não serão transmitidos, e sim, apenas, quando ocorrer a mudança de estado do nível lógico alto para baixo, caracterizando assim, o bit de início, ou \textit{start bit}. 
 
+%TODO: Colocar esta referência para imagem http://www.mecaweb.com.br/eletronica/content/e_serial
 
 \begin{figure}[h]
 \centering
@@ -161,6 +164,7 @@ Segundo (http://www.c2o.pro.br/automacao/x834.html) RS-232 é um padrão definid
 \subsubsection{Conversor de nível MAX-232}
 Os dispositivos eletrônicos utilizam níveis de tensão diferentes para identificar nível lógico baixo e nível lógico alto, dependendo apenas da tecnologia que está sendo empregada. Desta forma, quando se vai utilizar a porta serial do computador pessoal para se comunicar com algum dispositivo controlador, tem-se que analisar o padrão que o mesmo utiliza, pois a depender das especificações, será necessário fazer a conversão do nível. Por exemplo, vamos supor que queremos fazer uma comunicação entre o computador pessoal através da porta serial, com uma \textit{FPGA}. No entanto, a \textit{FPGA} utiliza a tecnologia \textit{TTL}, ou seja, de 0V a 0,8V representa nível lógico baixo e de $2V$ a $5V$ representa nível lógico alto. Percebe-se, assim, uma incompatibilidade entre o padrão RS-232 e o \textit{TTL}, desta forma é necessário fazer a conversão. Existe inúmeros dispositivos que tem a capacidade de fazer essa conversão, um deles é o MAX-232, o qual faz  a conversão entre os níveis utilizados pelo padrão RS-232 para TTL, e vice-versa. Na figura~\ref{fig:232} podemos ver uma configuração comum utilizando um conversor MAX-232. 
 
+%TODO: colocar referencia na imagem https://www.sparkfun.com/images/tutorials/BeginningEmbedded/4-UART/UART1.jpg
 \begin{figure}[h]
 \centering
 \includegraphics[width=.5\textwidth]{img/Fig11-microcontroller_uart_max232_circuit.jpg}
